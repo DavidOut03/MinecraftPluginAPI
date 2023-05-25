@@ -1,13 +1,12 @@
-package com.davidout.api;
+package com.davidout.minecraftPluginAPI;
 
-import com.davidout.api.command.CommandManager;
-import com.davidout.api.command.CustomCommand;
+import com.davidout.minecraftPluginAPI.command.CommandManager;
+import com.davidout.minecraftPluginAPI.command.CustomCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.EventListener;
 import java.util.List;
 
 public abstract class MinecraftPlugin extends JavaPlugin {
@@ -30,14 +29,29 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.registerEvents().forEach (eventListener -> this.pm.registerEvents(eventListener, this) );
         this.commandManager.registerCommands ( this.registerCommands() );
 
-        super.onEnable();
-
+        this.onStartup();
     }
 
     @Override
     public void onDisable() {
-        super.onDisable();
+        this.onShutdown();
     }
+
+
+    /**
+     *
+     *  GETTERS
+     *
+     */
+
+    public CommandManager getCommandManager() {return this.commandManager;}
+    public PluginManager getPluginManager() {return this.pm;}
+
+    /**
+     *
+     *  ABSTRACT METHODS
+     *
+     */
 
     // This method is called when the plugin is started by the server.
     public abstract void onStartup();
@@ -45,7 +59,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     // this method is called when the plugin is stopped or disabled by the server.
     public abstract void onShutdown();
 
-    // This method is called on startup and automaticly adds
+    // This method is called on startup and automatically adds
     public abstract List<Listener> registerEvents();
 
     // This method is called on startup to register the commands;

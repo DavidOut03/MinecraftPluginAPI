@@ -1,11 +1,11 @@
-package com.davidout.api;
+package com.davidout.minecraftPluginAPI;
 
-import com.davidout.api.command.CustomCommand;
+import com.davidout.minecraftPluginAPI.command.CustomCommand;
 import org.bukkit.event.Listener;
 
 import java.util.List;
 
-public class Main extends MinecraftPlugin{
+public class Main extends MinecraftPlugin {
 
 
     @Override

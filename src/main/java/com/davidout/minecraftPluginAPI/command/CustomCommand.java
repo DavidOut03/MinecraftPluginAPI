@@ -1,4 +1,4 @@
-package com.davidout.api.command;
+package com.davidout.minecraftPluginAPI.command;
 
 import org.bukkit.command.CommandSender;
 
