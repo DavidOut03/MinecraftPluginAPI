@@ -76,15 +76,14 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
         // Check for all arguments if its an subcommand
         for (int i = 0; i < arguments.length; i++) {
-            CustomCommand subCommand = getSubCommand(customCommand, arguments[i]);
-            // if the argument is not an subcommand execute the command.
-            if(subCommand == null)  return customCommand.executeCommand(sender, arguments);
-            // if the argument is an subcommand execute the subcommand and remove the fist argument;
-
             List<String> args = Arrays.asList(arguments);
-            System.out.println(args);
+            args.remove(i);
 
-            subCommand.executeCommand(sender, arguments);
+            String[] newArgs = (String[]) args.toArray();
+
+            CustomCommand subCommand = getSubCommand(customCommand, arguments[i]);
+            if(subCommand == null)  return customCommand.executeCommand(sender, newArgs);
+            subCommand.executeCommand(sender, newArgs);
         }
 
         return false;
