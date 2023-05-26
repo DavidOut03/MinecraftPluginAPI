@@ -105,7 +105,18 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
         for (CustomCommand customCommand : this.commandList) {
             if(!customCommand.getCommandName().equalsIgnoreCase(commandName)) continue;
-            returned.addAll(customCommand.autoCompleteCommand(commandSender, arguments));
+
+
+            for (int i = 0; i < arguments.length; i++) {
+                String[] newArgs = Arrays.copyOfRange(arguments, 1, arguments.length);
+                CustomCommand subCommand = getSubCommand(customCommand, arguments[i]);
+                if(subCommand != null) {
+                    returned.addAll(subCommand.autoCompleteCommand(commandSender, newArgs));
+                    break;
+                }
+
+                returned.addAll(customCommand.autoCompleteCommand(commandSender, arguments));
+            }
 
             Collections.sort(returned);
             return returned;
