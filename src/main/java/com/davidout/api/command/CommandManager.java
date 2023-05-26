@@ -32,6 +32,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             try {
                 this.plugin.getCommand(customCommand.getCommandName()).setExecutor(this);
                 this.plugin.getCommand(customCommand.getCommandName()).setTabCompleter(this);
+                this.commandList.add(customCommand);
             } catch (Exception ex) {
                 Bukkit.getLogger().log(Level.WARNING, "Could not register command: " + customCommand.getCommandName() + " because of an error:", ex);
             }
@@ -91,6 +92,8 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String commandName, String[] arguments) {
+
+
         if(this.commandList.isEmpty()) return false;
 
         for (CustomCommand customCommand : this.commandList) {
