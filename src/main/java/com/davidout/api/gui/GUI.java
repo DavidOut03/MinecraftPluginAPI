@@ -18,10 +18,10 @@ public abstract class GUI {
     private String title;
     private int rows;
 
-    public GUI(int rows) {
+    public GUI(int rows, String title) {
         this.items = new ArrayList<>();
-
         this.rows = rows;
+        this.title = TextUtils.formatColorCodes(title);
 
         for(int i = 0; i < (rows * 9); i++) {
             this.items.add(new ItemStack(Material.AIR));
@@ -52,6 +52,7 @@ public abstract class GUI {
      *  Abstract methods
      *
      */
+
 
     public abstract void createInventory();
     public abstract void onClick(InventoryClickEvent event, Player p);
