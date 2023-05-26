@@ -79,7 +79,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             String[] newArgs = Arrays.copyOfRange(arguments, 1, arguments.length);
             CustomCommand subCommand = getSubCommand(customCommand, arguments[i]);
             if(subCommand == null)  return customCommand.executeCommand(sender, newArgs);
-            subCommand.executeCommand(sender, newArgs);
+            return subCommand.executeCommand(sender, newArgs);
         }
 
         return false;
