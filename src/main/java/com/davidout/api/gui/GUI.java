@@ -11,22 +11,23 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public abstract class GUI {
-    private List<ItemStack> items;
+    private HashMap<Integer, ItemStack> items;
     private String title;
     private int rows;
 
     public GUI(int rows, String title) {
-        this.items = new ArrayList<>();
+        this.items = new HashMap<>();
         this.rows = rows;
         this.title = TextUtils.formatColorCodes(title);
 
-        for(int i = 0; i < (rows * 9); i++) {
-            this.items.add(new ItemStack(Material.AIR));
+        for (int i = 0; i < (rows * 9); i++) {
+            items.put(0, null);
         }
-
     }
 
     public Inventory getGUI() {
@@ -85,21 +86,25 @@ public abstract class GUI {
     }
 
     public void setItem(int slot, ItemStack itemStack) {
-        this.items.set(slot, itemStack);
+        this.items.put(slot, itemStack);
     }
 
     public void addItem(ItemStack itemStack) {
-        this.items.add(itemStack);
+        for (Map.Entry<Integer, ItemStack> integerItemStackEntry : this.items.entrySet()) {
+            if(integerItemStackEntry.getValue() != null && !integerItemStackEntry.getValue().getType().equals(Material.AIR)) continue;
+            this.items.put(integerItemStackEntry.getKey(), itemStack);
+            break;
+        }
     }
 
     public void removeItem(int slot) {
-        this.items.remove(slot);
+        this.items.put(slot, null);
     }
 
     public void removeAllItems(ItemStack itemStack) {
-        this.items.forEach(cs -> {
-            if(!cs.equals(itemStack)) return;
-            this.items.remove(cs);
+        this.items.forEach((integer, cs) -> {
+            if(!itemStack.equals(cs)) return;
+            removeItem(integer);
         });
     }
 
