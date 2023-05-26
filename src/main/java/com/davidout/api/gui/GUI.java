@@ -10,10 +10,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public abstract class GUI {
     private HashMap<Integer, ItemStack> items;
@@ -83,6 +80,10 @@ public abstract class GUI {
 
     public ItemStack getItem(int slot) {
         return this.items.get(slot);
+    }
+
+    public List<ItemStack> getItems() {
+        return new ArrayList<>(this.items.values());
     }
 
     public void setItem(int slot, ItemStack itemStack) {
