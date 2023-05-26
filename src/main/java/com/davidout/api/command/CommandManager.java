@@ -27,7 +27,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         if(this.plugin == null || commandList == null) return false;
 
         commandList.forEach(customCommand -> {
-            if(customCommand.getCommandName() == null) return;
+            if(customCommand == null|| customCommand.getCommandName() == null) return;
 
             try {
                 this.plugin.getCommand(customCommand.getCommandName()).setExecutor(this);
