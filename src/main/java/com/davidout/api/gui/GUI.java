@@ -26,12 +26,14 @@ public abstract class GUI {
         for(int i = 0; i < (rows * 9); i++) {
             this.items.add(new ItemStack(Material.AIR));
         }
+
     }
 
     public Inventory getGUI() {
         if(this.getRows() == 0) return Bukkit.createInventory(null, 9, this.title);
         Inventory inventory = Bukkit.createInventory(null, this.getSlots(), this.title);
 
+        this.createInventory();
         for (int i = 0; i < inventory.getSize(); i++) {
             if(this.items.get(i) == null) break;
             inventory.setItem(i, this.items.get(i));
@@ -41,7 +43,6 @@ public abstract class GUI {
     }
 
     public void openInventory(Player player) {
-        this.createInventory();
         player.openInventory(this.getGUI());
     }
 
