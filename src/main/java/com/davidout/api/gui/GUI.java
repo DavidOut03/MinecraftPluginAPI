@@ -34,8 +34,10 @@ public abstract class GUI {
         Inventory inventory = Bukkit.createInventory(null, this.getSlots(), this.title);
 
         this.createInventory();
+
+
         for (int i = 0; i < inventory.getSize(); i++) {
-            if(this.items.get(i) == null) break;
+            if(this.items.get(i) == null) continue;
             inventory.setItem(i, this.items.get(i));
         }
 
