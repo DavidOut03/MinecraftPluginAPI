@@ -67,11 +67,16 @@ public class CommandManager implements CommandExecutor, TabCompleter {
     }
 
     public boolean executeCustomCommand(CommandSender sender, CustomCommand customCommand, String[] arguments) {
+
+        System.out.println("1");
+
         // if the command has no extra arguments execute the command.
         if(arguments.length == 0) {
             customCommand.executeCommand(sender, arguments);
             return true;
         }
+
+        System.out.println("2");
 
         // Check for all arguments if its an subcommand
         for (int i = 0; i < arguments.length; i++) {
