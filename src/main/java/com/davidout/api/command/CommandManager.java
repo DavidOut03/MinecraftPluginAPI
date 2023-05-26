@@ -47,7 +47,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
     private boolean equalsCommand(CustomCommand command, String alias) {
         if(command.getCommandName().equalsIgnoreCase(alias)) return true;
 
-
+        if(command.getAliases() == null) return false;
         for (String commandAlias : command.getAliases()) {
             if(!commandAlias.equalsIgnoreCase(alias)) continue;
             return true;
@@ -92,15 +92,10 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String commandName, String[] arguments) {
-
-
         if(this.commandList.isEmpty()) return false;
 
         for (CustomCommand customCommand : this.commandList) {
-            System.out.println(customCommand.getCommandName());
             if (customCommand.getCommandName() == null || !commandName.equalsIgnoreCase(customCommand.getCommandName())) continue;
-
-            System.out.println(customCommand.getCommandName() + "is the executed command");
             return this.executeCustomCommand(commandSender, customCommand, arguments);
         }
 
