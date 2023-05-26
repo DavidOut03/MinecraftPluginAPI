@@ -1,7 +1,7 @@
-package com.davidout.minecraftPluginAPI;
+package com.davidout.api;
 
-import com.davidout.minecraftPluginAPI.command.CommandManager;
-import com.davidout.minecraftPluginAPI.command.CustomCommand;
+import com.davidout.api.command.CommandManager;
+import com.davidout.api.command.CustomCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;

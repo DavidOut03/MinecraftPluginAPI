@@ -1,4 +1,4 @@
-package com.davidout.minecraftPluginAPI.utillity;
+package com.davidout.api.utillity;
 
 import org.bukkit.ChatColor;
 

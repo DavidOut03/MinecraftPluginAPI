@@ -1,6 +1,6 @@
-package com.davidout.minecraftPluginAPI.command;
+package com.davidout.api.command;
 
-import com.davidout.minecraftPluginAPI.MinecraftPlugin;
+import com.davidout.api.MinecraftPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

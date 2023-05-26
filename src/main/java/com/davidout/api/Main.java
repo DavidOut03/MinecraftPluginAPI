@@ -1,6 +1,6 @@
-package com.davidout.minecraftPluginAPI;
+package com.davidout.api;
 
-import com.davidout.minecraftPluginAPI.command.CustomCommand;
+import com.davidout.api.command.CustomCommand;
 import org.bukkit.event.Listener;
 
 import java.util.List;

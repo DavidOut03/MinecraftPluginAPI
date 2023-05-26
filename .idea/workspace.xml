@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/command/CommandManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/command/CustomCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/TextUtils.java" afterDir="false" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="added getters in MinecraftPlugin.java">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/minecraftPluginAPI/gui/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/minecraftPluginAPI/gui/GUIManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/minecraftPluginAPI/gui/ItemAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,11 +59,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685028199262</updated>
-      <workItem from="1685028200348" duration="4873000" />
+      <workItem from="1685028200348" duration="7441000" />
     </task>
+    <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
+      <created>1685034440695</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685034440695</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added getters in MinecraftPlugin.java">
+      <created>1685035635921</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685035635921</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands." />
+    <MESSAGE value="added getters in MinecraftPlugin.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getters in MinecraftPlugin.java" />
   </component>
 </project>
