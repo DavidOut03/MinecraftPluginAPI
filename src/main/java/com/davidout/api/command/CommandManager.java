@@ -30,6 +30,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             if(customCommand == null|| customCommand.getCommandName() == null) return;
 
             try {
+                System.out.println("Registering command: " + customCommand.getCommandName());
                 this.plugin.getCommand(customCommand.getCommandName()).setExecutor(this);
                 this.plugin.getCommand(customCommand.getCommandName()).setTabCompleter(this);
             } catch (Exception ex) {
@@ -68,7 +69,6 @@ public class CommandManager implements CommandExecutor, TabCompleter {
 
     public boolean executeCustomCommand(CommandSender sender, CustomCommand customCommand, String[] arguments) {
 
-        System.out.println("1");
 
         // if the command has no extra arguments execute the command.
         if(arguments.length == 0) {
@@ -76,7 +76,6 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             return true;
         }
 
-        System.out.println("2");
 
         // Check for all arguments if its an subcommand
         for (int i = 0; i < arguments.length; i++) {
