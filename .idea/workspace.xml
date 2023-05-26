@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Made a git package">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed github packages" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +75,7 @@
       <updated>1685028199262</updated>
       <workItem from="1685028200348" duration="7441000" />
       <workItem from="1685103931158" duration="2852000" />
-      <workItem from="1685106871285" duration="29000" />
+      <workItem from="1685106871285" duration="323000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -101,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685104056470</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed github packages">
+      <created>1685107120638</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685107120638</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +126,7 @@
     <MESSAGE value="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands." />
     <MESSAGE value="added getters in MinecraftPlugin.java" />
     <MESSAGE value="Made a git package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made a git package" />
+    <MESSAGE value="Fixed github packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed github packages" />
   </component>
 </project>

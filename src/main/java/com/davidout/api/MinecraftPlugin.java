@@ -2,6 +2,7 @@ package com.davidout.api;
 
 import com.davidout.api.command.CommandManager;
 import com.davidout.api.command.CustomCommand;
+import com.davidout.api.gui.GUIManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
@@ -17,17 +18,23 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      *
      */
 
-    private PluginManager pm;
     private CommandManager commandManager;
+    private GUIManager guiManager;
+    private PluginManager pm;
+
 
     @Override
     public void onEnable() {
         this.pm = Bukkit.getPluginManager();
         this.commandManager = new CommandManager(this);
+        this.guiManager = new GUIManager();
 
         // register all the events and commands.
         this.registerEvents().forEach (eventListener -> this.pm.registerEvents(eventListener, this) );
         this.commandManager.registerCommands ( this.registerCommands() );
+
+        // register the click event for the guis.
+        this.pm.registerEvents(this.guiManager, this);
 
         this.onStartup();
     }
@@ -46,6 +53,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     public CommandManager getCommandManager() {return this.commandManager;}
     public PluginManager getPluginManager() {return this.pm;}
+    public GUIManager getGuiManager() {return this.guiManager;}
 
     /**
      *
