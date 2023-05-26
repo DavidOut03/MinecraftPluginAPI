@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="debug executeCommand">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed command eliases null bug.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +67,7 @@
       <command value="mvn clean deploy" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.Deploy">
     <configuration name="Deploy" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -94,6 +94,36 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="minecraft-plugin-api [clean,package]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="package" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Maven.Deploy" />
+      <item itemvalue="Maven.minecraft-plugin-api [clean,package]" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -107,7 +137,7 @@
       <workItem from="1685103931158" duration="2852000" />
       <workItem from="1685106871285" duration="4005000" />
       <workItem from="1685110925067" duration="1854000" />
-      <workItem from="1685114047823" duration="794000" />
+      <workItem from="1685114047823" duration="1700000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -172,7 +202,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685114833681</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="debug executeCommand">
+      <created>1685115003867</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685115003867</updated>
+    </task>
+    <task id="LOCAL-00011" summary="debug executeCommand">
+      <created>1685115587784</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685115587784</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fixed command eliases null bug.">
+      <created>1685115744426</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685115744426</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +249,7 @@
     <MESSAGE value="Fixed GUI creation" />
     <MESSAGE value="Fixed command manager" />
     <MESSAGE value="debug executeCommand" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug executeCommand" />
+    <MESSAGE value="Fixed command eliases null bug." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed command eliases null bug." />
   </component>
 </project>
