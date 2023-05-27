@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Map;
 
 public abstract class CustomEnchant extends Enchantment implements Listener {
@@ -84,7 +85,7 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
         this.target = target;
     }
 
-    public abstract Class<? extends Event> getEvent();
+    public abstract List<Class<? extends Event>> getEvents();
     public abstract void onAction(Event event);
 
     public void registerEnchantment(Plugin plugin) {
@@ -95,7 +96,11 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
 
             Enchantment.registerEnchantment(this);
 
-            Bukkit.getServer().getPluginManager().registerEvent(getEvent(), this, EventPriority.MONITOR, (listener, event) -> onAction(event), plugin);
+            this.getEvents().forEach(currentEvent -> {
+                Bukkit.getServer().getPluginManager().registerEvent(currentEvent, this, EventPriority.MONITOR, (listener, event) -> onAction(event), plugin);
+            });
+
+
 
         } catch (Exception ex) {
             Bukkit.getLogger().warning("Could not register custom enchantment: '" + getName() + "' due to an error: ");
