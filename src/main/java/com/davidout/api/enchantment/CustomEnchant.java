@@ -20,12 +20,12 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
     private EnchantmentTarget target;
 
 
-    public CustomEnchant(String name, int maxLevel, EnchantmentTarget target) {
+    public CustomEnchant(String name, int maxLevel) {
         super(NamespacedKey.minecraft(name));
         this.name = name;
         this.minLevel = 1;
         this.maxLevel = maxLevel;
-        this.target = target;
+        this.target = EnchantmentTarget.ALL;
     }
 
     @Override
@@ -68,6 +68,9 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
 
     public EnchantmentTarget getTarget() {
         return this.target;
+    }
+    public void setTarget(EnchantmentTarget target) {
+        this.target = target;
     }
 
     public abstract Class<? extends Event> getEvent();
