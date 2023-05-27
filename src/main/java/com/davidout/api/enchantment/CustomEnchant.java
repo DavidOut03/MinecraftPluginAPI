@@ -7,6 +7,7 @@ import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.lang.reflect.Field;
@@ -51,6 +52,16 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
     @Override
     public boolean isCursed() {
         return false;
+    }
+
+    @Override
+    public boolean conflictsWith(Enchantment other) {
+        return false;
+    }
+
+    @Override
+    public boolean canEnchantItem(ItemStack item) {
+        return true;
     }
 
 
