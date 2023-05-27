@@ -47,6 +47,11 @@ public class EnchantmentManager {
      *
      */
 
+
+    public static List<CustomEnchantment> getCustomEnchants() {
+        return customEnchantList;
+    }
+
     public static void addCustomEnchantment(ItemStack item, String name, int level) {
         CustomEnchantment enchantment = getEnchantByName(name);
         if(enchantment == null || item == null || item.getItemMeta() == null) return;

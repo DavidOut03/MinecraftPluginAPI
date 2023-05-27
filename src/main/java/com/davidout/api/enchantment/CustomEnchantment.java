@@ -24,7 +24,7 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
 
 
     public CustomEnchantment(String name, int maxLevel) {
-        super(name);
+        super(EnchantmentManager.getCustomEnchants().size() + values().length);
         this.name = name;
         this.minLevel = 1;
         this.maxLevel = maxLevel;
@@ -45,15 +45,6 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     public int getMaxLevel() {
         return this.maxLevel;
 
-    }
-    @Override
-    public boolean isTreasure() {
-        return false;
-    }
-
-    @Override
-    public boolean isCursed() {
-        return false;
     }
 
     @Override
@@ -114,13 +105,13 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     public void unRegisterEnchantment() {
 
         try {
-            Field byIdField = Enchantment.class.getDeclaredField("byKey");
+            Field byIdField = Enchantment.class.getDeclaredField("byId");
             Field byNameField = Enchantment.class.getDeclaredField("byName");
             byIdField.setAccessible(true);
             byNameField.setAccessible(true);
             Map<Integer, Enchantment> byId = (Map<Integer, Enchantment>) byIdField.get(null);
             Map<String, Enchantment> byName = (Map<String, Enchantment>) byNameField.get(null);
-            byId.remove( getKey());
+            byId.remove( getId());
             byName.remove( getName());
         } catch (Exception ex) {
             Bukkit.getLogger().warning("Could not unregister custom enchantment: '" + getName() + "' due to an error: ");
