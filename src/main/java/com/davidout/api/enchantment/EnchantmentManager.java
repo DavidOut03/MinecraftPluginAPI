@@ -11,12 +11,11 @@ import java.util.List;
 
 public class EnchantmentManager {
 
-    private List<CustomEnchant> customEnchantList;
+    private static List<CustomEnchant> customEnchantList = new ArrayList<>();
     private MinecraftPlugin plugin;
 
     public EnchantmentManager(MinecraftPlugin plugin) {
         this.plugin = plugin;
-        this.customEnchantList = new ArrayList<>();
     }
 
     public void addEnchantment(CustomEnchant enchant) {
@@ -41,7 +40,17 @@ public class EnchantmentManager {
     }
 
 
-    public static void addCustomEnchantment(ItemStack item, CustomEnchant enchantment, int level) {
+    /**
+     *
+     *
+     * Static methods.
+     *
+     */
+
+    public static void addCustomEnchantment(ItemStack item, String name, int level) {
+        CustomEnchant enchantment = getEnchantByName(name);
+        if(enchantment == null) return;
+
         ItemMeta itemMeta = item.getItemMeta();
         if (itemMeta != null) {
             itemMeta.addEnchant(enchantment, level, true);
@@ -62,11 +71,11 @@ public class EnchantmentManager {
 
 
 
-    public boolean enchantmentExists(String name) {
+    public static boolean enchantmentExists(String name) {
         return getEnchantByName(name) == null;
     }
 
-    public CustomEnchant getEnchantByName(String name) {
+    public static CustomEnchant getEnchantByName(String name) {
         for (CustomEnchant customEnchant : customEnchantList) {
             if(!customEnchant.getName().equalsIgnoreCase(name)) continue;
             return customEnchant;
