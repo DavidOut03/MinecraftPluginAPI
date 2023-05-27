@@ -2,9 +2,9 @@ package com.davidout.api.enchantment;
 
 import com.davidout.api.utillity.ServerUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
+import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -15,7 +15,7 @@ import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
-public abstract class CustomEnchant extends Enchantment implements Listener {
+public abstract class CustomEnchantment extends EnchantmentWrapper implements Listener {
 
     private String name;
     private int minLevel;
@@ -23,9 +23,8 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
     private EnchantmentTarget target;
 
 
-    public CustomEnchant(String name, int maxLevel) {
-        super((NamespacedKey) ((ServerUtils.getServerVersionNumber() >= 1.14) ? (Object) NamespacedKey.minecraft(name) : (Object) Enchantment.values().length));
-
+    public CustomEnchantment(String name, int maxLevel) {
+        super(name);
         this.name = name;
         this.minLevel = 1;
         this.maxLevel = maxLevel;

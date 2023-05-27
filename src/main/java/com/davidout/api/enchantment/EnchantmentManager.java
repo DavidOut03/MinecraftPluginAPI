@@ -11,18 +11,18 @@ import java.util.List;
 
 public class EnchantmentManager {
 
-    private static List<CustomEnchant> customEnchantList = new ArrayList<>();
+    private static List<CustomEnchantment> customEnchantList = new ArrayList<>();
     private MinecraftPlugin plugin;
 
     public EnchantmentManager(MinecraftPlugin plugin) {
         this.plugin = plugin;
     }
 
-    public void addEnchantment(CustomEnchant enchant) {
+    public void addEnchantment(CustomEnchantment enchant) {
         this.customEnchantList.add(enchant);
         enchant.registerEnchantment(plugin);
     }
-    public void removeEnchantment(CustomEnchant enchant) {
+    public void removeEnchantment(CustomEnchantment enchant) {
         this.customEnchantList.remove(enchant);
         enchant.unRegisterEnchantment();
     }
@@ -48,7 +48,7 @@ public class EnchantmentManager {
      */
 
     public static void addCustomEnchantment(ItemStack item, String name, int level) {
-        CustomEnchant enchantment = getEnchantByName(name);
+        CustomEnchantment enchantment = getEnchantByName(name);
         if(enchantment == null || item == null || item.getItemMeta() == null) return;
         ItemMeta itemMeta = item.getItemMeta();
             itemMeta.addEnchant(enchantment, level, true);
@@ -56,7 +56,7 @@ public class EnchantmentManager {
             item.setItemMeta(itemMeta);
     }
 
-    private static List<String> updateLore(List<String> currentLore, CustomEnchant enchantment, int level) {
+    private static List<String> updateLore(List<String> currentLore, CustomEnchantment enchantment, int level) {
         ArrayList<String> returned = new ArrayList<>();
         if(currentLore == null) currentLore = new ArrayList<>();
 
@@ -74,8 +74,8 @@ public class EnchantmentManager {
         return getEnchantByName(name) == null;
     }
 
-    public static CustomEnchant getEnchantByName(String name) {
-        for (CustomEnchant customEnchant : customEnchantList) {
+    public static CustomEnchantment getEnchantByName(String name) {
+        for (CustomEnchantment customEnchant : customEnchantList) {
             if(!customEnchant.getName().equalsIgnoreCase(name)) continue;
             return customEnchant;
         }
