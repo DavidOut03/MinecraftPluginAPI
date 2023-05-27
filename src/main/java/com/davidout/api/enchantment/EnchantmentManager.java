@@ -64,8 +64,9 @@ public class EnchantmentManager {
 
         String enchantmentLine = ChatColor.GRAY + enchantment.getName() + " " + RomanNumber.toRoman(level);
         returned.add(enchantmentLine);
-        returned.add(" ");
-        returned.addAll(currentLore);
+
+
+        if(currentLore != null && !currentLore.isEmpty()) returned.addAll(currentLore);
         return returned;
     }
 
