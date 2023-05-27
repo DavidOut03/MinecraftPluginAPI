@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Test work for mutiple versions">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed for 1.18">
+      <change afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/CustomEnchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/CustomEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/EnchantmentManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,13 @@
       <list>
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="legacy" />
+      </map>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -53,7 +57,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/enchantment",
+    "last_opened_file_path": "S:/HBO ICT/repositories/MinecraftPluginAPI",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +68,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI" />
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\enchantment" />
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\customevents" />
     </key>
@@ -155,7 +160,7 @@
       <workItem from="1685114047823" duration="6408000" />
       <workItem from="1685124744145" duration="1137000" />
       <workItem from="1685200570511" duration="1804000" />
-      <workItem from="1685212923105" duration="7386000" />
+      <workItem from="1685212923105" duration="7737000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -430,7 +435,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685221584522</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Fixed for 1.18">
+      <created>1685223160270</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1685223160270</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Fixed for 1.18">
+      <created>1685223297250</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1685223297250</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,6 +486,7 @@
     <MESSAGE value="Fixed bug where items could not receive a custom enchantment" />
     <MESSAGE value="Updated lore" />
     <MESSAGE value="Test work for mutiple versions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test work for mutiple versions" />
+    <MESSAGE value="Fixed for 1.18" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed for 1.18" />
   </component>
 </project>
