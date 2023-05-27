@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added the ArmorEquipEvent and ArmorDequipEvent">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added instance function to MinecraftPlugin.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/customevents/ArmorDequipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/customevent/ArmorDequipEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/customevents/ArmorEquipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/customevent/ArmorEquipEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/listeners/ArmorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/listener/ArmorListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +154,7 @@
       <workItem from="1685114047823" duration="6408000" />
       <workItem from="1685124744145" duration="1137000" />
       <workItem from="1685200570511" duration="1804000" />
-      <workItem from="1685212923105" duration="900000" />
+      <workItem from="1685212923105" duration="2776000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -341,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685213328649</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Added instance function to MinecraftPlugin.java">
+      <created>1685213946362</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1685213946362</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +382,7 @@
     <MESSAGE value="." />
     <MESSAGE value="Fixed gui addItem issue" />
     <MESSAGE value="Added the ArmorEquipEvent and ArmorDequipEvent" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the ArmorEquipEvent and ArmorDequipEvent" />
+    <MESSAGE value="Added instance function to MinecraftPlugin.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added instance function to MinecraftPlugin.java" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.davidout.api.customevents;
+package com.davidout.api.customevent;
 
 import com.davidout.api.enums.ArmorType;
 import org.bukkit.entity.Player;

@@ -2,8 +2,9 @@ package com.davidout.api;
 
 import com.davidout.api.command.CommandManager;
 import com.davidout.api.command.CustomCommand;
+import com.davidout.api.enchantment.EnchantmentManager;
 import com.davidout.api.gui.GUIManager;
-import com.davidout.api.listeners.ArmorListener;
+import com.davidout.api.listener.ArmorListener;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
@@ -13,8 +14,8 @@ import java.util.List;
 
 public abstract class MinecraftPlugin extends JavaPlugin {
 
-    public static MinecraftPlugin getInstance() {return instance;}
-    private static MinecraftPlugin instance;
+    public static MinecraftPlugin getPlugin() {return plugin;}
+    private static MinecraftPlugin plugin;
 
     /***
      *
@@ -22,6 +23,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      *
      */
 
+    private EnchantmentManager enchantmentManager;
     private CommandManager commandManager;
     private GUIManager guiManager;
     private PluginManager pm;
@@ -29,7 +31,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        instance = this;
+        plugin = this;
 
         this.pm = Bukkit.getPluginManager();
         this.commandManager = new CommandManager(this);
@@ -42,13 +44,14 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         // register all the events and commands.
         this.registerEvents().forEach (eventListener -> this.pm.registerEvents(eventListener, this) );
         this.commandManager.registerCommands ( this.registerCommands() );
-
+        this.enchantmentManager.registerEnchantments();
 
         this.onStartup();
     }
 
     @Override
     public void onDisable() {
+        this.enchantmentManager.unRegisterEnchantments();
         this.onShutdown();
     }
 
@@ -64,6 +67,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      *
      */
 
+    public EnchantmentManager getEnchantmentManager() {return this.enchantmentManager;}
     public CommandManager getCommandManager() {return this.commandManager;}
     public PluginManager getPluginManager() {return this.pm;}
     public GUIManager getGuiManager() {return this.guiManager;}
