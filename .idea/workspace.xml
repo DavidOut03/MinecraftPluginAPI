@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Updated lore" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Updated lore">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/ServerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/CustomEnchant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/CustomEnchant.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +154,7 @@
       <workItem from="1685114047823" duration="6408000" />
       <workItem from="1685124744145" duration="1137000" />
       <workItem from="1685200570511" duration="1804000" />
-      <workItem from="1685212923105" duration="4618000" />
+      <workItem from="1685212923105" duration="5578000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -403,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685220161935</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Updated lore">
+      <created>1685220340572</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1685220340572</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,5 +1,6 @@
 package com.davidout.api.enchantment;
 
+import com.davidout.api.utillity.ServerUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -23,7 +24,8 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
 
 
     public CustomEnchant(String name, int maxLevel) {
-        super(NamespacedKey.minecraft(name));
+        super((ServerUtils.getServerVersionNumber() >= 1.14) ? NamespacedKey.minecraft(name) : Enchantment.values().length);
+
         this.name = name;
         this.minLevel = 1;
         this.maxLevel = maxLevel;
@@ -89,6 +91,8 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
     public abstract void onAction(Event event);
 
     public void registerEnchantment(Plugin plugin) {
+
+
         try {
             Field acceptingNew = Enchantment.class.getDeclaredField("acceptingNew");
             acceptingNew.setAccessible(true);
