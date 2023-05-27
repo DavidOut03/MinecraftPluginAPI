@@ -36,6 +36,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.pm = Bukkit.getPluginManager();
         this.commandManager = new CommandManager(this);
         this.guiManager = new GUIManager();
+        this.enchantmentManager = new EnchantmentManager(this);
 
 
         // register all necesarry listeners

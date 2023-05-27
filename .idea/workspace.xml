@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added instance function to MinecraftPlugin.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/customevents/ArmorDequipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/customevent/ArmorDequipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/customevents/ArmorEquipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/customevent/ArmorEquipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/listeners/ArmorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/listener/ArmorListener.java" afterDir="false" />
-    </list>
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added EnchantmentManager.java to create custom enchantments" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/customevents",
+    "last_opened_file_path": "S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/enchantment",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,6 +58,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\enchantment" />
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\customevents" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -154,7 +149,7 @@
       <workItem from="1685114047823" duration="6408000" />
       <workItem from="1685124744145" duration="1137000" />
       <workItem from="1685200570511" duration="1804000" />
-      <workItem from="1685212923105" duration="2776000" />
+      <workItem from="1685212923105" duration="3094000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -352,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685213946362</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added EnchantmentManager.java to create custom enchantments">
+      <created>1685218532465</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1685218532465</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,6 +385,7 @@
     <MESSAGE value="Fixed gui addItem issue" />
     <MESSAGE value="Added the ArmorEquipEvent and ArmorDequipEvent" />
     <MESSAGE value="Added instance function to MinecraftPlugin.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added instance function to MinecraftPlugin.java" />
+    <MESSAGE value="Added EnchantmentManager.java to create custom enchantments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added EnchantmentManager.java to create custom enchantments" />
   </component>
 </project>
