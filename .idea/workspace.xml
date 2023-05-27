@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Removed enchantment target from constructor" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed bug where items could not receive a custom enchantment" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +149,7 @@
       <workItem from="1685114047823" duration="6408000" />
       <workItem from="1685124744145" duration="1137000" />
       <workItem from="1685200570511" duration="1804000" />
-      <workItem from="1685212923105" duration="3476000" />
+      <workItem from="1685212923105" duration="3778000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -368,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685219048132</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Fixed bug where items could not receive a custom enchantment">
+      <created>1685219222660</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1685219222660</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,6 +409,7 @@
     <MESSAGE value="Added EnchantmentManager.java to create custom enchantments" />
     <MESSAGE value="Fixed enchantmentManager null bug" />
     <MESSAGE value="Removed enchantment target from constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed enchantment target from constructor" />
+    <MESSAGE value="Fixed bug where items could not receive a custom enchantment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where items could not receive a custom enchantment" />
   </component>
 </project>
