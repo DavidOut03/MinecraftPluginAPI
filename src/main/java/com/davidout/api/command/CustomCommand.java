@@ -12,8 +12,6 @@ public interface CustomCommand {
 
     public List<CustomCommand> getSubCommands();
 
-    public void sendHelp(String[] arguments);
-
     public boolean executeCommand(CommandSender sender, String[] arguments);
     public List<String> autoCompleteCommand(CommandSender sender, String[] arguments);
 

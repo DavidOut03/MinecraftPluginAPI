@@ -3,6 +3,7 @@ package com.davidout.api;
 import com.davidout.api.command.CommandManager;
 import com.davidout.api.command.CustomCommand;
 import com.davidout.api.gui.GUIManager;
+import com.davidout.api.listeners.ArmorListener;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
@@ -29,12 +30,14 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.commandManager = new CommandManager(this);
         this.guiManager = new GUIManager();
 
+
+        // register all necesarry listeners
+        this.registerNecesarryListeners();
+
         // register all the events and commands.
         this.registerEvents().forEach (eventListener -> this.pm.registerEvents(eventListener, this) );
         this.commandManager.registerCommands ( this.registerCommands() );
 
-        // register the click event for the guis.
-        this.pm.registerEvents(this.guiManager, this);
 
         this.onStartup();
     }
@@ -42,6 +45,11 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         this.onShutdown();
+    }
+
+    public void registerNecesarryListeners() {
+        this.pm.registerEvents(this.guiManager, this);
+        this.pm.registerEvents(new ArmorListener(), this);
     }
 
 
