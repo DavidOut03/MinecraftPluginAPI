@@ -13,6 +13,9 @@ import java.util.List;
 
 public abstract class MinecraftPlugin extends JavaPlugin {
 
+    public static MinecraftPlugin getInstance() {return instance;}
+    private static MinecraftPlugin instance;
+
     /***
      *
      *   Class created by David Out
@@ -26,6 +29,8 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        instance = this;
+
         this.pm = Bukkit.getPluginManager();
         this.commandManager = new CommandManager(this);
         this.guiManager = new GUIManager();
