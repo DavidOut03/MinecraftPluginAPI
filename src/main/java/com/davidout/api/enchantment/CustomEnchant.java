@@ -24,7 +24,7 @@ public abstract class CustomEnchant extends Enchantment implements Listener {
 
 
     public CustomEnchant(String name, int maxLevel) {
-        super((ServerUtils.getServerVersionNumber() >= 1.14) ? NamespacedKey.minecraft(name) : Enchantment.values().length);
+        super((NamespacedKey) ((ServerUtils.getServerVersionNumber() >= 1.14) ? (Object) NamespacedKey.minecraft(name) : (Object) Enchantment.values().length));
 
         this.name = name;
         this.minLevel = 1;
