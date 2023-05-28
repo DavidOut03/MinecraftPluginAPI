@@ -31,7 +31,7 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     }
 
     public CustomEnchantment(String name, int maxLevel, EnchantmentTarget target) {
-        super(name);
+        super(EnchantmentManager.getCustomEnchants().size());
         this.name = name;
         this.minLevel = 1;
         this.maxLevel = maxLevel;
