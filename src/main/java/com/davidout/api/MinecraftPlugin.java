@@ -5,6 +5,7 @@ import com.davidout.api.command.CustomCommand;
 import com.davidout.api.enchantment.EnchantmentManager;
 import com.davidout.api.gui.GUIManager;
 import com.davidout.api.listener.ArmorListener;
+import com.davidout.api.scoreboard.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
@@ -25,6 +26,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     private EnchantmentManager enchantmentManager;
     private CommandManager commandManager;
+    private ScoreboardManager scoreboardManager;
     private GUIManager guiManager;
     private PluginManager pm;
 
@@ -37,6 +39,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.commandManager = new CommandManager(this);
         this.guiManager = new GUIManager();
         this.enchantmentManager = new EnchantmentManager(this);
+        this.scoreboardManager = new ScoreboardManager();
 
 
         // register all necesarry listeners
@@ -72,6 +75,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public CommandManager getCommandManager() {return this.commandManager;}
     public PluginManager getPluginManager() {return this.pm;}
     public GUIManager getGuiManager() {return this.guiManager;}
+    public ScoreboardManager getScoreboardManager() {return this.scoreboardManager;}
 
     /**
      *
