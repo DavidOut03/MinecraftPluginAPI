@@ -1,8 +1,6 @@
 package com.davidout.api.enchantment;
 
-import com.davidout.api.utillity.ServerUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.enchantments.EnchantmentWrapper;

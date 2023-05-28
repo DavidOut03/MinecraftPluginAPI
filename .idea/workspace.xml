@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Legacy release 1.0.2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed enchantment target" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,7 +162,7 @@
       <workItem from="1685200570511" duration="1804000" />
       <workItem from="1685212923105" duration="7737000" />
       <workItem from="1685275073970" duration="2345000" />
-      <workItem from="1685278838936" duration="837000" />
+      <workItem from="1685278838936" duration="1172000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -495,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685278486682</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Fixed enchantment target">
+      <created>1685280796009</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1685280796009</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,6 +542,7 @@
     <MESSAGE value="Added the ScoreboardManager.java" />
     <MESSAGE value="Fixed legacy enchantments" />
     <MESSAGE value="Legacy release 1.0.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Legacy release 1.0.2" />
+    <MESSAGE value="Fixed enchantment target" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed enchantment target" />
   </component>
 </project>
