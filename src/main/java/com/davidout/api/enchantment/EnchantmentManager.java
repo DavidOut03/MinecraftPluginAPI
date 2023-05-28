@@ -66,7 +66,7 @@ public class EnchantmentManager {
         if(currentLore == null) currentLore = new ArrayList<>();
 
         String enchantmentLine = (enchantment.getMaxLevel() == 1)? ChatColor.GRAY + enchantment.getName() : ChatColor.GRAY + enchantment.getName() + " " + RomanNumber.toRoman(level);
-        returned.add(enchantmentLine.replace("-", "").replace("_", ""));
+        returned.add(enchantmentLine.replace("-", " ").replace("_", " "));
 
 
         if(currentLore != null && !currentLore.isEmpty()) returned.addAll(currentLore);
