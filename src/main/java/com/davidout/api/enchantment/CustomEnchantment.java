@@ -1,8 +1,6 @@
 package com.davidout.api.enchantment;
 
-import com.davidout.api.utillity.ServerUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.enchantments.EnchantmentWrapper;
@@ -25,7 +23,7 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
 
 
     public CustomEnchantment(String name, int maxLevel) {
-        super(name);
+        super(EnchantmentManager.getCustomEnchants().size());
         this.name = name;
         this.minLevel = 1;
         this.maxLevel = maxLevel;
@@ -106,13 +104,13 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     public void unRegisterEnchantment() {
 
         try {
-            Field byIdField = Enchantment.class.getDeclaredField("byKey");
+            Field byIdField = Enchantment.class.getDeclaredField("byId");
             Field byNameField = Enchantment.class.getDeclaredField("byName");
             byIdField.setAccessible(true);
             byNameField.setAccessible(true);
             Map<Integer, Enchantment> byId = (Map<Integer, Enchantment>) byIdField.get(null);
             Map<String, Enchantment> byName = (Map<String, Enchantment>) byNameField.get(null);
-            byId.remove( getKey());
+            byId.remove( getId());
             byName.remove( getName());
         } catch (Exception ex) {
             Bukkit.getLogger().warning("Could not unregister custom enchantment: '" + getName() + "' due to an error: ");
