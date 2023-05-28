@@ -28,11 +28,4 @@ public class PlayerUtils {
                 team.unregister();
     }
 
-    public static void setTextBelowName(Player p, String text) {
-        Scoreboard scoreboard = p.getScoreboard();
-        Objective objective = scoreboard.registerNewObjective("belowName", "dummy", TextUtils.formatColorCodes(text));
-        objective.setDisplaySlot(DisplaySlot.BELOW_NAME);
-        objective.getScore(TextUtils.formatColorCodes(text)).setScore(0);
-
-    }
 }
