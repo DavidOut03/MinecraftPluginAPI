@@ -32,6 +32,15 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
         this.target = EnchantmentTarget.ALL;
     }
 
+    public CustomEnchantment(String name, int maxLevel, EnchantmentTarget target) {
+        super(name);
+        this.name = name;
+        this.minLevel = 1;
+        this.maxLevel = maxLevel;
+        this.target = target;
+    }
+
+
     @Override
     public String getName() {
         return this.name;
@@ -53,9 +62,10 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
         return false;
     }
 
+
     @Override
     public boolean canEnchantItem(ItemStack item) {
-        return true;
+        return target.includes(item);
     }
 
 

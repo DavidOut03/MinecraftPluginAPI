@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added the ScoreboardManager.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/PlayerUtils.java" afterDir="false" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Legacy release 1.0.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/ServerUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +164,7 @@
       <workItem from="1685200570511" duration="1804000" />
       <workItem from="1685212923105" duration="7737000" />
       <workItem from="1685275073970" duration="2345000" />
+      <workItem from="1685278838936" duration="837000" />
     </task>
     <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
       <created>1685034440695</created>
@@ -483,7 +481,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685269932907</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Fixed legacy enchantments">
+      <created>1685278438294</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1685278438294</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Legacy release 1.0.2">
+      <created>1685278486681</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1685278486682</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,6 +535,8 @@
     <MESSAGE value="Fixed for 1.18" />
     <MESSAGE value="Official release for 1.7 til 1.13" />
     <MESSAGE value="Added the ScoreboardManager.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the ScoreboardManager.java" />
+    <MESSAGE value="Fixed legacy enchantments" />
+    <MESSAGE value="Legacy release 1.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Legacy release 1.0.2" />
   </component>
 </project>
