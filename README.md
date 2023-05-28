@@ -23,7 +23,7 @@ My github packages repository.
         <dependency>
             <groupId>com.davidout.api.minecraft</groupId>
             <artifactId>minecraft-plugin-api</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
 ```
 
@@ -32,8 +32,16 @@ My github packages repository.
         <dependency>
             <groupId>com.davidout.api.minecraft</groupId>
             <artifactId>minecraft-plugin-api</artifactId>
-            <version>1.0.0-LEGACY</version>
+            <version>1.0.1-LEGACY</version>
         </dependency>
+```
+**Add this to your shaded maven plugin configuration**
+```xml
+    <configuration>
+       <createDependencyReducedPom>false</createDependencyReducedPom>
+       <shadedArtifactAttached>true</shadedArtifactAttached>                
+     </configuration>
+                          
 ```
 
 
