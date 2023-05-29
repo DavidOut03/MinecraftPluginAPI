@@ -33,9 +33,8 @@ public class PluginFile {
 
     public void generateFile() throws IOException {
         this.dataFolder = MinecraftPlugin.getPlugin().getDataFolder();
-
-
         if(!dataFolder.exists()) dataFolder.mkdir();
+        if(!new File(dataFolder, folderPath).exists()) new File(dataFolder, folderPath).mkdir();
         this.file = new File(dataFolder, folderPath + "/" + fileName + ".yml");
         if(file.exists()) return;
         file.createNewFile();
