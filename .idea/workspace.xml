@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed capetelize first letter to enchantments">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added fileSystem">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/file/FileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/file/PluginFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,14 +170,7 @@
       <workItem from="1685278838936" duration="1172000" />
       <workItem from="1685290963682" duration="1216000" />
       <workItem from="1685358993905" duration="10000" />
-      <workItem from="1685368357195" duration="2753000" />
-    </task>
-    <task id="LOCAL-00008" summary="debug executeCommand">
-      <created>1685114641011</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1685114641011</updated>
+      <workItem from="1685368357195" duration="3941000" />
     </task>
     <task id="LOCAL-00009" summary="debug executeCommand">
       <created>1685114833681</created>
@@ -512,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685371013271</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Added fileSystem">
+      <created>1685389612292</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1685389612292</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added onClick method in GUI.java" />
     <MESSAGE value="Fixed GUI creation" />
     <MESSAGE value="Fixed command manager" />
     <MESSAGE value="debug executeCommand" />
@@ -555,6 +557,7 @@
     <MESSAGE value="Added new method to add the custom enchantment" />
     <MESSAGE value="Added capetelize first letter to enchantments" />
     <MESSAGE value="Fixed capetelize first letter to enchantments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed capetelize first letter to enchantments" />
+    <MESSAGE value="Added fileSystem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fileSystem" />
   </component>
 </project>

@@ -54,6 +54,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.commandManager.registerCommands ( this.registerCommands() );
         this.enchantmentManager.registerEnchantments();
 
+        this.fileManager.createFiles();
         this.onStartup();
     }
 

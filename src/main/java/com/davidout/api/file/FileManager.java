@@ -19,10 +19,14 @@ public class FileManager {
     public void addFile(PluginFile file) {this.fileList.add(file);}
     public void removeFile(PluginFile file) {this.fileList.remove(file);}
 
-    public void createFiles() throws IOException {
-        for (PluginFile pluginFile : this.fileList) {
-            pluginFile.generateFile();
-        }
+    public void createFiles() {
+        this.fileList.forEach(file -> {
+            try {
+                file.generateFile();
+            } catch (IOException e) {
+                throw new RuntimeException("Could not create the file: " + file.getFileName() + " because of an error:", e);
+            }
+        });
     }
 
     public void saveFiles() throws IOException {

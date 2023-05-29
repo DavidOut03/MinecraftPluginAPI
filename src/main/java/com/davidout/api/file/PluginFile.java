@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class PluginFile {
@@ -18,6 +19,11 @@ public class PluginFile {
 
     private File file;
     private File dataFolder;
+
+    public String getFileName() {return fileName;}
+    public String getFolderPath() {return folderPath;}
+    public String getAbsoluteFolderPath() {return dataFolder.getAbsolutePath() + "/" + folderPath + "/" + fileName + ".yml";}
+
 
     public PluginFile(String folderPath, String fileName) {
         this.folderPath = folderPath;
