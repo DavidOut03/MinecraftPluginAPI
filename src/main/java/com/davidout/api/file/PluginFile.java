@@ -23,7 +23,7 @@ public class PluginFile {
 
     public String getFileName() {return fileName;}
     public String getFolderPath() {return folderPath;}
-    public String getAbsoluteFolderPath() {return dataFolder.getAbsolutePath() + "/" + folderPath + "/" + fileName + ".yml";}
+    public String getAbsoluteFolderPath() {return this.file.getAbsolutePath();}
 
 
     public PluginFile(String folderPath, String fileName) {
