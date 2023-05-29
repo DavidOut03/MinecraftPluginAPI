@@ -45,11 +45,13 @@ public abstract class CustomScoreboard  {
         this.schedular = Bukkit.getScheduler().scheduleSyncRepeatingTask(MinecraftPlugin.getPlugin(), new Runnable() {
             @Override
             public void run() {
+                if(players == null || players.isEmpty()) {
+                    stopUpdater();
+                    return;
+                }
+
                 players.forEach(playerName -> {
-                    if(playerName == null || Bukkit.getPlayer(playerName) == null) {
-                        players.remove(playerName);
-                        return;
-                    }
+                    if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
 
                     Player player = Bukkit.getPlayer(playerName);
                     List<String> lines = update(player);
@@ -58,7 +60,6 @@ public abstract class CustomScoreboard  {
                     if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
                     for (int i = 0; i < lines.size(); i++) {
                         if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-
 
                         String lineName = "line" + i;
 

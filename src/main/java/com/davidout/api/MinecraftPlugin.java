@@ -7,6 +7,7 @@ import com.davidout.api.file.FileManager;
 import com.davidout.api.file.PluginFile;
 import com.davidout.api.gui.GUIManager;
 import com.davidout.api.listener.ArmorListener;
+import com.davidout.api.listener.LeaveListener;
 import com.davidout.api.scoreboard.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
@@ -69,7 +70,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public void registerNecesarryListeners() {
         this.pm.registerEvents(this.guiManager, this);
         this.pm.registerEvents(new ArmorListener(), this);
-
+        this.pm.registerEvents(new LeaveListener(), this);
     }
 
 

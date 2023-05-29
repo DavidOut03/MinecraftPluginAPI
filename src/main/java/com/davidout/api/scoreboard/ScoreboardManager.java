@@ -32,6 +32,11 @@ public class ScoreboardManager {
         scoreboard.addToScoreboard(player);
     }
 
+    public void removeFromScoreboard(Player player) {
+      if(players.get(player) == null) return;
+      players.get(player).removeFromScoreboard(player);
+    }
+
 
     public CustomScoreboard getScoreboard(String name) {
         if(name == null) return null;
