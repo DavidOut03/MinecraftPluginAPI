@@ -36,6 +36,8 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
         this.minLevel = 1;
         this.maxLevel = maxLevel;
         this.target = target;
+
+
     }
 
 
