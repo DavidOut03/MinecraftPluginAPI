@@ -28,7 +28,7 @@ public class FileManager {
                 file.generateFile();
             } catch (IOException e) {
                 throw new RuntimeException("Could not create the file: " + file.getFileName() + "\n" +
-                        "folder path: " + file.getFolderPath() + "\n" +
+                        "folder path: " + file.getAbsoluteFolderPath() + "\n" +
                         " because of an error:", e);
 
             }
