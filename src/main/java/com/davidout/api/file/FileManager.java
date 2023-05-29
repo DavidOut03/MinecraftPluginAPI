@@ -20,6 +20,7 @@ public class FileManager {
 
     public void addFile(PluginFile file) {this.fileList.add(file);}
     public void removeFile(PluginFile file) {this.fileList.remove(file);}
+    public void setFiles(List<PluginFile> files) {this.fileList = (files == null) ? new ArrayList<>() : files;}
 
     public void createFiles() {
         this.fileList.forEach(file -> {

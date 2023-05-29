@@ -4,6 +4,7 @@ import com.davidout.api.command.CommandManager;
 import com.davidout.api.command.CustomCommand;
 import com.davidout.api.enchantment.EnchantmentManager;
 import com.davidout.api.file.FileManager;
+import com.davidout.api.file.PluginFile;
 import com.davidout.api.gui.GUIManager;
 import com.davidout.api.listener.ArmorListener;
 import com.davidout.api.scoreboard.ScoreboardManager;
@@ -54,7 +55,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.commandManager.registerCommands ( this.registerCommands() );
         this.enchantmentManager.registerEnchantments();
 
-        this.fileManager.createFiles();
+        this.fileManager.setFiles(filesToCreate());
         this.onStartup();
     }
 
@@ -103,6 +104,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     // This method is called on startup to register the commands;
     public abstract List<CustomCommand> registerCommands();
+    public abstract List<PluginFile> filesToCreate();
 
 
 
