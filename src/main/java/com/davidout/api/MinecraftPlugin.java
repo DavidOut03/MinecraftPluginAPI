@@ -3,6 +3,7 @@ package com.davidout.api;
 import com.davidout.api.command.CommandManager;
 import com.davidout.api.command.CustomCommand;
 import com.davidout.api.enchantment.EnchantmentManager;
+import com.davidout.api.file.FileManager;
 import com.davidout.api.gui.GUIManager;
 import com.davidout.api.listener.ArmorListener;
 import com.davidout.api.scoreboard.ScoreboardManager;
@@ -25,8 +26,9 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      */
 
     private EnchantmentManager enchantmentManager;
-    private CommandManager commandManager;
     private ScoreboardManager scoreboardManager;
+    private CommandManager commandManager;
+    private FileManager fileManager;
     private GUIManager guiManager;
     private PluginManager pm;
 
@@ -35,11 +37,13 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
-        this.pm = Bukkit.getPluginManager();
-        this.commandManager = new CommandManager(this);
-        this.guiManager = new GUIManager();
         this.enchantmentManager = new EnchantmentManager(this);
+        this.commandManager = new CommandManager(this);
         this.scoreboardManager = new ScoreboardManager();
+        this.fileManager = new FileManager();
+        this.guiManager = new GUIManager();
+        this.pm = Bukkit.getPluginManager();
+
 
 
         // register all necesarry listeners
@@ -62,6 +66,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public void registerNecesarryListeners() {
         this.pm.registerEvents(this.guiManager, this);
         this.pm.registerEvents(new ArmorListener(), this);
+
     }
 
 
@@ -72,10 +77,13 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      */
 
     public EnchantmentManager getEnchantmentManager() {return this.enchantmentManager;}
-    public CommandManager getCommandManager() {return this.commandManager;}
-    public PluginManager getPluginManager() {return this.pm;}
-    public GUIManager getGuiManager() {return this.guiManager;}
     public ScoreboardManager getScoreboardManager() {return this.scoreboardManager;}
+    public CommandManager getCommandManager() {return this.commandManager;}
+    public FileManager getFileManager() {return this.fileManager;}
+    public GUIManager getGuiManager() {return this.guiManager;}
+    public PluginManager getPluginManager() {return this.pm;}
+
+
 
     /**
      *
