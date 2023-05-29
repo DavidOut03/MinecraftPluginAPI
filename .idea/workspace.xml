@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed enchantment target">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Changed enchantment name in lore.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/EnchantmentManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,13 +166,8 @@
       <workItem from="1685212923105" duration="7737000" />
       <workItem from="1685275073970" duration="2345000" />
       <workItem from="1685278838936" duration="1172000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands.">
-      <created>1685034440695</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1685034440695</updated>
+      <workItem from="1685290963682" duration="1216000" />
+      <workItem from="1685358993905" duration="10000" />
     </task>
     <task id="LOCAL-00002" summary="added getters in MinecraftPlugin.java">
       <created>1685035635921</created>
@@ -502,7 +498,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685280796009</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Changed enchantment name in lore.">
+      <created>1685281857221</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1685281857221</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Changed enchantment name in lore.">
+      <created>1685281930588</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1685281930588</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added the setup methods for the plugin.&#10;Added the CommandManager.java to manage custom commands." />
     <MESSAGE value="added getters in MinecraftPlugin.java" />
     <MESSAGE value="Made a git package" />
     <MESSAGE value="Fixed github packages" />
@@ -545,6 +554,7 @@
     <MESSAGE value="Fixed legacy enchantments" />
     <MESSAGE value="Legacy release 1.0.2" />
     <MESSAGE value="Fixed enchantment target" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed enchantment target" />
+    <MESSAGE value="Changed enchantment name in lore." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed enchantment name in lore." />
   </component>
 </project>
