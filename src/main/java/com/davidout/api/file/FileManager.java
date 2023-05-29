@@ -13,7 +13,9 @@ public class FileManager {
     }
 
     public PluginFile createFile(String folderpath, String fileName) {
-        return new PluginFile(folderpath, fileName);
+        PluginFile file = new PluginFile(folderpath, fileName);
+        this.fileList.add(file);
+        return file;
     }
 
     public void addFile(PluginFile file) {this.fileList.add(file);}
