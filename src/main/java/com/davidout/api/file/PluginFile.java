@@ -54,7 +54,7 @@ public class PluginFile {
     public Object getData(String dataPath) {return (yamlConfiguration == null) ? null : yamlConfiguration.get(dataPath);}
 
     public String getString(String dataPath) {
-        return (yamlConfiguration == null) ? "" : yamlConfiguration.get(dataPath).toString();
+        return (yamlConfiguration == null || yamlConfiguration.get(dataPath) == null) ? "" : yamlConfiguration.get(dataPath).toString();
     }
     public boolean getBoolean(String dataPath) {return (yamlConfiguration == null) ? false : (boolean) yamlConfiguration.get(dataPath);}
     public List<String> getList(String dataPath) {return (yamlConfiguration == null) ? new ArrayList<>() : (List<String>) yamlConfiguration.get(dataPath);}

@@ -55,7 +55,11 @@ public abstract class CustomScoreboard  {
                     List<String> lines = update(player);
                     List<String> oldLines = new ArrayList<>(board.getEntries());
 
+                    if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
                     for (int i = 0; i < lines.size(); i++) {
+                        if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
+
+
                         String lineName = "line" + i;
 
                         Team team = (board.getTeam(lineName) == null) ? board.registerNewTeam(lineName) : board.getTeam(lineName);
@@ -70,6 +74,7 @@ public abstract class CustomScoreboard  {
                             return;
                         }
 
+                        if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
                         Score score =  player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getScore(getEntry(lines.get(i)));
                         score.setScore(i);
 
