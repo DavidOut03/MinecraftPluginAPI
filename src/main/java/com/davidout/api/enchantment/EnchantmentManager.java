@@ -73,7 +73,7 @@ public class EnchantmentManager {
         ArrayList<String> returned = new ArrayList<>();
         if(currentLore == null) currentLore = new ArrayList<>();
 
-        String name = enchantment.getName().substring(0, 1) + enchantment.getName().substring(1);
+        String name = enchantment.getName().substring(0, 1).toUpperCase() + enchantment.getName().substring(1);
         String enchantmentLine = (enchantment.getMaxLevel() == 1)? ChatColor.GRAY + name : ChatColor.GRAY + name + " " + RomanNumber.toRoman(level);
         returned.add(enchantmentLine.replace("-", " ").replace("_", " "));
 
