@@ -56,9 +56,9 @@ public class PluginFile {
     public String getString(String dataPath) {return (yamlConfiguration == null) ? "" : (String) yamlConfiguration.get(dataPath);}
     public boolean getBoolean(String dataPath) {return (yamlConfiguration == null) ? false : (boolean) yamlConfiguration.get(dataPath);}
     public List<String> getList(String dataPath) {return (yamlConfiguration == null) ? new ArrayList<>() : (List<String>) yamlConfiguration.get(dataPath);}
-    public int getNumber(String dataPath) {return (yamlConfiguration == null) ? 0 : Integer.parseInt((String) yamlConfiguration.get(dataPath));}
-    public double getDouble(String dataPath) { return (yamlConfiguration == null) ? 0 : Double.parseDouble((String) yamlConfiguration.get(dataPath));}
-    public double getFloat(String dataPath) { return (yamlConfiguration == null) ? 0 : Float.parseFloat((String) yamlConfiguration.get(dataPath));}
+    public int getNumber(String dataPath) {return (yamlConfiguration == null || getString(dataPath) == null) ? 0 : Integer.parseInt(getString(dataPath));}
+    public double getDouble(String dataPath) { return (yamlConfiguration == null || getString(dataPath) == null) ? 0 : Double.parseDouble(getString(dataPath));}
+    public double getFloat(String dataPath) { return (yamlConfiguration == null || getString(dataPath) == null) ? 0 : Float.parseFloat((String) yamlConfiguration.get(dataPath));}
     public ConfigurationSection getSection(String dataPath) {return (yamlConfiguration == null) ? null : yamlConfiguration.getConfigurationSection(dataPath);}
     public List<String> getSectionChildren(String dataPath) {return (yamlConfiguration == null) ? new ArrayList<>() : new ArrayList<>(yamlConfiguration.getConfigurationSection(dataPath).getKeys(false));}
 
