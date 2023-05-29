@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -51,15 +52,15 @@ public class PluginFile {
     }
 
     public void setData(String dataPath, Object value) {yamlConfiguration.set(dataPath, value);}
-    public Object getData(String dataPath) {return yamlConfiguration.get(dataPath);}
+    public Object getData(String dataPath) {return (yamlConfiguration == null) ? null : yamlConfiguration.get(dataPath);}
 
-    public String getString(String dataPath) {return (String) yamlConfiguration.get(dataPath);}
-    public boolean getBoolean(String dataPath) {return (boolean) yamlConfiguration.get(dataPath);}
-    public List<String> getList(String dataPath) {return (List) yamlConfiguration.get(dataPath);}
-    public int getNumber(String dataPath) {return Integer.parseInt((String) yamlConfiguration.get(dataPath));}
-    public double getDouble(String dataPath) { return Double.parseDouble( (String) yamlConfiguration.get(dataPath));}
-    public double getFloat(String dataPath) { return Float.parseFloat( (String) yamlConfiguration.get(dataPath));}
-    public ConfigurationSection getSection(String dataPath) {return yamlConfiguration.getConfigurationSection(dataPath);}
-    public Set<String> getSectionChildren(String dataPath) {return yamlConfiguration.getConfigurationSection(dataPath).getKeys(false);}
+    public String getString(String dataPath) {return (yamlConfiguration == null) ? "" : (String) yamlConfiguration.get(dataPath);}
+    public boolean getBoolean(String dataPath) {return (yamlConfiguration == null) ? false : (boolean) yamlConfiguration.get(dataPath);}
+    public List<String> getList(String dataPath) {return (yamlConfiguration == null) ? new ArrayList<>() : (List<String>) yamlConfiguration.get(dataPath);}
+    public int getNumber(String dataPath) {return (yamlConfiguration == null) ? 0 : Integer.parseInt((String) yamlConfiguration.get(dataPath));}
+    public double getDouble(String dataPath) { return (yamlConfiguration == null) ? 0 : Double.parseDouble((String) yamlConfiguration.get(dataPath));}
+    public double getFloat(String dataPath) { return (yamlConfiguration == null) ? 0 : Float.parseFloat((String) yamlConfiguration.get(dataPath));}
+    public ConfigurationSection getSection(String dataPath) {return (yamlConfiguration == null) ? null : yamlConfiguration.getConfigurationSection(dataPath);}
+    public List<String> getSectionChildren(String dataPath) {return (yamlConfiguration == null) ? new ArrayList<>() : new ArrayList<>(yamlConfiguration.getConfigurationSection(dataPath).getKeys(false));}
 
 }
