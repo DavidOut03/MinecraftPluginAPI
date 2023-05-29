@@ -119,7 +119,7 @@ public abstract class CustomScoreboard  {
      */
 
     public void addToScoreboard(Player p) {
-        if(this.players.isEmpty()) startUpdater();
+        if(this.players.isEmpty() && useUpdate()) startUpdater();
         this.players.add(p.getName());
         p.setScoreboard(board);
     }
@@ -127,7 +127,7 @@ public abstract class CustomScoreboard  {
     public void removeFromScoreboard(Player p) {
         this.players.remove(p.getName());
         p.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
-        if(this.players.isEmpty()) stopUpdater();
+        if(this.players.isEmpty() && useUpdate()) stopUpdater();
     }
 
     /**
@@ -171,6 +171,7 @@ public abstract class CustomScoreboard  {
 
     public abstract String getName();
     public abstract List<String> update(Player player);
+    public abstract boolean useUpdate();
     public abstract long updateTimeInSeconds();
 
 }
