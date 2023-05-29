@@ -33,10 +33,10 @@ public class PluginFile {
 
     public void generateFile() throws IOException {
         this.dataFolder = MinecraftPlugin.getPlugin().getDataFolder();
+
+
+        if(!dataFolder.exists()) dataFolder.mkdir();
         this.file = new File(dataFolder, folderPath + "/" + fileName + ".yml");
-
-
-        if(!dataFolder.exists()) dataFolder.mkdirs();
         if(file.exists()) return;
         file.createNewFile();
 
@@ -46,7 +46,7 @@ public class PluginFile {
     public void reloadFile() {this.yamlConfiguration = YamlConfiguration.loadConfiguration(file);}
 
     public void saveFile() throws IOException {
-        if(!dataFolder.exists()) dataFolder.mkdirs();
+        if(!dataFolder.exists()) dataFolder.mkdir();
         if(!file.exists())  file.createNewFile();
        this.yamlConfiguration.save(file);
     }
