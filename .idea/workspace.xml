@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added fileSystem">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/file/FileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/file/PluginFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
-    </list>
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added fileSystem" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,14 +165,7 @@
       <workItem from="1685278838936" duration="1172000" />
       <workItem from="1685290963682" duration="1216000" />
       <workItem from="1685358993905" duration="10000" />
-      <workItem from="1685368357195" duration="3941000" />
-    </task>
-    <task id="LOCAL-00009" summary="debug executeCommand">
-      <created>1685114833681</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1685114833681</updated>
+      <workItem from="1685368357195" duration="4275000" />
     </task>
     <task id="LOCAL-00010" summary="debug executeCommand">
       <created>1685115003867</created>
@@ -515,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685389612292</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Added fileSystem">
+      <created>1685389831571</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1685389831571</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
