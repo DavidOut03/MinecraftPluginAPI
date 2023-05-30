@@ -39,6 +39,7 @@ public abstract class CustomScoreboard  {
         this.objective = this.board.registerNewObjective("customObjective", "dummy");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         this.objective.setDisplayName(this.title);
+        this.title = TextUtils.formatColorCodes(getName());
     }
 
     private void startUpdater() {
