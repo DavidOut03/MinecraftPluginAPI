@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Add the lastest colors" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fix scores bug" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,28 +168,7 @@
       <workItem from="1685368357195" duration="7706000" />
       <workItem from="1685398530989" duration="463000" />
       <workItem from="1685433877235" duration="5000" />
-      <workItem from="1685466561537" duration="997000" />
-    </task>
-    <task id="LOCAL-00031" summary="Removed enchantment target from constructor">
-      <created>1685219048132</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1685219048132</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Fixed bug where items could not receive a custom enchantment">
-      <created>1685219222660</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1685219222660</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Updated lore">
-      <created>1685219677372</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1685219677372</updated>
+      <workItem from="1685466561537" duration="1372000" />
     </task>
     <task id="LOCAL-00034" summary="Updated lore">
       <created>1685219807956</created>
@@ -513,7 +492,28 @@
       <option name="project" value="LOCAL" />
       <updated>1685467489552</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Add the lastest colors">
+      <created>1685467747440</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1685467747440</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Fixed title">
+      <created>1685467831202</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1685467831202</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Fix scores bug">
+      <created>1685467925109</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1685467925109</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,8 +531,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="debug executeCommand" />
-    <MESSAGE value="Fixed command eliases null bug." />
     <MESSAGE value="." />
     <MESSAGE value="Fixed gui addItem issue" />
     <MESSAGE value="Added the ArmorEquipEvent and ArmorDequipEvent" />
@@ -556,6 +554,8 @@
     <MESSAGE value="Added fileSystem" />
     <MESSAGE value="Updated scoreboard methods" />
     <MESSAGE value="Add the lastest colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add the lastest colors" />
+    <MESSAGE value="Fixed title" />
+    <MESSAGE value="Fix scores bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix scores bug" />
   </component>
 </project>
