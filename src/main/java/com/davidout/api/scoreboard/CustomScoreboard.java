@@ -72,7 +72,7 @@ public abstract class CustomScoreboard  {
             if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
             for (int i = 0; i < lines.size(); i++) {
                 if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-
+                if(oldLines.get(i).equalsIgnoreCase(lines.get(i))) continue;
                 String lineName = "line" + i;
 
                 Team team = (board.getTeam(lineName) == null) ? board.registerNewTeam(lineName) : board.getTeam(lineName);
@@ -80,6 +80,8 @@ public abstract class CustomScoreboard  {
                 team.setSuffix(getSuffix(lines.get(i)));
 
                 if(!oldLines.isEmpty() && oldLines.get(0) != null) board.resetScores(oldLines.get(i));
+
+
                 team.addEntry(getEntry(lines.get(i)));
 
                 if(player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null) {
@@ -144,12 +146,12 @@ public abstract class CustomScoreboard  {
 
     private String getEntry(String line) {
         String lineText = (line == null) ? "" : TextUtils.formatColorCodes(line);
-        return (lineText.length() <= 16) ? lineText : (lineText.length() <= 32) ? ChatColor.getLastColors(getPrefix(line)) + lineText.substring(15, lineText.length()) : ChatColor.getLastColors(getPrefix(line)) + lineText.substring(15, 31);
+        return (lineText.length() <= 16) ? lineText : (lineText.length() <= 32) ? ChatColor.getLastColors(getPrefix(line)) + lineText.substring(15, lineText.length() - 1) : ChatColor.getLastColors(getPrefix(line)) + lineText.substring(15, 30);
     }
 
     private String getSuffix(String line) {
         String lineText = (line == null) ? "" : TextUtils.formatColorCodes(line);
-        return (lineText.length() <= 32) ? "" : ChatColor.getLastColors(getEntry(line)) + lineText.substring(15, lineText.length());
+        return (lineText.length() <= 32) ? "" : ChatColor.getLastColors(getEntry(line)) + lineText.substring(15, lineText.length() - 1);
     }
 
 

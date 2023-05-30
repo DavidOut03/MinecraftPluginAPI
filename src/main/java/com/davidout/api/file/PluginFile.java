@@ -51,7 +51,10 @@ public class PluginFile {
     }
 
     public void setData(String dataPath, Object value) throws IOException {
-        if(yamlConfiguration == null) this.generateFile();
+        if(yamlConfiguration == null) {
+            this.generateFile();
+            return;
+        }
         yamlConfiguration.set(dataPath, value);
     }
     public Object getData(String dataPath) {return (yamlConfiguration == null) ? null : yamlConfiguration.get(dataPath);}

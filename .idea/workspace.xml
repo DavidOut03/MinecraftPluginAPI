@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Add the lastest colors">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Add the lastest colors" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,21 +168,7 @@
       <workItem from="1685368357195" duration="7706000" />
       <workItem from="1685398530989" duration="463000" />
       <workItem from="1685433877235" duration="5000" />
-      <workItem from="1685466561537" duration="696000" />
-    </task>
-    <task id="LOCAL-00029" summary="Added EnchantmentManager.java to create custom enchantments">
-      <created>1685218532465</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1685218532465</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Fixed enchantmentManager null bug">
-      <created>1685218724415</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1685218724415</updated>
+      <workItem from="1685466561537" duration="997000" />
     </task>
     <task id="LOCAL-00031" summary="Removed enchantment target from constructor">
       <created>1685219048132</created>
@@ -515,7 +499,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685466899996</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Add the lastest colors">
+      <created>1685467292247</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1685467292247</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Add the lastest colors">
+      <created>1685467489552</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1685467489552</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
