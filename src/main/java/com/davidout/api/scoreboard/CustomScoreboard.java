@@ -23,7 +23,6 @@ public abstract class CustomScoreboard  {
         this.name = (name == null) ? "Custom Scoreboard" : getName();
         this.players = new ArrayList<>();
         this.title = TextUtils.formatColorCodes(this.name);
-
         this.resetScoreboard();
     }
 
@@ -162,7 +161,9 @@ public abstract class CustomScoreboard  {
      */
 
     public String getTitle() {return this.title;}
-    public void setTitle(String newTitle) {this.title = TextUtils.formatColorCodes(newTitle.substring(0, 31));}
+    public void setTitle(String newTitle) {
+        this.title = (newTitle.length() <= 32) ? TextUtils.formatColorCodes(newTitle) : TextUtils.formatColorCodes(newTitle.substring(0, 32));
+    }
 
     /**
      *
