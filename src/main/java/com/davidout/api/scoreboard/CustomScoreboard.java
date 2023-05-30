@@ -73,7 +73,7 @@ public abstract class CustomScoreboard  {
             if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
             for (int i = 0; i < lines.size(); i++) {
                 if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-                if(oldLines.get(i).equalsIgnoreCase(lines.get(i))) continue;
+                if(oldLines.get(i) == null || lines.get(i) == null || oldLines.get(i).equalsIgnoreCase(lines.get(i))) continue;
                 String lineName = "line" + i;
 
                 Team team = (board.getTeam(lineName) == null) ? board.registerNewTeam(lineName) : board.getTeam(lineName);
