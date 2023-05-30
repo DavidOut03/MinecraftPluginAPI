@@ -3,6 +3,7 @@ package com.davidout.api.scoreboard;
 import com.davidout.api.MinecraftPlugin;
 import com.davidout.api.utillity.TextUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
 
@@ -144,12 +145,12 @@ public abstract class CustomScoreboard  {
 
     private String getEntry(String line) {
         String lineText = (line == null) ? "" : TextUtils.formatColorCodes(line);
-        return (lineText.length() <= 16) ? lineText : (lineText.length() <= 32) ? lineText.substring(15, lineText.length()) : lineText.substring(15, 31);
+        return (lineText.length() <= 16) ? lineText : (lineText.length() <= 32) ? ChatColor.getLastColors(getPrefix(line)) + lineText.substring(15, lineText.length()) : ChatColor.getLastColors(getPrefix(line)) + lineText.substring(15, 31);
     }
 
     private String getSuffix(String line) {
         String lineText = (line == null) ? "" : TextUtils.formatColorCodes(line);
-        return (lineText.length() <= 32) ? "" : lineText.substring(15, 31);
+        return (lineText.length() <= 32) ? "" : ChatColor.getLastColors(getEntry(line)) + lineText.substring(15, 31);
     }
 
 

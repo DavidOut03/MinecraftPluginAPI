@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added fileSystem">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Updated scoreboard methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enchantment/CustomEnchantment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,20 +168,8 @@
       <workItem from="1685290963682" duration="1216000" />
       <workItem from="1685358993905" duration="10000" />
       <workItem from="1685368357195" duration="7706000" />
-    </task>
-    <task id="LOCAL-00026" summary="Fixed gui addItem issue">
-      <created>1685121361896</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1685121361896</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Added the ArmorEquipEvent and ArmorDequipEvent">
-      <created>1685213328649</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1685213328649</updated>
+      <workItem from="1685398530989" duration="463000" />
+      <workItem from="1685433877235" duration="5000" />
     </task>
     <task id="LOCAL-00028" summary="Added instance function to MinecraftPlugin.java">
       <created>1685213946362</created>
@@ -513,7 +500,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685392613517</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Updated scoreboard methods">
+      <created>1685398897446</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1685398897447</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Updated scoreboard methods">
+      <created>1685398973350</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1685398973350</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +532,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed GUI creation" />
     <MESSAGE value="Fixed command manager" />
     <MESSAGE value="debug executeCommand" />
     <MESSAGE value="Fixed command eliases null bug." />
@@ -556,6 +556,7 @@
     <MESSAGE value="Added capetelize first letter to enchantments" />
     <MESSAGE value="Fixed capetelize first letter to enchantments" />
     <MESSAGE value="Added fileSystem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fileSystem" />
+    <MESSAGE value="Updated scoreboard methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated scoreboard methods" />
   </component>
 </project>
