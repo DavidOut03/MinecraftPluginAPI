@@ -73,15 +73,16 @@ public abstract class CustomScoreboard  {
             if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
             for (int i = 0; i < lines.size(); i++) {
                 if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-                if(i > oldLines.size()) continue;
-                if(oldLines.get(i) == null || lines.get(i) == null || oldLines.get(i).equalsIgnoreCase(lines.get(i))) continue;
+                if(i < oldLines.size() && oldLines.get(i) != null && oldLines.get(i).equalsIgnoreCase(lines.get(i))) continue;
+
+                if(lines.get(i) == null || oldLines.get(i).equalsIgnoreCase(lines.get(i))) continue;
                 String lineName = "line" + i;
 
                 Team team = (board.getTeam(lineName) == null) ? board.registerNewTeam(lineName) : board.getTeam(lineName);
                 team.setPrefix(getPrefix(lines.get(i)));
                 team.setSuffix(getSuffix(lines.get(i)));
 
-                if(!oldLines.isEmpty() && oldLines.get(0) != null) board.resetScores(oldLines.get(i));
+                if(i < oldLines.size() || !oldLines.isEmpty() && oldLines.get(0) != null) board.resetScores(oldLines.get(i));
 
 
                 team.addEntry(getEntry(lines.get(i)));
