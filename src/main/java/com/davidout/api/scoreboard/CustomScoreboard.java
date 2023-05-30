@@ -150,7 +150,7 @@ public abstract class CustomScoreboard  {
 
     private String getSuffix(String line) {
         String lineText = (line == null) ? "" : TextUtils.formatColorCodes(line);
-        return (lineText.length() <= 32) ? "" : ChatColor.getLastColors(getEntry(line)) + lineText.substring(15, 31);
+        return (lineText.length() <= 32) ? "" : ChatColor.getLastColors(getEntry(line)) + lineText.substring(15, lineText.length());
     }
 
 

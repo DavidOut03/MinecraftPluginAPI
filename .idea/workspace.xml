@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Updated scoreboard methods">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Add the lastest colors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,13 +170,7 @@
       <workItem from="1685368357195" duration="7706000" />
       <workItem from="1685398530989" duration="463000" />
       <workItem from="1685433877235" duration="5000" />
-    </task>
-    <task id="LOCAL-00028" summary="Added instance function to MinecraftPlugin.java">
-      <created>1685213946362</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1685213946362</updated>
+      <workItem from="1685466561537" duration="696000" />
     </task>
     <task id="LOCAL-00029" summary="Added EnchantmentManager.java to create custom enchantments">
       <created>1685218532465</created>
@@ -514,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685398973350</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Add the lastest colors">
+      <created>1685466899995</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1685466899996</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed command manager" />
     <MESSAGE value="debug executeCommand" />
     <MESSAGE value="Fixed command eliases null bug." />
     <MESSAGE value="." />
@@ -557,6 +557,7 @@
     <MESSAGE value="Fixed capetelize first letter to enchantments" />
     <MESSAGE value="Added fileSystem" />
     <MESSAGE value="Updated scoreboard methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated scoreboard methods" />
+    <MESSAGE value="Add the lastest colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add the lastest colors" />
   </component>
 </project>
