@@ -3,6 +3,7 @@ package com.davidout.api.custom.scoreboard;
 import com.davidout.api.MinecraftPlugin;
 import com.davidout.api.utillity.TextUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
 
@@ -91,8 +92,8 @@ public abstract class CustomScoreboard  {
     private void setScore(Player player, int line, String newScore) {
         List<String> oldLines = new ArrayList<>(player.getScoreboard().getEntries());
         String prefix = getPrefix(newScore);
-        String entry = getEntry(newScore);
-        String suffix = getSuffix(newScore);
+        String entry = ChatColor.getLastColors(prefix) + getEntry(newScore);
+        String suffix = ChatColor.getLastColors( (ChatColor.getLastColors(entry).equalsIgnoreCase("")) ? ChatColor.getLastColors(prefix) : entry) + getSuffix(newScore);
 
         Objective objective = player.getScoreboard().getObjective(DisplaySlot.SIDEBAR);
         if(objective != null && oldLines.size() > line && oldLines.get(line) != null && objective.getScore(oldLines.get(line)) != null) {
@@ -105,8 +106,11 @@ public abstract class CustomScoreboard  {
         team.setSuffix(suffix);
         team.addEntry(entry);
 
+
         Score score = player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getScore(entry);
         score.setScore(line + 1);
+
+        player.sendMessage(prefix + entry + suffix);
     }
 
     /**
@@ -140,12 +144,12 @@ public abstract class CustomScoreboard  {
     }
 
     private String getEntry(String line) {
-        String lineText = (line == null) ? "" : TextUtils.formatColorCodes(line);
+        String lineText = (line == null) ? "" : ChatColor.getLastColors(getPrefix(line)) + TextUtils.formatColorCodes(line);
         return (lineText.length() <= 16) ? lineText : (lineText.length() <= 32) ? lineText.substring(15, lineText.length()) : lineText.substring(15, 31);
     }
 
     private String getSuffix(String line) {
-        String lineText = (line == null) ? "" : TextUtils.formatColorCodes(line);
+        String lineText = (line == null) ? "" : ChatColor.getLastColors(getEntry(line)) + TextUtils.formatColorCodes(line);
         return (lineText.length() <= 32) ? "" : lineText.substring(15, 31);
     }
 

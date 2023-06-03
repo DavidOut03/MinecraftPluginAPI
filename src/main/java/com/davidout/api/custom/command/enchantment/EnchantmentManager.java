@@ -1,6 +1,7 @@
 package com.davidout.api.custom.command.enchantment;
 
 import com.davidout.api.MinecraftPlugin;
+import com.davidout.api.custom.enchantment.CustomEnchantment;
 import com.davidout.api.utillity.RomanNumber;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;

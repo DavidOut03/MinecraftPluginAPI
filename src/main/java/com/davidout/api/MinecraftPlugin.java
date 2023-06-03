@@ -37,8 +37,8 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Register all necesarry managers
         plugin = this;
-
         this.enchantmentManager = new EnchantmentManager(this);
         this.commandManager = new CommandManager(this);
         this.scoreboardManager = new ScoreboardManager();
@@ -56,6 +56,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.commandManager.registerCommands ( this.registerCommands() );
         this.enchantmentManager.registerEnchantments();
 
+        // create the following files
         this.fileManager.setFiles(filesToCreate());
         this.fileManager.createFiles();
         this.onStartup();
