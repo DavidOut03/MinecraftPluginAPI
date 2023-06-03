@@ -3,8 +3,11 @@ package com.davidout.api;
 import com.davidout.api.command.CommandManager;
 import com.davidout.api.command.CustomCommand;
 import com.davidout.api.enchantment.EnchantmentManager;
+import com.davidout.api.file.FileManager;
+import com.davidout.api.file.PluginFile;
 import com.davidout.api.gui.GUIManager;
 import com.davidout.api.listener.ArmorListener;
+import com.davidout.api.listener.LeaveListener;
 import com.davidout.api.scoreboard.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
@@ -25,8 +28,9 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      */
 
     private EnchantmentManager enchantmentManager;
-    private CommandManager commandManager;
     private ScoreboardManager scoreboardManager;
+    private CommandManager commandManager;
+    private FileManager fileManager;
     private GUIManager guiManager;
     private PluginManager pm;
 
@@ -35,11 +39,13 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public void onEnable() {
         plugin = this;
 
-        this.pm = Bukkit.getPluginManager();
-        this.commandManager = new CommandManager(this);
-        this.guiManager = new GUIManager();
         this.enchantmentManager = new EnchantmentManager(this);
+        this.commandManager = new CommandManager(this);
         this.scoreboardManager = new ScoreboardManager();
+        this.fileManager = new FileManager();
+        this.guiManager = new GUIManager();
+        this.pm = Bukkit.getPluginManager();
+
 
 
         // register all necesarry listeners
@@ -50,6 +56,8 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.commandManager.registerCommands ( this.registerCommands() );
         this.enchantmentManager.registerEnchantments();
 
+        this.fileManager.setFiles(filesToCreate());
+        this.fileManager.createFiles();
         this.onStartup();
     }
 
@@ -62,6 +70,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public void registerNecesarryListeners() {
         this.pm.registerEvents(this.guiManager, this);
         this.pm.registerEvents(new ArmorListener(), this);
+        this.pm.registerEvents(new LeaveListener(), this);
     }
 
 
@@ -72,10 +81,13 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      */
 
     public EnchantmentManager getEnchantmentManager() {return this.enchantmentManager;}
-    public CommandManager getCommandManager() {return this.commandManager;}
-    public PluginManager getPluginManager() {return this.pm;}
-    public GUIManager getGuiManager() {return this.guiManager;}
     public ScoreboardManager getScoreboardManager() {return this.scoreboardManager;}
+    public CommandManager getCommandManager() {return this.commandManager;}
+    public FileManager getFileManager() {return this.fileManager;}
+    public GUIManager getGuiManager() {return this.guiManager;}
+    public PluginManager getPluginManager() {return this.pm;}
+
+
 
     /**
      *
@@ -94,6 +106,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     // This method is called on startup to register the commands;
     public abstract List<CustomCommand> registerCommands();
+    public abstract List<PluginFile> filesToCreate();
 
 
 

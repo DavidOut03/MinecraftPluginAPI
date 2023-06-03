@@ -61,12 +61,21 @@ public class EnchantmentManager {
             item.setItemMeta(itemMeta);
     }
 
+    public static void addCustomEnchantment(ItemStack item, CustomEnchantment enchantment, int level) {
+        if(enchantment == null || item == null || item.getItemMeta() == null) return;
+        ItemMeta itemMeta = item.getItemMeta();
+        itemMeta.addEnchant(enchantment, level, true);
+        itemMeta.setLore(updateLore(itemMeta.getLore(), enchantment, level));
+        item.setItemMeta(itemMeta);
+    }
+
     private static List<String> updateLore(List<String> currentLore, CustomEnchantment enchantment, int level) {
         ArrayList<String> returned = new ArrayList<>();
         if(currentLore == null) currentLore = new ArrayList<>();
 
-        String enchantmentLine = (enchantment.getMaxLevel() == 1)? ChatColor.GRAY + enchantment.getName() : ChatColor.GRAY + enchantment.getName() + " " + RomanNumber.toRoman(level);
-        returned.add(enchantmentLine);
+        String name = enchantment.getName().substring(0, 1).toUpperCase() + enchantment.getName().substring(1);
+        String enchantmentLine = (enchantment.getMaxLevel() == 1)? ChatColor.GRAY + name : ChatColor.GRAY + name + " " + RomanNumber.toRoman(level);
+        returned.add(enchantmentLine.replace("-", " ").replace("_", " "));
 
 
         if(currentLore != null && !currentLore.isEmpty()) returned.addAll(currentLore);
