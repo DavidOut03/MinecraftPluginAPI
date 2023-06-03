@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class CustomScoreboard  {
@@ -64,52 +65,48 @@ public abstract class CustomScoreboard  {
 
         players.forEach(playerName -> {
             if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-
             Player player = Bukkit.getPlayer(playerName);
             List<String> lines = update(player);
-            List<String> oldLines = new ArrayList<>(board.getEntries());
+            Collections.reverse(lines);
 
-            if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-            for (int i = 0; i < lines.size(); i++) {
-                if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-
-                String lineName = "line" + i;
-
-                Team team = (board.getTeam(lineName) == null) ? board.registerNewTeam(lineName) : board.getTeam(lineName);
-                team.setPrefix(getPrefix(lines.get(i)));
-                team.setSuffix(getSuffix(lines.get(i)));
-
-                if(!oldLines.isEmpty() && oldLines.get(0) != null) board.resetScores(oldLines.get(i));
-                team.addEntry(getEntry(lines.get(i)));
-
-                if(player.getScoreboard().getObjective(DisplaySlot.SIDEBAR) == null) {
-                    removeFromScoreboard(player);
-                    return;
-                }
-
-                if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-                Score score =  player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getScore(getEntry(lines.get(i)));
-                score.setScore(i);
-
+            for(int i = 0; i < lines.size(); i++) {
+                setLine(player, i, lines);
             }
         });
     }
 
-    public void setLine(Player player, int line, String newLine) {
-        List<String> lines = new ArrayList<>(board.getEntries());
-        List<String> oldLines = new ArrayList<>(board.getEntries());
-        lines.set(line, newLine);
+    public void setLine(Player player, int line, List<String> newLines) {
+        List<String> oldLines = new ArrayList<>(player.getScoreboard().getEntries());
+        String newLine = newLines.get(line);
+
+        if(line >= oldLines.size() || oldLines.get(line) == null) {
+            setScore(player, line, newLine);
+            return;
+        }
+
+        if(oldLines.get(line).equalsIgnoreCase(newLine)) return;
+        setScore(player, line, newLine);
+    }
+
+    private void setScore(Player player, int line, String newScore) {
+        List<String> oldLines = new ArrayList<>(player.getScoreboard().getEntries());
+        String prefix = getPrefix(newScore);
+        String entry = getEntry(newScore);
+        String suffix = getSuffix(newScore);
+
+        Objective objective = player.getScoreboard().getObjective(DisplaySlot.SIDEBAR);
+        if(objective != null && oldLines.size() > line && oldLines.get(line) != null && objective.getScore(oldLines.get(line)) != null) {
+            objective.getScoreboard().resetScores(oldLines.get(line));
+        }
 
         String lineName = "line" + line;
         Team team = (board.getTeam(lineName) == null) ? board.registerNewTeam(lineName) : board.getTeam(lineName);
-        team.setPrefix(getPrefix(lines.get(line)));
-        team.setSuffix(getSuffix(lines.get(line)));
+        team.setPrefix(prefix);
+        team.setSuffix(suffix);
+        team.addEntry(entry);
 
-        if(!oldLines.isEmpty() && oldLines.get(0) != null) board.resetScores(oldLines.get(line));
-        team.addEntry(getEntry(lines.get(line)));
-
-        Score score =  player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getScore(getEntry(lines.get(line)));
-        score.setScore(line);
+        Score score = player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getScore(entry);
+        score.setScore(line + 1);
     }
 
     /**
