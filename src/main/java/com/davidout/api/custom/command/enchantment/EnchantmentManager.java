@@ -1,4 +1,4 @@
-package com.davidout.api.enchantment;
+package com.davidout.api.custom.command.enchantment;
 
 import com.davidout.api.MinecraftPlugin;
 import com.davidout.api.utillity.RomanNumber;

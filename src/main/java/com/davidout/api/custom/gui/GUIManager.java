@@ -1,4 +1,4 @@
-package com.davidout.api.gui;
+package com.davidout.api.custom.gui;
 
 import com.davidout.api.utillity.TextUtils;
 import org.bukkit.Material;

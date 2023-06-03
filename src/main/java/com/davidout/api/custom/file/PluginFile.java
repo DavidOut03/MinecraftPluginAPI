@@ -1,4 +1,4 @@
-package com.davidout.api.file;
+package com.davidout.api.custom.file;
 
 import com.davidout.api.MinecraftPlugin;
 import org.bukkit.configuration.Configuration;

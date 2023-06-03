@@ -1,4 +1,4 @@
-package com.davidout.api.scoreboard;
+package com.davidout.api.custom.scoreboard;
 
 import com.davidout.api.MinecraftPlugin;
 import com.davidout.api.utillity.TextUtils;

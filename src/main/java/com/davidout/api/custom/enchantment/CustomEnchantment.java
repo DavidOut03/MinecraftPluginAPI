@@ -1,4 +1,4 @@
-package com.davidout.api.enchantment;
+package com.davidout.api.custom.enchantment;
 
 import org.bukkit.Bukkit;
 import org.bukkit.enchantments.Enchantment;

@@ -1,4 +1,4 @@
-package com.davidout.api.command;
+package com.davidout.api.custom.command;
 
 import com.davidout.api.MinecraftPlugin;
 import org.bukkit.Bukkit;

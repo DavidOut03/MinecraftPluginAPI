@@ -1,4 +1,4 @@
-package com.davidout.api.gui;
+package com.davidout.api.custom.gui;
 
 import org.bukkit.inventory.ItemStack;
 
