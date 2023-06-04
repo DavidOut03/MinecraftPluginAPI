@@ -6,6 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,7 +41,9 @@ public abstract class CustomScoreboard  {
         this.board =  Bukkit.getScoreboardManager().getNewScoreboard();
         this.objective = this.board.registerNewObjective("customObjective", "dummy");
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-        this.objective.setDisplayName(this.title);
+        this.setTitle(getName());
+
+        updateScoreboard();
     }
 
     private void startUpdater() {
@@ -58,6 +61,8 @@ public abstract class CustomScoreboard  {
         Bukkit.getScheduler().cancelTask(this.schedular);
     }
 
+
+
     public void updateScoreboard() {
         if(players == null || players.isEmpty()) {
             stopUpdater();
@@ -66,52 +71,54 @@ public abstract class CustomScoreboard  {
 
         players.forEach(playerName -> {
             if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-            Player player = Bukkit.getPlayer(playerName);
-            List<String> lines = update(player);
-            Collections.reverse(lines);
-
-            for(int i = 0; i < lines.size(); i++) {
-                setLine(player, i, lines);
-            }
+            setLines(playerName);
         });
     }
 
-    public void setLine(Player player, int line, List<String> newLines) {
-        List<String> oldLines = new ArrayList<>(player.getScoreboard().getEntries());
-        String newLine = newLines.get(line);
 
-        if(line >= oldLines.size() || oldLines.get(line) == null) {
-            setScore(player, line, newLine);
-            return;
-        }
+    private void setLines(String playerName) {
+            if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
+            Player player = Bukkit.getPlayer(playerName);
+            List<String> newLines = update(player);
+            Collections.reverse(newLines);
 
-        if(oldLines.get(line).equalsIgnoreCase(newLine)) return;
-        setScore(player, line, newLine);
+            player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).setDisplayName(TextUtils.formatColorCodes(title));
+
+
+            for(int i = 0; i < newLines.size(); i++) {
+                setLine(i, newLines.get(i), player);
+            }
+
     }
 
-    private void setScore(Player player, int line, String newScore) {
-        List<String> oldLines = new ArrayList<>(player.getScoreboard().getEntries());
-        String prefix = getPrefix(newScore);
-        String entry = ChatColor.getLastColors(prefix) + getEntry(newScore);
-        String suffix = ChatColor.getLastColors( (ChatColor.getLastColors(entry).equalsIgnoreCase("")) ? ChatColor.getLastColors(prefix) : entry) + getSuffix(newScore);
+    private void setLine(int line, String newText, Player player) {
+        Scoreboard scoreboard = player.getScoreboard();
+        Objective objective = scoreboard.getObjective(DisplaySlot.SIDEBAR);
+        String prefix = getPrefix(newText);
+        String entry = ChatColor.getLastColors(prefix) + getEntry(newText);
+        String suffix = ChatColor.getLastColors(entry) + getSuffix(newText);
 
-        Objective objective = player.getScoreboard().getObjective(DisplaySlot.SIDEBAR);
-        if(objective != null && oldLines.size() > line && oldLines.get(line) != null && objective.getScore(oldLines.get(line)) != null) {
-            objective.getScoreboard().resetScores(oldLines.get(line));
-        }
 
-        String lineName = "line" + line;
-        Team team = (board.getTeam(lineName) == null) ? board.registerNewTeam(lineName) : board.getTeam(lineName);
+        this.resetOldLine(line, scoreboard);
+        Team team = (scoreboard.getTeam("line" + line) == null) ? scoreboard.registerNewTeam("line" + line) : scoreboard.getTeam("line" + line);
         team.setPrefix(prefix);
         team.setSuffix(suffix);
         team.addEntry(entry);
 
-
-        Score score = player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getScore(entry);
+        Score score = objective.getScore(TextUtils.formatColorCodes(newText));
         score.setScore(line + 1);
 
-        player.sendMessage(prefix + entry + suffix);
     }
+
+    private void resetOldLine(int line, Scoreboard scoreboard) {
+        for(String entry : objective.getScoreboard().getEntries()) {
+            Score score = objective.getScore(entry);
+            if(score.getScore() != (line + 1)) continue;
+            scoreboard.resetScores(entry);
+        }
+    }
+
+
 
     /**
      *
@@ -162,7 +169,9 @@ public abstract class CustomScoreboard  {
      */
 
     public String getTitle() {return this.title;}
-    public void setTitle(String newTitle) {this.title = TextUtils.formatColorCodes(newTitle.substring(0, 31));}
+    public void setTitle(String newTitle) {
+       this.title = (newTitle.length() > 32) ? TextUtils.formatColorCodes(newTitle.substring(0, 32)) : TextUtils.formatColorCodes(newTitle);
+    }
 
     /**
      *

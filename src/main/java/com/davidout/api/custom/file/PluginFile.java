@@ -45,6 +45,7 @@ public class PluginFile {
     public void reloadFile() {this.yamlConfiguration = YamlConfiguration.loadConfiguration(file);}
 
     public void saveFile() throws IOException {
+        if(this.yamlConfiguration == null) return;
         if(!dataFolder.exists()) dataFolder.mkdir();
         if(!file.exists())  file.createNewFile();
        this.yamlConfiguration.save(file);
