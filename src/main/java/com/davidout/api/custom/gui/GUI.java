@@ -14,25 +14,20 @@ import java.util.*;
 
 public abstract class GUI {
     private HashMap<Integer, ItemStack> items;
-    private String title;
-    private int rows;
 
-    public GUI(int rows, String title) {
+    public GUI() {
         this.items = new HashMap<>();
-        this.rows = rows;
-        this.title = TextUtils.formatColorCodes(title);
 
-        for (int i = 0; i < (rows * 9); i++) {
+        for (int i = 0; i < (getRows() * 9); i++) {
             items.put(0, null);
         }
     }
 
-    public Inventory getGUI() {
-        if(this.getRows() == 0) return Bukkit.createInventory(null, 9, this.title);
-        Inventory inventory = Bukkit.createInventory(null, this.getSlots(), this.title);
+    private Inventory getDefaultGUI(String ... arguments) {
+        if(this.getRows() == 0) return Bukkit.createInventory(null, 9, TextUtils.formatColorCodes(getTitle()));
+        Inventory inventory = Bukkit.createInventory(null, this.getSlots(), TextUtils.formatColorCodes(getTitle()));
 
-        this.createInventory();
-
+        this.createInventory(arguments);
 
         for (int i = 0; i < inventory.getSize(); i++) {
             if(this.items.get(i) == null) continue;
@@ -42,8 +37,9 @@ public abstract class GUI {
         return inventory;
     }
 
-    public void openInventory(Player player) {
-        player.openInventory(this.getGUI());
+    public void openInventory(Player player, String ... arguments) {
+        Inventory inventory = getDefaultGUI(arguments);
+        player.openInventory(inventory);
     }
 
 
@@ -54,7 +50,9 @@ public abstract class GUI {
      */
 
 
-    public abstract void createInventory();
+    public abstract String getTitle();
+    public abstract int getRows();
+    public abstract void createInventory(String ... arguments);
     public abstract void onClick(InventoryClickEvent event, Player p);
 
 
@@ -64,12 +62,7 @@ public abstract class GUI {
      *
      */
 
-    public void setTitle(String title) {this.title = TextUtils.formatColorCodes(title);}
-    public String getTitle() {return this.title;}
-
-    public int getRows() {return this.rows;}
-    public int getSlots() {return this.rows * 9;}
-    public void setRows(int rows) {this.rows = rows;}
+    public int getSlots() {return getRows() * 9;}
 
 
     /**

@@ -2,7 +2,7 @@ package com.davidout.api;
 
 import com.davidout.api.custom.command.CommandManager;
 import com.davidout.api.custom.command.CustomCommand;
-import com.davidout.api.custom.command.enchantment.EnchantmentManager;
+import com.davidout.api.custom.enchantment.EnchantmentManager;
 import com.davidout.api.custom.file.FileManager;
 import com.davidout.api.custom.file.PluginFile;
 import com.davidout.api.custom.gui.GUIManager;

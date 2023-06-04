@@ -1,8 +1,8 @@
 package com.davidout.api.custom.enchantment;
 
+import com.davidout.api.enums.EnchantmentTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
@@ -11,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     private String name;
     private int minLevel;
     private int maxLevel;
-    private EnchantmentTarget target;
+    private List<EnchantmentTarget> targets;
 
 
     public CustomEnchantment(String name, int maxLevel) {
@@ -27,7 +28,9 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
         this.name = name;
         this.minLevel = 1;
         this.maxLevel = maxLevel;
-        this.target = EnchantmentTarget.ALL;
+        this.targets = new ArrayList<>();
+
+        this.targets.add(EnchantmentTarget.ALL);
     }
 
     public CustomEnchantment(String name, int maxLevel, EnchantmentTarget target) {
@@ -35,8 +38,20 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
         this.name = name;
         this.minLevel = 1;
         this.maxLevel = maxLevel;
-        this.target = target;
+        this.targets = new ArrayList<>();
+
+        this.targets.add(target);
     }
+
+    public CustomEnchantment(String name, int maxLevel, List<EnchantmentTarget> targets) {
+        super(name);
+        this.name = name;
+        this.minLevel = 1;
+        this.maxLevel = maxLevel;
+        this.targets = new ArrayList<>();
+        this.targets.addAll(targets);
+    }
+
 
 
     @Override
@@ -63,14 +78,14 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
 
     @Override
     public boolean canEnchantItem(ItemStack item) {
-        return target.includes(item);
+        for (EnchantmentTarget currentTarget : this.targets) {
+            if(!currentTarget.includes(item)) continue;
+            return true;
+        }
+        return false;
     }
 
 
-    @Override
-    public EnchantmentTarget getItemTarget() {
-        return getTarget();
-    }
 
 
     /**
@@ -79,12 +94,9 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
      *
      */
 
-    public EnchantmentTarget getTarget() {
-        return this.target;
-    }
-    public void setTarget(EnchantmentTarget target) {
-        this.target = target;
-    }
+    public List<EnchantmentTarget> getTargets() {return targets;}
+    public void addTarget(EnchantmentTarget target) {targets.add(target);}
+    public void removeTarget(EnchantmentTarget target) {targets.remove(target);}
 
     public abstract List<Class<? extends Event>> getEvents();
     public abstract void onAction(Event event);

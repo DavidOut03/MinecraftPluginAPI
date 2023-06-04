@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added last colors of prefix and entry in CustomScoreboard.java">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Scoreboard reset line fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/ItemCreator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,14 +179,7 @@
       <workItem from="1685398530989" duration="463000" />
       <workItem from="1685433877235" duration="5000" />
       <workItem from="1685466561537" duration="1685000" />
-      <workItem from="1685868450328" duration="1271000" />
-    </task>
-    <task id="LOCAL-00041" summary="Fixed for 1.18">
-      <created>1685223297250</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1685223297250</updated>
+      <workItem from="1685868450328" duration="9043000" />
     </task>
     <task id="LOCAL-00042" summary="Official release for 1.7 til 1.13">
       <created>1685225291749</created>
@@ -519,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685822029359</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Scoreboard reset line fix">
+      <created>1685869740882</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1685869740883</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +542,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed enchantmentManager null bug" />
     <MESSAGE value="Removed enchantment target from constructor" />
     <MESSAGE value="Fixed bug where items could not receive a custom enchantment" />
     <MESSAGE value="Updated lore" />
@@ -562,6 +566,7 @@
     <MESSAGE value="1.1.0-LEGACY Release" />
     <MESSAGE value="Restructured files" />
     <MESSAGE value="Added last colors of prefix and entry in CustomScoreboard.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added last colors of prefix and entry in CustomScoreboard.java" />
+    <MESSAGE value="Scoreboard reset line fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scoreboard reset line fix" />
   </component>
 </project>

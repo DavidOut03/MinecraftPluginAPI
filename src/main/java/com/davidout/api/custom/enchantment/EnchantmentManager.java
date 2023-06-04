@@ -1,4 +1,4 @@
-package com.davidout.api.custom.command.enchantment;
+package com.davidout.api.custom.enchantment;
 
 import com.davidout.api.MinecraftPlugin;
 import com.davidout.api.custom.enchantment.CustomEnchantment;
