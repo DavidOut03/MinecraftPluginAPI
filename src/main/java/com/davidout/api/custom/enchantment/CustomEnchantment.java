@@ -58,6 +58,9 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     public String getName() {
         return this.name;
     }
+    public String getDisplayName() {
+        return getName().substring(0, 1).toUpperCase() + getName().substring(1).replace("-", " ").replace("_", " ");
+    }
 
     @Override
     public int getStartLevel() {

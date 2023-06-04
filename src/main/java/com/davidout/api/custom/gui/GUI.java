@@ -1,6 +1,7 @@
 package com.davidout.api.custom.gui;
 
 import com.davidout.api.utillity.TextUtils;
+import com.davidout.api.utillity.item.Item;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Utility;
@@ -19,7 +20,7 @@ public abstract class GUI {
         this.items = new HashMap<>();
 
         for (int i = 0; i < (getRows() * 9); i++) {
-            items.put(0, null);
+            items.put(i, null);
         }
     }
 
@@ -85,7 +86,7 @@ public abstract class GUI {
 
     public void addItem(ItemStack itemStack) {
         for (Map.Entry<Integer, ItemStack> integerItemStackEntry : this.items.entrySet()) {
-            if(integerItemStackEntry.getValue() != null && !integerItemStackEntry.getValue().getType().equals(Material.AIR)) continue;
+            if(!Item.itemIsNull(integerItemStackEntry.getValue())) continue;
             this.items.put(integerItemStackEntry.getKey(), itemStack);
             break;
         }

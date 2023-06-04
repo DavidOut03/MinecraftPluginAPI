@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Scoreboard reset line fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/ItemCreator.java" afterDir="false" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed Scoreboard line bug.&#10;Added ItemCreator.java to create items&#10;Added own custom enchantment target for more enchantment customization">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/recipe/CustomRecipe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUIManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUIManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/Item.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,14 +180,9 @@
       <workItem from="1685398530989" duration="463000" />
       <workItem from="1685433877235" duration="5000" />
       <workItem from="1685466561537" duration="1685000" />
-      <workItem from="1685868450328" duration="9043000" />
-    </task>
-    <task id="LOCAL-00042" summary="Official release for 1.7 til 1.13">
-      <created>1685225291749</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1685225291749</updated>
+      <workItem from="1685868450328" duration="10213000" />
+      <workItem from="1685897483951" duration="3170000" />
+      <workItem from="1685907519150" duration="3896000" />
     </task>
     <task id="LOCAL-00043" summary="Added the ScoreboardManager.java">
       <created>1685269543854</created>
@@ -524,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685869740883</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Fixed Scoreboard line bug.&#10;Added ItemCreator.java to create items&#10;Added own custom enchantment target for more enchantment customization">
+      <created>1685887248257</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1685887248257</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +545,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed enchantment target from constructor" />
     <MESSAGE value="Fixed bug where items could not receive a custom enchantment" />
     <MESSAGE value="Updated lore" />
     <MESSAGE value="Test work for mutiple versions" />
@@ -567,6 +569,7 @@
     <MESSAGE value="Restructured files" />
     <MESSAGE value="Added last colors of prefix and entry in CustomScoreboard.java" />
     <MESSAGE value="Scoreboard reset line fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scoreboard reset line fix" />
+    <MESSAGE value="Fixed Scoreboard line bug.&#10;Added ItemCreator.java to create items&#10;Added own custom enchantment target for more enchantment customization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Scoreboard line bug.&#10;Added ItemCreator.java to create items&#10;Added own custom enchantment target for more enchantment customization" />
   </component>
 </project>

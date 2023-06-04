@@ -4,10 +4,15 @@ import com.davidout.api.utillity.item.Item;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Random;
+
 public enum EnchantmentTarget {
+
+
 
     // Categories
     ALL,
+    BREAKABLE,
     ARMOUR,
     TOOLS,
     WEAPONS,
@@ -47,6 +52,7 @@ public enum EnchantmentTarget {
 
     public static EnchantmentTarget getEnchantmentTarget(ItemStack itemStack) {
         String mat = itemStack.getType().toString().toLowerCase();
+        if(mat.equals(Material.BOOK)) return EnchantmentTarget.ALL;
 
         if(Item.itemIsArmour(itemStack)) {
             if(mat.endsWith(Item.helmet)) return EnchantmentTarget.HELMET;

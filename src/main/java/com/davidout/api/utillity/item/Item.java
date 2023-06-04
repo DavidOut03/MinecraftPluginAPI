@@ -1,5 +1,9 @@
 package com.davidout.api.utillity.item;
 
+import com.davidout.api.utillity.TextUtils;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
 public class Item {
@@ -48,9 +52,23 @@ public class Item {
         return  mat.toLowerCase().endsWith(sword) || mat.endsWith(bow) || mat.endsWith(crossbow) || mat.endsWith(trident);
     }
 
+    public static boolean itemIsNull(ItemStack itemStack) {
+        return itemStack == null || itemStack.getType() == Material.AIR;
+    }
     public static boolean itemIsBlock(ItemStack itemStack) {
       return itemStack.getType().isBlock();
     }
 
+    public static boolean itemHasSameName(String name, ItemStack itemStack) {
+        return TextUtils.formatColorCodes(name).equalsIgnoreCase(TextUtils.formatColorCodes(itemStack.getItemMeta().getDisplayName()));
+    }
+
+    public static boolean itemIsSameType(Material mat, ItemStack itemStack) {
+        return mat == itemStack.getType();
+    }
+
+    public static boolean itemIsTheSame(ItemStack item1, ItemStack item2) {
+        return itemIsSameType(item1.getType(), item2) && itemHasSameName(item1.getItemMeta().getDisplayName(), item2);
+    }
 
 }

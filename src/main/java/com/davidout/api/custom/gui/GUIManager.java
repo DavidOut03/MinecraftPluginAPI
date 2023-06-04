@@ -6,6 +6,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Recipe;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +43,7 @@ public class GUIManager implements Listener {
         if(e.getCurrentItem() == null || e.getCurrentItem().getType().equals(Material.AIR)) return;
 
         for (GUI gui : this.guiList) {
-            if(!gui.getTitle().equalsIgnoreCase(TextUtils.formatColorCodes(e.getView().getTitle()))) continue;
+            if(!TextUtils.formatColorCodes(gui.getTitle()).equalsIgnoreCase(TextUtils.formatColorCodes(e.getView().getTitle()))) continue;
 
             gui.onClick(e, (Player) e.getWhoClicked());
             break;

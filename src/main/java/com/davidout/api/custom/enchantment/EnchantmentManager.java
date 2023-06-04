@@ -4,6 +4,7 @@ import com.davidout.api.MinecraftPlugin;
 import com.davidout.api.custom.enchantment.CustomEnchantment;
 import com.davidout.api.utillity.RomanNumber;
 import org.bukkit.ChatColor;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -53,21 +54,34 @@ public class EnchantmentManager {
         return customEnchantList;
     }
 
-    public static void addCustomEnchantment(ItemStack item, String name, int level) {
+
+    public static boolean addCustomEnchantment(ItemStack item, Enchantment enchantment, int level) {
+        CustomEnchantment customEnchantment = getEnchantByName(enchantment.getName());
+        if(canNotEnchant(customEnchantment, item)) return false;
+        ItemMeta itemMeta = item.getItemMeta();
+        itemMeta.addEnchant(customEnchantment, level, true);
+        itemMeta.setLore(updateLore(itemMeta.getLore(), customEnchantment, level));
+        item.setItemMeta(itemMeta);
+        return true;
+    }
+
+    public static boolean addCustomEnchantment(ItemStack item, String name, int level) {
         CustomEnchantment enchantment = getEnchantByName(name);
-        if(enchantment == null || item == null || item.getItemMeta() == null) return;
+        if(canNotEnchant(enchantment, item)) return false;
         ItemMeta itemMeta = item.getItemMeta();
             itemMeta.addEnchant(enchantment, level, true);
             itemMeta.setLore(updateLore(itemMeta.getLore(), enchantment, level));
             item.setItemMeta(itemMeta);
+        return true;
     }
 
-    public static void addCustomEnchantment(ItemStack item, CustomEnchantment enchantment, int level) {
-        if(enchantment == null || item == null || item.getItemMeta() == null) return;
+    public static boolean addCustomEnchantment(ItemStack item, CustomEnchantment enchantment, int level) {
+        if(canNotEnchant(enchantment, item)) return false;
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.addEnchant(enchantment, level, true);
         itemMeta.setLore(updateLore(itemMeta.getLore(), enchantment, level));
         item.setItemMeta(itemMeta);
+        return true;
     }
 
     private static List<String> updateLore(List<String> currentLore, CustomEnchantment enchantment, int level) {
@@ -76,11 +90,16 @@ public class EnchantmentManager {
 
         String name = enchantment.getName().substring(0, 1).toUpperCase() + enchantment.getName().substring(1);
         String enchantmentLine = (enchantment.getMaxLevel() == 1)? ChatColor.GRAY + name : ChatColor.GRAY + name + " " + RomanNumber.toRoman(level);
-        returned.add(enchantmentLine.replace("-", " ").replace("_", " "));
+        String addedLore = enchantmentLine.replace("-", " ").replace("_", " ");
+        if(!currentLore.contains(addedLore)) returned.add(addedLore);
 
 
         if(currentLore != null && !currentLore.isEmpty()) returned.addAll(currentLore);
         return returned;
+    }
+
+    private static boolean canNotEnchant(CustomEnchantment enchantment, ItemStack itemStack) {
+        return enchantment == null || itemStack == null || itemStack.getItemMeta() == null || !enchantment.canEnchantItem(itemStack);
     }
 
 
