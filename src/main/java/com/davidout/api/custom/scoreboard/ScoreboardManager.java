@@ -1,4 +1,4 @@
-package com.davidout.api.scoreboard;
+package com.davidout.api.custom.scoreboard;
 
 import org.bukkit.entity.Player;
 

@@ -1,6 +1,7 @@
-package com.davidout.api.gui;
+package com.davidout.api.custom.gui;
 
 import com.davidout.api.utillity.TextUtils;
+import com.davidout.api.utillity.item.Item;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Utility;
@@ -14,25 +15,20 @@ import java.util.*;
 
 public abstract class GUI {
     private HashMap<Integer, ItemStack> items;
-    private String title;
-    private int rows;
 
-    public GUI(int rows, String title) {
+    public GUI() {
         this.items = new HashMap<>();
-        this.rows = rows;
-        this.title = TextUtils.formatColorCodes(title);
 
-        for (int i = 0; i < (rows * 9); i++) {
-            items.put(0, null);
+        for (int i = 0; i < (getRows() * 9); i++) {
+            items.put(i, null);
         }
     }
 
-    public Inventory getGUI() {
-        if(this.getRows() == 0) return Bukkit.createInventory(null, 9, this.title);
-        Inventory inventory = Bukkit.createInventory(null, this.getSlots(), this.title);
+    private Inventory getDefaultGUI(String ... arguments) {
+        if(this.getRows() == 0) return Bukkit.createInventory(null, 9, TextUtils.formatColorCodes(getTitle()));
+        Inventory inventory = Bukkit.createInventory(null, this.getSlots(), TextUtils.formatColorCodes(getTitle()));
 
-        this.createInventory();
-
+        this.createInventory(arguments);
 
         for (int i = 0; i < inventory.getSize(); i++) {
             if(this.items.get(i) == null) continue;
@@ -42,8 +38,9 @@ public abstract class GUI {
         return inventory;
     }
 
-    public void openInventory(Player player) {
-        player.openInventory(this.getGUI());
+    public void openInventory(Player player, String ... arguments) {
+        Inventory inventory = getDefaultGUI(arguments);
+        player.openInventory(inventory);
     }
 
 
@@ -54,7 +51,9 @@ public abstract class GUI {
      */
 
 
-    public abstract void createInventory();
+    public abstract String getTitle();
+    public abstract int getRows();
+    public abstract void createInventory(String ... arguments);
     public abstract void onClick(InventoryClickEvent event, Player p);
 
 
@@ -64,12 +63,7 @@ public abstract class GUI {
      *
      */
 
-    public void setTitle(String title) {this.title = TextUtils.formatColorCodes(title);}
-    public String getTitle() {return this.title;}
-
-    public int getRows() {return this.rows;}
-    public int getSlots() {return this.rows * 9;}
-    public void setRows(int rows) {this.rows = rows;}
+    public int getSlots() {return getRows() * 9;}
 
 
     /**
@@ -92,7 +86,7 @@ public abstract class GUI {
 
     public void addItem(ItemStack itemStack) {
         for (Map.Entry<Integer, ItemStack> integerItemStackEntry : this.items.entrySet()) {
-            if(integerItemStackEntry.getValue() != null && !integerItemStackEntry.getValue().getType().equals(Material.AIR)) continue;
+            if(!Item.itemIsNull(integerItemStackEntry.getValue())) continue;
             this.items.put(integerItemStackEntry.getKey(), itemStack);
             break;
         }

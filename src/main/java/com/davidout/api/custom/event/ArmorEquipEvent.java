@@ -1,4 +1,4 @@
-package com.davidout.api.customevent;
+package com.davidout.api.custom.event;
 
 import com.davidout.api.enums.ArmorType;
 import org.bukkit.entity.Player;
@@ -6,7 +6,7 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
 
-public class ArmorDequipEvent extends Event {
+public class ArmorEquipEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
     private final Player player;
@@ -14,7 +14,7 @@ public class ArmorDequipEvent extends Event {
     private final ItemStack newItem;
     private final ArmorType type;
 
-    public ArmorDequipEvent(Player player, ItemStack oldItem, ItemStack newItem, ArmorType type) {
+    public ArmorEquipEvent(Player player, ItemStack oldItem, ItemStack newItem, ArmorType type) {
         this.player = player;
         this.oldItem = oldItem;
         this.newItem = newItem;

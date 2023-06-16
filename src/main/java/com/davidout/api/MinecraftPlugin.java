@@ -1,14 +1,14 @@
 package com.davidout.api;
 
-import com.davidout.api.command.CommandManager;
-import com.davidout.api.command.CustomCommand;
-import com.davidout.api.enchantment.EnchantmentManager;
-import com.davidout.api.file.FileManager;
-import com.davidout.api.file.PluginFile;
-import com.davidout.api.gui.GUIManager;
+import com.davidout.api.custom.command.CommandManager;
+import com.davidout.api.custom.command.CustomCommand;
+import com.davidout.api.custom.enchantment.EnchantmentManager;
+import com.davidout.api.custom.file.FileManager;
+import com.davidout.api.custom.file.PluginFile;
+import com.davidout.api.custom.gui.GUIManager;
 import com.davidout.api.listener.ArmorListener;
 import com.davidout.api.listener.LeaveListener;
-import com.davidout.api.scoreboard.ScoreboardManager;
+import com.davidout.api.custom.scoreboard.ScoreboardManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
@@ -37,16 +37,14 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Register all necesarry managers
         plugin = this;
-
         this.enchantmentManager = new EnchantmentManager(this);
         this.commandManager = new CommandManager(this);
         this.scoreboardManager = new ScoreboardManager();
         this.fileManager = new FileManager();
         this.guiManager = new GUIManager();
         this.pm = Bukkit.getPluginManager();
-
-
 
         // register all necesarry listeners
         this.registerNecesarryListeners();
@@ -56,6 +54,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.commandManager.registerCommands ( this.registerCommands() );
         this.enchantmentManager.registerEnchantments();
 
+        // create the following files
         this.fileManager.setFiles(filesToCreate());
         this.fileManager.createFiles();
         this.onStartup();

@@ -43,6 +43,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <!--            <version>1.8.8-R0.1-SNAPSHOT</version>-->
+            <version>1.18-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -87,7 +94,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <outputDirectory>Z:\Minecraft Development\api</outputDirectory>
+                    <outputDirectory>D:\Minecraft Development\api</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
