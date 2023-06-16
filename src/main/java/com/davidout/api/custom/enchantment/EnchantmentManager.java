@@ -9,6 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EnchantmentManager {
@@ -57,7 +58,8 @@ public class EnchantmentManager {
 
     public static boolean addCustomEnchantment(ItemStack item, Enchantment enchantment, int level) {
         CustomEnchantment customEnchantment = getEnchantByName(enchantment.getName());
-        if(canNotEnchant(customEnchantment, item)) return false;
+
+        if(!canEnchantItem(customEnchantment, item)) return false;
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.addEnchant(customEnchantment, level, true);
         itemMeta.setLore(updateLore(itemMeta.getLore(), customEnchantment, level));
@@ -67,7 +69,7 @@ public class EnchantmentManager {
 
     public static boolean addCustomEnchantment(ItemStack item, String name, int level) {
         CustomEnchantment enchantment = getEnchantByName(name);
-        if(canNotEnchant(enchantment, item)) return false;
+        if(!canEnchantItem(enchantment, item)) return false;
         ItemMeta itemMeta = item.getItemMeta();
             itemMeta.addEnchant(enchantment, level, true);
             itemMeta.setLore(updateLore(itemMeta.getLore(), enchantment, level));
@@ -76,7 +78,7 @@ public class EnchantmentManager {
     }
 
     public static boolean addCustomEnchantment(ItemStack item, CustomEnchantment enchantment, int level) {
-        if(canNotEnchant(enchantment, item)) return false;
+        if(!canEnchantItem(enchantment, item)) return false;
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.addEnchant(enchantment, level, true);
         itemMeta.setLore(updateLore(itemMeta.getLore(), enchantment, level));
@@ -98,8 +100,8 @@ public class EnchantmentManager {
         return returned;
     }
 
-    private static boolean canNotEnchant(CustomEnchantment enchantment, ItemStack itemStack) {
-        return enchantment == null || itemStack == null || itemStack.getItemMeta() == null || !enchantment.canEnchantItem(itemStack);
+    private static boolean canEnchantItem(CustomEnchantment enchantment, ItemStack itemStack) {
+        return enchantment != null && itemStack != null && itemStack.getItemMeta() != null && enchantment.canEnchantItem(itemStack);
     }
 
 

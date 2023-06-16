@@ -33,21 +33,25 @@ public enum EnchantmentTarget {
         if(this.equals(EnchantmentTarget.ALL) || this.equals(getEnchantmentTarget(itemStack)) || itemStack.getType().equals(Material.BOOK)) return true;
         EnchantmentTarget itemTarget = getEnchantmentTarget(itemStack);
 
-        if(this.equals(EnchantmentTarget.ARMOUR) && itemTarget.equals(EnchantmentTarget.HELMET) ||
-           itemTarget.equals(EnchantmentTarget.CHESTPLATE) || itemTarget.equals(EnchantmentTarget.LEGGINGS) ||
-           itemTarget.equals(EnchantmentTarget.BOOTS)) return true;
+        if(this.equals(EnchantmentTarget.ARMOUR)) {
+            if(itemTarget.equals(EnchantmentTarget.HELMET) || itemTarget.equals(EnchantmentTarget.CHESTPLATE) || itemTarget.equals(EnchantmentTarget.LEGGINGS) || itemTarget.equals(EnchantmentTarget.BOOTS)) return true;
+        }
 
-        if(this.equals(EnchantmentTarget.TOOLS) && itemTarget.equals(EnchantmentTarget.PICKAXE) ||
-                itemTarget.equals(EnchantmentTarget.AXE) || itemTarget.equals(EnchantmentTarget.HOE) ||
-                itemTarget.equals(EnchantmentTarget.SHOVEL) || itemTarget.equals(EnchantmentTarget.SHEAR) ||
-                itemTarget.equals(EnchantmentTarget.FISHING_ROD)) return true;
-
-        if(this.equals(EnchantmentTarget.WEAPONS) && itemTarget.equals(EnchantmentTarget.SWORD) ||
-                itemTarget.equals(EnchantmentTarget.BOW) || itemTarget.equals(EnchantmentTarget.CROSSBOW) ||
-                itemTarget.equals(EnchantmentTarget.TRIDENT) || itemTarget.equals(EnchantmentTarget.AXE)) return true;
+        if(this.equals(EnchantmentTarget.TOOLS)) {
+            if(itemTarget.equals(EnchantmentTarget.PICKAXE) ||
+                    itemTarget.equals(EnchantmentTarget.AXE) || itemTarget.equals(EnchantmentTarget.HOE) ||
+                    itemTarget.equals(EnchantmentTarget.SHOVEL) || itemTarget.equals(EnchantmentTarget.SHEAR) ||
+                    itemTarget.equals(EnchantmentTarget.FISHING_ROD)) return true;
+        }
 
 
-        return false;
+        if(this.equals(EnchantmentTarget.WEAPONS)) {
+            if(itemTarget.equals(EnchantmentTarget.SWORD) ||
+                    itemTarget.equals(EnchantmentTarget.BOW) || itemTarget.equals(EnchantmentTarget.CROSSBOW) ||
+                    itemTarget.equals(EnchantmentTarget.TRIDENT) || itemTarget.equals(EnchantmentTarget.AXE)) return true;
+        }
+
+        return this.name().equalsIgnoreCase(itemTarget.name());
     }
 
     public static EnchantmentTarget getEnchantmentTarget(ItemStack itemStack) {
