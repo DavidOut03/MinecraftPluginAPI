@@ -3,6 +3,7 @@ package com.davidout.api.utillity.item;
 import com.davidout.api.utillity.TextUtils;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Damageable;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -47,11 +48,10 @@ public class ItemCreator {
         return itemStack;
     }
 
-    public static ItemStack createItem(Material mat, String name, List<String> lore, Map<Enchantment, Integer> enchantments, boolean unbreakable) {
+    public static ItemStack createItem(Material mat, String name, List<String> lore, Map<Enchantment, Integer> enchantments) {
         ItemStack itemStack = createItem(mat, name, lore);
         itemStack.addUnsafeEnchantments(enchantments);
         ItemMeta meta = itemStack.getItemMeta();
-        meta.setUnbreakable(unbreakable);
         itemStack.setItemMeta(meta);
         return itemStack;
     }
@@ -87,29 +87,29 @@ public class ItemCreator {
 
      */
 
-    public static ItemStack createUnbreakableItem(Material mat) {
-        ItemStack itemStack = createItem(mat);
-        ItemMeta meta = itemStack.getItemMeta();
-        meta.setUnbreakable(true);
-        itemStack.setItemMeta(meta);
-        return itemStack;
-    }
-
-    public static ItemStack createUnbreakableItem(Material mat, String displayName) {
-        ItemStack itemStack = createItem(mat, displayName);
-        ItemMeta meta = itemStack.getItemMeta();
-        meta.setUnbreakable(true);
-        itemStack.setItemMeta(meta);
-        return itemStack;
-    }
-
-    public static ItemStack createUnbreakableItem(Material mat, String displayName, List<String> lore) {
-        ItemStack itemStack = createItem(mat, displayName, lore);
-        ItemMeta meta = itemStack.getItemMeta();
-        meta.setUnbreakable(true);
-        itemStack.setItemMeta(meta);
-        return itemStack;
-    }
+//    public static ItemStack createUnbreakableItem(Material mat) {
+//        ItemStack itemStack = createItem(mat);
+//        ItemMeta meta = itemStack.getItemMeta();
+//        meta.setUnbreakable(true);
+//        itemStack.setItemMeta(meta);
+//        return itemStack;
+//    }
+//
+//    public static ItemStack createUnbreakableItem(Material mat, String displayName) {
+//        ItemStack itemStack = createItem(mat, displayName);
+//        ItemMeta meta = itemStack.getItemMeta();
+//        meta.setUnbreakable(true);
+//        itemStack.setItemMeta(meta);
+//        return itemStack;
+//    }
+//
+//    public static ItemStack createUnbreakableItem(Material mat, String displayName, List<String> lore) {
+//        ItemStack itemStack = createItem(mat, displayName, lore);
+//        ItemMeta meta = itemStack.getItemMeta();
+//        meta.setUnbreakable(true);
+//        itemStack.setItemMeta(meta);
+//        return itemStack;
+//    }
 
     /**
      *
