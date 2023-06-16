@@ -1,8 +1,8 @@
 package com.davidout.api.listener;
 
 
-import com.davidout.api.customevent.ArmorDequipEvent;
-import com.davidout.api.customevent.ArmorEquipEvent;
+import com.davidout.api.custom.event.ArmorDequipEvent;
+import com.davidout.api.custom.event.ArmorEquipEvent;
 import com.davidout.api.enums.ArmorType;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

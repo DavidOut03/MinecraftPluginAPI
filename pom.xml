@@ -6,7 +6,7 @@
 
     <groupId>com.davidout.api.minecraft</groupId>
     <artifactId>minecraft-plugin-api</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
@@ -35,6 +35,13 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+<!--            <version>1.8.8-R0.1-SNAPSHOT</version>-->
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.spigotmc</groupId>
@@ -87,7 +94,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <outputDirectory>Z:\Minecraft Development\api</outputDirectory>
+                    <outputDirectory>D:\Minecraft Development\api</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
