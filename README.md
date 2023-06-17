@@ -9,7 +9,7 @@ MinecraftPluginAPI is a Minecraft Spigot Plugin tool which simplifies and speeds
 -  [How can i create my own custom enchantments?](#how-do-i-create-my-own-custom-enchantments)
 -  [How do i create a custom GUI?](#how-do-i-create-my-own-guis)
 -  [How do i create my own scoreboard?](#how-can-i-create-a-custom-scoreboard)
--  [How do i manage my files?](#how-do-i-create-my-own-guis)
+-  [How do i manage my files?](#how-do-i-manage-my-files)
 
 ## How to Install
 You can use this maven repository.
