@@ -53,7 +53,7 @@ public class EnchantmentManager {
 
     public static boolean containsEnchantment(Enchantment enchantment, ItemStack itemStack) {
         if(itemStack == null || itemStack.getItemMeta() == null) return false;
-        return Objects.requireNonNull(itemStack.getItemMeta()).hasEnchant(enchantment) || itemStack.getItemMeta().hasEnchant(Objects.requireNonNull(Enchantment.getByKey(enchantment.getKey())));
+        return Objects.requireNonNull(itemStack.getItemMeta()).hasEnchant(enchantment) || itemStack.getItemMeta().hasEnchant(Objects.requireNonNull(Enchantment.getById(enchantment.getId())));
     }
 
 
