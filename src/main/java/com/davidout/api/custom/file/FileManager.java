@@ -3,27 +3,46 @@ package com.davidout.api.custom.file;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class FileManager {
 
-    private List<PluginFile> fileList;
+    private static List<PluginFile> fileList = new ArrayList<>();
+    private static List<PluginFolder> folderList = new ArrayList<>();
 
-    public FileManager() {
-        this.fileList = new ArrayList<>();
+    public static PluginFile getFile(String fileName) {
+        Optional<PluginFile> file = fileList.stream().filter(pluginFile -> pluginFile.getFileName().equalsIgnoreCase(fileName)).collect(Collectors.toList()).stream().findFirst();
+        return file.orElse(null);
     }
 
-    public PluginFile createFile(String folderpath, String fileName) {
-        PluginFile file = new PluginFile(folderpath, fileName);
-        this.fileList.add(file);
+    public static PluginFolder getFolder(String folderName) {
+        Optional<PluginFolder> folder = folderList.stream().filter(pluginFolder -> pluginFolder.getFolderName().equalsIgnoreCase(folderName)).collect(Collectors.toList()).stream().findFirst();
+        return folder.orElse(null);
+    }
+
+    public static PluginFile createFile(PluginFolder folder, String fileName) {
+        PluginFile file = new PluginFile(folder, fileName);
+        fileList.add(file);
         return file;
     }
 
-    public void addFile(PluginFile file) {this.fileList.add(file);}
-    public void removeFile(PluginFile file) {this.fileList.remove(file);}
-    public void setFiles(List<PluginFile> files) {this.fileList = (files == null) ? new ArrayList<>() : files;}
+    public static void addFile(PluginFile file) {
+        List<PluginFile> newList = new ArrayList<>(fileList);
+        newList.add(file);
+        fileList = newList;
+    }
+    public static void removeFile(PluginFile file) {fileList.remove(file);}
+    public static void setFiles(List<PluginFile> files) {fileList = (files == null) ? new ArrayList<>() : files;}
 
-    public void createFiles() {
-        this.fileList.forEach(file -> {
+    public static void addFolder(PluginFolder folder) {folderList.add(folder);}
+    public static void removeFolder(PluginFolder folder) {folderList.remove(folder);}
+    public static void setFolderList(List<PluginFolder> list) {folderList = list;}
+
+    public static void createFolders() {folderList.forEach(PluginFolder::createPath);}
+
+    public static void createFiles() {
+        fileList.forEach(file -> {
             try {
                 file.generateFile();
             } catch (IOException e) {
@@ -35,14 +54,14 @@ public class FileManager {
         });
     }
 
-    public void saveFiles() throws IOException {
-        for (PluginFile pluginFile : this.fileList) {
+    public static void saveFiles() throws IOException {
+        for (PluginFile pluginFile : fileList) {
             pluginFile.saveFile();
         }
     }
 
-    public void reloadFiles() {
-        for (PluginFile pluginFile : this.fileList) {
+    public static void reloadFiles() {
+        for (PluginFile pluginFile : fileList) {
             pluginFile.reloadFile();
         }
     }

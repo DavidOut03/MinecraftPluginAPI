@@ -5,7 +5,10 @@ import com.davidout.api.custom.command.CustomCommand;
 import com.davidout.api.custom.enchantment.EnchantmentManager;
 import com.davidout.api.custom.file.FileManager;
 import com.davidout.api.custom.file.PluginFile;
+import com.davidout.api.custom.file.PluginFolder;
 import com.davidout.api.custom.gui.GUIManager;
+import com.davidout.api.custom.language.LanguageManager;
+import com.davidout.api.custom.language.TranslationBundle;
 import com.davidout.api.listener.ArmorListener;
 import com.davidout.api.listener.LeaveListener;
 import com.davidout.api.custom.scoreboard.ScoreboardManager;
@@ -14,6 +17,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.IOException;
 import java.util.List;
 
 public abstract class MinecraftPlugin extends JavaPlugin {
@@ -27,10 +31,11 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      *
      */
 
+
+
     private EnchantmentManager enchantmentManager;
     private ScoreboardManager scoreboardManager;
     private CommandManager commandManager;
-    private FileManager fileManager;
     private GUIManager guiManager;
     private PluginManager pm;
 
@@ -39,24 +44,14 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public void onEnable() {
         // Register all necesarry managers
         plugin = this;
-        this.enchantmentManager = new EnchantmentManager(this);
-        this.commandManager = new CommandManager(this);
-        this.scoreboardManager = new ScoreboardManager();
-        this.fileManager = new FileManager();
-        this.guiManager = new GUIManager();
-        this.pm = Bukkit.getPluginManager();
 
-        // register all necesarry listeners
-        this.registerNecesarryListeners();
+        this.loadManagers();;
+        this.register();
+        this.createFiles();
 
-        // register all the events and commands.
-        this.registerEvents().forEach (eventListener -> this.pm.registerEvents(eventListener, this) );
-        this.commandManager.registerCommands ( this.registerCommands() );
-        this.enchantmentManager.registerEnchantments();
+        LanguageManager.loadTranslations();
+        LanguageManager.setLanguageBundle(LanguageManager.getCurrentLanguage(), getDefaultTranslationBundle());
 
-        // create the following files
-        this.fileManager.setFiles(filesToCreate());
-        this.fileManager.createFiles();
         this.onStartup();
     }
 
@@ -65,6 +60,60 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.enchantmentManager.unRegisterEnchantments();
         this.onShutdown();
     }
+
+
+
+    /**
+     *
+     *  Onenable methods
+     *
+     */
+
+    private void loadManagers() {
+        this.enchantmentManager = new EnchantmentManager(this);
+        this.commandManager = new CommandManager(this);
+        this.scoreboardManager = new ScoreboardManager();
+        this.guiManager = new GUIManager();
+        this.pm = Bukkit.getPluginManager();
+    }
+
+    private void register() {
+        this.registerNecesarryListeners();
+        this.registerEvents().forEach (eventListener -> this.pm.registerEvents(eventListener, this) );
+        this.commandManager.registerCommands ( this.registerCommands() );
+        this.enchantmentManager.registerEnchantments();
+    }
+
+    private void createFiles() {
+        FileManager.setFiles(filesToCreate());
+        FileManager.createFolders();
+        FileManager.createFiles();
+
+        addLanguageFiles();
+    }
+
+    private void addLanguageFiles() {
+        PluginFolder folder = LanguageManager.getFolder();
+        PluginFile file = new PluginFile(LanguageManager.getFolder(), LanguageManager.getCurrentLanguage());
+
+        FileManager.addFolder(folder);
+        FileManager.addFile(file);
+
+        try {
+            file.setData("message.example", "This is a test message.");
+            file.saveFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+    /**
+     *
+     *  Sub methods
+     *
+     */
 
     public void registerNecesarryListeners() {
         this.pm.registerEvents(this.guiManager, this);
@@ -82,11 +131,24 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public EnchantmentManager getEnchantmentManager() {return this.enchantmentManager;}
     public ScoreboardManager getScoreboardManager() {return this.scoreboardManager;}
     public CommandManager getCommandManager() {return this.commandManager;}
-    public FileManager getFileManager() {return this.fileManager;}
     public GUIManager getGuiManager() {return this.guiManager;}
     public PluginManager getPluginManager() {return this.pm;}
 
 
+    /**
+     *
+     * Methods which can be overidden
+     *
+     */
+
+    public TranslationBundle getDefaultTranslationBundle() {
+        TranslationBundle bundle = new TranslationBundle("en");
+        bundle.setMessage("example", "This is an example message.");
+        bundle.setMessage("onEnable", "This plugin enabled.");
+        bundle.setMessage("onDisable", "This plugin disabled.");
+
+        return bundle;
+    }
 
     /**
      *
@@ -106,8 +168,6 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     // This method is called on startup to register the commands;
     public abstract List<CustomCommand> registerCommands();
     public abstract List<PluginFile> filesToCreate();
-
-
 
 
 }
