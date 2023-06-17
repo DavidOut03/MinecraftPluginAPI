@@ -31,6 +31,10 @@ public class LanguageManager {
 
     public static PluginFolder getFolder() {return folder;}
 
+    public static void setLanguageBundle(String languageBundle, TranslationBundle translationBundle) {
+        languageBundles.put(languageBundle, translationBundle);
+        saveTranslationBundle(languageBundle, translationBundle);
+    }
 
     public static void loadTranslations() {
         if(folder.getFolder() == null) return;
@@ -51,24 +55,22 @@ public class LanguageManager {
         });
     }
 
-    public static void saveTranslations() {
-        languageBundles.forEach((s, translationBundle) -> {
-            PluginFile file = FileManager.getFile(s);
-            if(file == null) {
-                file = FileManager.createFile(folder, s);
-                file.getFileName();
-            }
+    protected static void saveTranslationBundle(String language, TranslationBundle bundle) {
+        PluginFile file = FileManager.getFile(language);
+        if(file == null) {
+            file = FileManager.createFile(folder, language);
+            file.getFileName();
+        }
 
-            try {
-                for(Map.Entry<String, String> currentMessage : translationBundle.getMessages().entrySet()) {
-                    file.setData("message." + currentMessage.getKey(), currentMessage.getValue());
-                }
-                file.saveFile();
-            } catch (Exception ex) {
-                Bukkit.getConsoleSender().sendMessage(TextUtils.formatColorCodes("&cCould not save language file: " + s + ".yml"));
-                ex.printStackTrace();
+        try {
+            for(Map.Entry<String, String> currentMessage : bundle.getMessages().entrySet()) {
+                file.setData("message." + currentMessage.getKey(), currentMessage.getValue());
             }
-
-        });
+            file.saveFile();
+        } catch (Exception ex) {
+            Bukkit.getConsoleSender().sendMessage(TextUtils.formatColorCodes("&cCould not save language file: " + language + ".yml"));
+            ex.printStackTrace();
+        }
     }
+
 }

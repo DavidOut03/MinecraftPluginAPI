@@ -8,6 +8,7 @@ import com.davidout.api.custom.file.PluginFile;
 import com.davidout.api.custom.file.PluginFolder;
 import com.davidout.api.custom.gui.GUIManager;
 import com.davidout.api.custom.language.LanguageManager;
+import com.davidout.api.custom.language.TranslationBundle;
 import com.davidout.api.listener.ArmorListener;
 import com.davidout.api.listener.LeaveListener;
 import com.davidout.api.custom.scoreboard.ScoreboardManager;
@@ -48,6 +49,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.createFiles();
 
         LanguageManager.loadTranslations();
+        LanguageManager.setLanguageBundle(LanguageManager.getCurrentLanguage(), setDefaultTranslationBundle());
 
         this.onStartup();
     }
@@ -56,7 +58,6 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public void onDisable() {
         this.enchantmentManager.unRegisterEnchantments();
         this.onShutdown();
-        LanguageManager.saveTranslations();
     }
 
 
@@ -152,6 +153,8 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     // This method is called on startup to register the commands;
     public abstract List<CustomCommand> registerCommands();
     public abstract List<PluginFile> filesToCreate();
+
+    public abstract TranslationBundle setDefaultTranslationBundle();
 
 
 

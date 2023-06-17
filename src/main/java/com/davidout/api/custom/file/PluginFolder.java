@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class PluginFolder {
 
-    private File dataFolder;
+    private final File dataFolder;
     private final String path;
 
 

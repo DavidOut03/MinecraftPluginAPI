@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added a better way to make custom enchantments">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added LanguageManager">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,13 +185,7 @@
       <workItem from="1686992094606" duration="599000" />
       <workItem from="1686996298201" duration="16000" />
       <workItem from="1687007394855" duration="2591000" />
-    </task>
-    <task id="LOCAL-00047" summary="Legacy release 1.0.2">
-      <created>1685278486681</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1685278486682</updated>
+      <workItem from="1687014258940" duration="5261000" />
     </task>
     <task id="LOCAL-00048" summary="Fixed enchantment target">
       <created>1685280796009</created>
@@ -526,7 +523,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687008708580</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Added LanguageManager">
+      <created>1687018753583</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1687018753584</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +548,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed for 1.18" />
     <MESSAGE value="Official release for 1.7 til 1.13" />
     <MESSAGE value="Added the ScoreboardManager.java" />
     <MESSAGE value="Fixed legacy enchantments" />
@@ -569,6 +572,7 @@
     <MESSAGE value="Added new checks to Item.java" />
     <MESSAGE value="Release legacy 1.2.0" />
     <MESSAGE value="Added a better way to make custom enchantments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a better way to make custom enchantments" />
+    <MESSAGE value="Added LanguageManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added LanguageManager" />
   </component>
 </project>

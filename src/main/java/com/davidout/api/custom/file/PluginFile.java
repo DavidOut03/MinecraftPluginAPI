@@ -28,8 +28,7 @@ public class PluginFile {
 
     public void generateFile() throws IOException {
         if(!folder.pathExists()) folder.createPath();
-        if(file.exists()) return;
-        file.createNewFile();
+        if(!file.exists()) file.createNewFile();
         this.yamlConfiguration = YamlConfiguration.loadConfiguration(file);
     }
 
