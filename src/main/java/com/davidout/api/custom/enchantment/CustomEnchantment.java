@@ -1,5 +1,6 @@
 package com.davidout.api.custom.enchantment;
 
+import com.davidout.api.custom.enchantment.factory.EnchantmentFunction;
 import com.davidout.api.enums.EnchantmentTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.enchantments.Enchantment;
@@ -17,61 +18,28 @@ import java.util.Map;
 
 public abstract class CustomEnchantment extends EnchantmentWrapper implements Listener {
 
-    private String name;
-    private int minLevel;
-    private int maxLevel;
-    private List<EnchantmentTarget> targets;
+    private final EnchantmentDetails details;
 
-
-    public CustomEnchantment(String name, int maxLevel) {
-        super(EnchantmentManager.getCustomEnchants().size());
-        this.name = name;
-        this.minLevel = 1;
-        this.maxLevel = maxLevel;
-        this.targets = new ArrayList<>();
-
-        this.targets.add(EnchantmentTarget.ALL);
+    public CustomEnchantment(EnchantmentDetails details) {
+        super(details.getName());
+        this.details = details;
     }
-
-    public CustomEnchantment(String name, int maxLevel, EnchantmentTarget target) {
-        super(EnchantmentManager.getCustomEnchants().size());
-        this.name = name;
-        this.minLevel = 1;
-        this.maxLevel = maxLevel;
-        this.targets = new ArrayList<>();
-
-        this.targets.add(target);
-    }
-
-    public CustomEnchantment(String name, int maxLevel, List<EnchantmentTarget> targets) {
-        super(EnchantmentManager.getCustomEnchants().size());
-        this.name = name;
-        this.minLevel = 1;
-        this.maxLevel = maxLevel;
-        this.targets = new ArrayList<>();
-        this.targets.addAll(targets);
-    }
-
-
 
     @Override
     public String getName() {
-        return this.name;
+        return this.details.getName();
     }
+
     public String getDisplayName() {
         return getName().substring(0, 1).toUpperCase() + getName().substring(1).replace("-", " ").replace("_", " ");
     }
 
     @Override
     public int getStartLevel() {
-        return this.minLevel;
+        return this.details.getMinLevel();
     }
-
     @Override
-    public int getMaxLevel() {
-        return this.maxLevel;
-
-    }
+    public int getMaxLevel() {return this.details.getMaxLevel();}
 
     @Override
     public boolean conflictsWith(Enchantment other) {
@@ -82,7 +50,7 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     @Override
     public boolean canEnchantItem(ItemStack item) {
 
-        for (EnchantmentTarget currentTarget : this.targets) {
+        for (EnchantmentTarget currentTarget : this.details.getTargets()) {
             if(!currentTarget.includes(item)) continue;
             return true;
         }
@@ -98,12 +66,20 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
      *
      */
 
-    public List<EnchantmentTarget> getTargets() {return targets;}
-    public void addTarget(EnchantmentTarget target) {targets.add(target);}
-    public void removeTarget(EnchantmentTarget target) {targets.remove(target);}
+    /*
 
+    Abstract methods
+
+     */
     public abstract List<Class<? extends Event>> getEvents();
     public abstract void onAction(Event event);
+
+    public String getDescription() {return details.getDescription();}
+    public List<EnchantmentTarget> getTargets() {return details.getTargets();}
+    public void addTarget(EnchantmentTarget target) {details.getTargets().add(target);}
+    public void removeTarget(EnchantmentTarget target) {details.getTargets().remove(target);}
+
+
 
     public void registerEnchantment(Plugin plugin) {
 
@@ -130,13 +106,13 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     public void unRegisterEnchantment() {
 
         try {
-            Field byIdField = Enchantment.class.getDeclaredField("byId");
+            Field byIdField = Enchantment.class.getDeclaredField("byKey");
             Field byNameField = Enchantment.class.getDeclaredField("byName");
             byIdField.setAccessible(true);
             byNameField.setAccessible(true);
             Map<Integer, Enchantment> byId = (Map<Integer, Enchantment>) byIdField.get(null);
             Map<String, Enchantment> byName = (Map<String, Enchantment>) byNameField.get(null);
-            byId.remove( getId());
+            byId.remove( getKey());
             byName.remove( getName());
         } catch (Exception ex) {
             Bukkit.getLogger().warning("Could not unregister custom enchantment: '" + getName() + "' due to an error: ");

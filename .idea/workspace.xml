@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added new checks to Item.java">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed language manager issues.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="legacy" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,6 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
     &quot;last_directory_selection&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/custom&quot;,
     &quot;last_opened_file_path&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/scoreboard&quot;,
@@ -180,41 +179,11 @@
       <workItem from="1685912819282" duration="167000" />
       <workItem from="1686150705413" duration="649000" />
       <workItem from="1686952040893" duration="1684000" />
-    </task>
-    <task id="LOCAL-00044" summary="Added the ScoreboardManager.java">
-      <created>1685269805640</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1685269805640</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Added the ScoreboardManager.java">
-      <created>1685269932907</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1685269932907</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Fixed legacy enchantments">
-      <created>1685278438294</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1685278438294</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Legacy release 1.0.2">
-      <created>1685278486681</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1685278486682</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Fixed enchantment target">
-      <created>1685280796009</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1685280796009</updated>
+      <workItem from="1686954712866" duration="2542000" />
+      <workItem from="1686992094606" duration="599000" />
+      <workItem from="1686996298201" duration="16000" />
+      <workItem from="1687007394855" duration="2591000" />
+      <workItem from="1687014258940" duration="8478000" />
     </task>
     <task id="LOCAL-00049" summary="Changed enchantment name in lore.">
       <created>1685281857221</created>
@@ -524,7 +493,42 @@
       <option name="project" value="LOCAL" />
       <updated>1685912980791</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Release legacy 1.2.0">
+      <created>1686953970208</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1686953970208</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Release legacy 1.2.0">
+      <created>1686954074460</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1686954074460</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Added a better way to make custom enchantments">
+      <created>1687008708580</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1687008708580</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Added LanguageManager">
+      <created>1687018753583</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1687018753584</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Fixed language manager issues.">
+      <created>1687019635707</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1687019635707</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,10 +546,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated lore" />
-    <MESSAGE value="Test work for mutiple versions" />
-    <MESSAGE value="Fixed for 1.18" />
-    <MESSAGE value="Official release for 1.7 til 1.13" />
     <MESSAGE value="Added the ScoreboardManager.java" />
     <MESSAGE value="Fixed legacy enchantments" />
     <MESSAGE value="Legacy release 1.0.2" />
@@ -567,6 +567,10 @@
     <MESSAGE value="Scoreboard reset line fix" />
     <MESSAGE value="Fixed Scoreboard line bug.&#10;Added ItemCreator.java to create items&#10;Added own custom enchantment target for more enchantment customization" />
     <MESSAGE value="Added new checks to Item.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new checks to Item.java" />
+    <MESSAGE value="Release legacy 1.2.0" />
+    <MESSAGE value="Added a better way to make custom enchantments" />
+    <MESSAGE value="Added LanguageManager" />
+    <MESSAGE value="Fixed language manager issues." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed language manager issues." />
   </component>
 </project>
