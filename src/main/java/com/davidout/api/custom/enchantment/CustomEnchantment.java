@@ -21,7 +21,7 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     private final EnchantmentDetails details;
 
     public CustomEnchantment(EnchantmentDetails details) {
-        super(details.getName());
+        super(EnchantmentManager.getCustomEnchants().size());
         this.details = details;
     }
 
@@ -106,13 +106,13 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
     public void unRegisterEnchantment() {
 
         try {
-            Field byIdField = Enchantment.class.getDeclaredField("byKey");
+            Field byIdField = Enchantment.class.getDeclaredField("byId");
             Field byNameField = Enchantment.class.getDeclaredField("byName");
             byIdField.setAccessible(true);
             byNameField.setAccessible(true);
             Map<Integer, Enchantment> byId = (Map<Integer, Enchantment>) byIdField.get(null);
             Map<String, Enchantment> byName = (Map<String, Enchantment>) byNameField.get(null);
-            byId.remove( getKey());
+            byId.remove( getId());
             byName.remove( getName());
         } catch (Exception ex) {
             Bukkit.getLogger().warning("Could not unregister custom enchantment: '" + getName() + "' due to an error: ");
