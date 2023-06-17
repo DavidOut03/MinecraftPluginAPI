@@ -1,5 +1,6 @@
 package com.davidout.api.custom.enchantment;
 
+import com.davidout.api.custom.enchantment.factory.EnchantmentFunction;
 import com.davidout.api.enums.EnchantmentTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.enchantments.Enchantment;

@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Release legacy 1.2.0">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/EnchantmentFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/EnchantmentFunction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/FactoryEnchantment.java" afterDir="false" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added a better way to make custom enchantments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,14 +181,7 @@
       <workItem from="1686954712866" duration="2542000" />
       <workItem from="1686992094606" duration="599000" />
       <workItem from="1686996298201" duration="16000" />
-      <workItem from="1687007394855" duration="1222000" />
-    </task>
-    <task id="LOCAL-00046" summary="Fixed legacy enchantments">
-      <created>1685278438294</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1685278438294</updated>
+      <workItem from="1687007394855" duration="2591000" />
     </task>
     <task id="LOCAL-00047" summary="Legacy release 1.0.2">
       <created>1685278486681</created>
@@ -532,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686954074460</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Added a better way to make custom enchantments">
+      <created>1687008708580</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1687008708580</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test work for mutiple versions" />
     <MESSAGE value="Fixed for 1.18" />
     <MESSAGE value="Official release for 1.7 til 1.13" />
     <MESSAGE value="Added the ScoreboardManager.java" />
@@ -575,6 +568,7 @@
     <MESSAGE value="Fixed Scoreboard line bug.&#10;Added ItemCreator.java to create items&#10;Added own custom enchantment target for more enchantment customization" />
     <MESSAGE value="Added new checks to Item.java" />
     <MESSAGE value="Release legacy 1.2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Release legacy 1.2.0" />
+    <MESSAGE value="Added a better way to make custom enchantments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a better way to make custom enchantments" />
   </component>
 </project>

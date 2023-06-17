@@ -1,7 +1,5 @@
 package com.davidout.api.custom.file;
 
-import com.davidout.api.MinecraftPlugin;
-import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -9,55 +7,48 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.Set;
 
 public class PluginFile {
 
     private YamlConfiguration yamlConfiguration;
-    private String folderPath;
-    private String fileName;
-
     private File file;
-    private File dataFolder;
+
+    private final PluginFolder folder;
+    private final String fileName;
+
 
     public String getFileName() {return fileName;}
-    public String getFolderPath() {return folderPath;}
-    public String getAbsoluteFolderPath() {return this.file.getAbsolutePath();}
 
 
-    public PluginFile(String folderPath, String fileName) {
-        this.folderPath = folderPath;
+    public PluginFile(PluginFolder folder, String fileName) {
+        this.folder = folder;
         this.fileName = fileName;
+        this.file = new File(folder.getFolder(), fileName + ".yml");
     }
 
     public void generateFile() throws IOException {
-        this.dataFolder = MinecraftPlugin.getPlugin().getDataFolder();
-        if(!dataFolder.exists()) dataFolder.mkdir();
-        if(!new File(dataFolder, folderPath).exists()) new File(dataFolder, folderPath).mkdir();
-        this.file = new File(dataFolder, folderPath + "/" + fileName + ".yml");
+        if(!folder.pathExists()) folder.createPath();
         if(file.exists()) return;
         file.createNewFile();
-
         this.yamlConfiguration = YamlConfiguration.loadConfiguration(file);
     }
 
     public void reloadFile() {this.yamlConfiguration = YamlConfiguration.loadConfiguration(file);}
 
     public void saveFile() throws IOException {
-        if(this.yamlConfiguration == null) return;
-        if(!dataFolder.exists()) dataFolder.mkdir();
-        if(!file.exists())  file.createNewFile();
-       this.yamlConfiguration.save(file);
+        if(!folder.pathExists()) folder.createPath();
+        if(!file.exists()) generateFile();
+            this.yamlConfiguration.save(file);
     }
 
     public void setData(String dataPath, Object value) throws IOException {
-        if(yamlConfiguration == null) {
-            this.generateFile();
-            return;
-        }
-        yamlConfiguration.set(dataPath, value);
+        if(yamlConfiguration == null) this.generateFile();
+            yamlConfiguration.set(dataPath, value);
     }
+
+
+    public String getAbsoluteFolderPath() {return this.file.getAbsolutePath();}
+
     public Object getData(String dataPath) {return (yamlConfiguration == null) ? null : yamlConfiguration.get(dataPath);}
 
     public String getString(String dataPath) {
