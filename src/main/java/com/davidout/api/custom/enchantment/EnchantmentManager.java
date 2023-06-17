@@ -11,22 +11,23 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class EnchantmentManager {
 
-    private static List<CustomEnchantment> customEnchantList = new ArrayList<>();
-    private MinecraftPlugin plugin;
+    private static final List<CustomEnchantment> customEnchantList = new ArrayList<>();
+    private final MinecraftPlugin plugin;
 
     public EnchantmentManager(MinecraftPlugin plugin) {
         this.plugin = plugin;
     }
 
     public void addEnchantment(CustomEnchantment enchant) {
-        this.customEnchantList.add(enchant);
+        customEnchantList.add(enchant);
         enchant.registerEnchantment(plugin);
     }
     public void removeEnchantment(CustomEnchantment enchant) {
-        this.customEnchantList.remove(enchant);
+        customEnchantList.remove(enchant);
         enchant.unRegisterEnchantment();
     }
 
@@ -37,9 +38,9 @@ public class EnchantmentManager {
      *
      */
 
-    public void registerEnchantments() {this.customEnchantList.forEach(customEnchant -> customEnchant.registerEnchantment(plugin));}
+    public void registerEnchantments() {customEnchantList.forEach(customEnchant -> customEnchant.registerEnchantment(plugin));}
     public void unRegisterEnchantments() {
-        this.customEnchantList.forEach(enchant -> enchant.unRegisterEnchantment());
+        customEnchantList.forEach(CustomEnchantment::unRegisterEnchantment);
     }
 
 
@@ -50,6 +51,11 @@ public class EnchantmentManager {
      *
      */
 
+    public static boolean containsEnchantment(Enchantment enchantment, ItemStack itemStack) {
+        if(itemStack == null || itemStack.getItemMeta() == null) return false;
+        return Objects.requireNonNull(itemStack.getItemMeta()).hasEnchant(enchantment) || itemStack.getItemMeta().hasEnchant(Objects.requireNonNull(Enchantment.getByKey(enchantment.getKey())));
+    }
+
 
     public static List<CustomEnchantment> getCustomEnchants() {
         return customEnchantList;
@@ -58,32 +64,25 @@ public class EnchantmentManager {
 
     public static boolean addCustomEnchantment(ItemStack item, Enchantment enchantment, int level) {
         CustomEnchantment customEnchantment = getEnchantByName(enchantment.getName());
-
-        if(!canEnchantItem(customEnchantment, item)) return false;
-        ItemMeta itemMeta = item.getItemMeta();
-        itemMeta.addEnchant(customEnchantment, level, true);
-        itemMeta.setLore(updateLore(itemMeta.getLore(), customEnchantment, level));
-        item.setItemMeta(itemMeta);
-        return true;
+        return addCustomEnchantment(item, level, customEnchantment);
     }
 
     public static boolean addCustomEnchantment(ItemStack item, String name, int level) {
         CustomEnchantment enchantment = getEnchantByName(name);
-        if(!canEnchantItem(enchantment, item)) return false;
-        ItemMeta itemMeta = item.getItemMeta();
-            itemMeta.addEnchant(enchantment, level, true);
-            itemMeta.setLore(updateLore(itemMeta.getLore(), enchantment, level));
-            item.setItemMeta(itemMeta);
-        return true;
+        return addCustomEnchantment(item, level, enchantment);
     }
 
-    public static boolean addCustomEnchantment(ItemStack item, CustomEnchantment enchantment, int level) {
+    private static boolean addCustomEnchantment(ItemStack item, int level, CustomEnchantment enchantment) {
         if(!canEnchantItem(enchantment, item)) return false;
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.addEnchant(enchantment, level, true);
         itemMeta.setLore(updateLore(itemMeta.getLore(), enchantment, level));
         item.setItemMeta(itemMeta);
         return true;
+    }
+
+    public static boolean addCustomEnchantment(ItemStack item, CustomEnchantment enchantment, int level) {
+        return addCustomEnchantment(item, level, enchantment);
     }
 
     private static List<String> updateLore(List<String> currentLore, CustomEnchantment enchantment, int level) {
@@ -96,7 +95,7 @@ public class EnchantmentManager {
         if(!currentLore.contains(addedLore)) returned.add(addedLore);
 
 
-        if(currentLore != null && !currentLore.isEmpty()) returned.addAll(currentLore);
+        if(!currentLore.isEmpty()) returned.addAll(currentLore);
         return returned;
     }
 
