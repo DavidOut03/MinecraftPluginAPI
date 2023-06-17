@@ -32,6 +32,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      */
 
 
+
     private EnchantmentManager enchantmentManager;
     private ScoreboardManager scoreboardManager;
     private CommandManager commandManager;
@@ -49,7 +50,7 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.createFiles();
 
         LanguageManager.loadTranslations();
-        LanguageManager.setLanguageBundle(LanguageManager.getCurrentLanguage(), setDefaultTranslationBundle());
+        LanguageManager.setLanguageBundle(LanguageManager.getCurrentLanguage(), getDefaultTranslationBundle());
 
         this.onStartup();
     }
@@ -134,6 +135,20 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     public PluginManager getPluginManager() {return this.pm;}
 
 
+    /**
+     *
+     * Methods which can be overidden
+     *
+     */
+
+    public TranslationBundle getDefaultTranslationBundle() {
+        TranslationBundle bundle = new TranslationBundle("en");
+        bundle.setMessage("example", "This is an example message.");
+        bundle.setMessage("onEnable", "This plugin enabled.");
+        bundle.setMessage("onDisable", "This plugin disabled.");
+
+        return bundle;
+    }
 
     /**
      *
@@ -153,10 +168,6 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     // This method is called on startup to register the commands;
     public abstract List<CustomCommand> registerCommands();
     public abstract List<PluginFile> filesToCreate();
-
-    public abstract TranslationBundle setDefaultTranslationBundle();
-
-
 
 
 }

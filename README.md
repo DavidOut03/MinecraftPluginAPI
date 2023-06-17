@@ -1,5 +1,15 @@
 # MinecraftPluginAPI
-MinecraftPluginAPI is a Minecraft Spigot Plugin tool which simplifies the process of creating your own minecrafg plugin.
+MinecraftPluginAPI is a Minecraft Spigot Plugin tool which simplifies and speeds up the process of creating your own minecraft plugin.
+
+# Index
+-  [How do i install this library?](#how-to-install)
+-  [How can i create my first plugin?](#create-your-own-plugin)
+-  [How can i create my own command?](#how-do-i-create-my-own-custom-command-and-sub-commands)
+-  [How can i edit the language and their messages?](#how-do-i-manage-the-languages)
+-  [How can i create my own custom enchantments?](#how-do-i-create-my-own-custom-enchantments)
+-  [How do i create a custom GUI?](#how-do-i-create-my-own-guis)
+-  [How do i create my own scoreboard?](#how-can-i-create-a-custom-scoreboard)
+-  [How do i manage my files?](#how-do-i-create-my-own-guis)
 
 ## How to Install
 You can use this maven repository.
@@ -23,7 +33,7 @@ My github packages repository.
         <dependency>
             <groupId>com.davidout.api.minecraft</groupId>
             <artifactId>minecraft-plugin-api</artifactId>
-            <version>1.0.1</version>
+            <version>1.3.0</version>
         </dependency>
 ```
 
@@ -32,7 +42,7 @@ My github packages repository.
         <dependency>
             <groupId>com.davidout.api.minecraft</groupId>
             <artifactId>minecraft-plugin-api</artifactId>
-            <version>1.0.1-LEGACY</version>
+            <version>1.3.0-LEGACY</version>
         </dependency>
 ```
 **Add this to your shaded maven plugin configuration**
@@ -76,7 +86,42 @@ public class YourPlugin extends MinecraftPlugin {
 }
 ```
 
-### How do i create my own custom command and sub commands?
+## How do i manage the languages
+
+```java
+import com.davidout.api.custom.language.LanguageManager;
+
+public class YourPlugin extends MinecraftPlugin {
+
+    @Override
+    public void onStartup() {
+        // use this method to set the current language.
+        LanguageManager.setLanguage("en");
+    }
+    
+    // You can override the default language bundle with this method.
+    @Override
+    public TranslationBundle getDefaultTranslationBundle() {
+        TranslationBundle bundle = new TranslationBundle("en");
+        bundle.setMessage("example", "This is a test message.");
+        bundle.setMessage("onEnable", "&aEnabled custom enchantments plugin.");
+        bundle.setMessage("onDisable", "&cDisabled custom enchantments plugin.");
+
+        return bundle;
+    }
+}
+```
+
+```yaml
+/* You can edit all the messages in the /language/default.yml or /langauage/(language).yml \*
+message:
+  example: 'This is a test message.'
+  onEnable: '&aEnabled custom enchantments plugin.'
+  onDisable: '&cDisabled custom enchantments plugin.'
+```
+
+
+## How do i create my own custom command and sub commands?
 
 ```java
 public class ExampleCommand implements CustomCommand {
@@ -120,7 +165,7 @@ public class ExampleCommand implements CustomCommand {
 
 ```
 
-#### Create your subcommand
+### Create your subcommand
 ```java
 public class OpenCommand implements CustomCommand {
     @Override
@@ -172,11 +217,14 @@ public class OpenCommand implements CustomCommand {
     }
 }
 ```
-### How do i create my own custom enchantments?
+## How do i create my own custom enchantments?
+
+### Option 1
 ```java
 public class Speed extends CustomEnchantment {
-    public Speed(String name, int maxLevel) {
-        super(name, maxLevel);
+    
+    public Speed() {
+        super(new EnchantmentDetails("speed", 2, "Receive a speed boost with these boots.", EnchantmentTarget.BOOTS));
     }
 
     @Override
@@ -199,12 +247,59 @@ public class Speed extends CustomEnchantment {
 }
 ```
 
-#### How do i add the enchantment to an item?
+### Register the enchantment
+
 ```java
-  EnchantmentManager.addCustomEnchantment(p.getInventory().getItemInMainHand(), "speed", 1);
+
+// register the enchantment
+
+public class YourPlugin extends MinecraftPlugin {
+
+    @Override
+    public void onStartup() {
+        getEnchantmentManager().addEnchantment(new Speed());
+    }
+}
+
 ```
 
-### How do i create my own GUIS?
+### Option 2
+
+```java
+
+import com.davidout.api.custom.enchantment.CustomEnchantment;
+import com.davidout.api.custom.enchantment.EnchantmentDetails;
+import com.davidout.api.custom.enchantment.factory.EnchantmentFactory;
+import com.davidout.api.custom.event.ArmorEquipEvent;
+
+public class YourPlugin extends MinecraftPlugin {
+
+    @Override
+    public void onStartup() {
+        EnchantmentDetails enchantmentDetails = new EnchantmentDetails("speed", 2);
+        
+        CustomEnchantment enchantment = EnchantmentFactory.createEnchantment(enchantmentDetails, ArmorEquipEvent.class, event -> {
+        
+            // your logic
+        });
+        
+        getEnchantmentManager().addEnchantment(enchantment);
+    }
+}
+
+```
+
+
+
+
+### How do i add the enchantment to an item?
+```java
+  int level = 2; 
+  CustomEnchantment enchantment = new Speed();
+  EnchantmentManager.addCustomEnchantment(p.getInventory().getItemInMainHand(), /* Enchantment name or class */ enchantment, level);
+```
+
+## How do i create my own GUIS?
 ```java
 public class ExampleGUI extends GUI {
 
@@ -231,19 +326,113 @@ public class ExampleGUI extends GUI {
 
 ```
 
-#### How can i add it to the plugin?
+### How can i add it to the plugin?
 ```java
       this.getGuiManager().addGUI(new ExampleGUI());
 ```
 
 
-#### How can a player open the GUI?
+### How can a player open the GUI?
 ```java
         ExampleGUI gui1 = new ExampleGUI();
         gui1.openInventory(player);
 ```
    
+## How can i create a custom scoreboard?
+```java
 
+public class Board extends CustomScoreboard {
+    @Override
+    public String getName() {
+        return "board";
+    }
+
+    @Override
+    public List<String> update(Player player) {
+        setTitle("   &9Once A Year   ");
+
+        return Arrays.asList(
+                "&7&m                              ",
+                "   &b&lPlay time: &f" + PlayTimeCounter.getFormatedTime(player),
+                " ",
+                "   &b&lX: &f" + player.getLocation().getBlockX(),
+                "   &b&lY: &f" + player.getLocation().getBlockY(),
+                "   &b&lZ: &f" + player.getLocation().getBlockZ(),
+                "&c&7&m                              "
+        );
+    }
+
+    @Override
+    public boolean useUpdate() {
+        return true;
+    }
+
+    @Override
+    public long updateTimeInSeconds() {
+        return (long) 1;
+    }
+
+}
+```
+### Register the scoreboard
+
+```java
+// register the scoreboard
+
+public class YourPlugin extends MinecraftPlugin {
+
+    @Override
+    public void onStartup() {
+        getScoreboardManager().registerScoreboard(board);
+    }
+}
+
+```
+### How i a add a player to a scoreboard
+```java
+// Set a players scoreboard
+ YourPlugin.getPlugin().getScoreboardManager().setScoreboard(e.getPlayer(), /* the scoreboard you want */  board );
+
+```
+
+## How do i manage my files?
+
+### Create a file.
+
+```java
+
+    PluginFolder folder = new PluginFolder("settings");
+    PluginFile file = new PluginFile(folder, "settings");
+    
+    // Create the path and the file.
+    folder.createPath();
+    file.generateFile();
+
+```
+
+### Edit a file
+
+```java
+
+    PluginFolder folder = new PluginFolder("settings");
+    PluginFile file = new PluginFile(folder, "settings");
+    
+    file.setData("settings.keepInventory", false);
+    file.setData("settings.sayHello", true);
+    file.saveFile();
+
+```
+
+### Reload a file
+
+```java
+
+    PluginFolder folder = new PluginFolder("settings");
+    PluginFile file = new PluginFile(folder, "settings");
+    
+    file.reloadFile();
+
+```
 
 
 
