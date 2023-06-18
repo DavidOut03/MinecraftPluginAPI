@@ -397,6 +397,33 @@ public class YourPlugin extends MinecraftPlugin {
 
 ## How do i manage my files?
 
+### Create files or folders when the server is starting.
+
+```java
+public class YourPlugin extends MinecraftPlugin {
+
+
+    @Override
+    public List<PluginFile> filesToCreate() {
+        return Arrays.asList(
+                new PluginFile("test", "test")
+        );
+    }
+
+    @Override
+    public List<PluginFolder> foldersToCreate() {
+        return Arrays.asList(
+                new PluginFolder("test")
+        );
+    }
+    
+}
+
+```
+
+
+
+
 ### Create a file.
 
 ```java

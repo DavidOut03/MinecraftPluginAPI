@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed language manager issues.">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Release 1.4.0-LEGACY">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="legacy" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -184,20 +183,7 @@
       <workItem from="1686996298201" duration="16000" />
       <workItem from="1687007394855" duration="2591000" />
       <workItem from="1687014258940" duration="8478000" />
-    </task>
-    <task id="LOCAL-00049" summary="Changed enchantment name in lore.">
-      <created>1685281857221</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1685281857221</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Changed enchantment name in lore.">
-      <created>1685281930588</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1685281930588</updated>
+      <workItem from="1687097353436" duration="140000" />
     </task>
     <task id="LOCAL-00051" summary="Added new method to add the custom enchantment">
       <created>1685368402292</created>
@@ -528,7 +514,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687019635707</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Release 1.4.0-LEGACY">
+      <created>1687029724238</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1687029724238</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Release 1.4.0-LEGACY">
+      <created>1687029752383</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1687029752383</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,7 +546,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added the ScoreboardManager.java" />
     <MESSAGE value="Fixed legacy enchantments" />
     <MESSAGE value="Legacy release 1.0.2" />
     <MESSAGE value="Fixed enchantment target" />
@@ -571,6 +570,7 @@
     <MESSAGE value="Added a better way to make custom enchantments" />
     <MESSAGE value="Added LanguageManager" />
     <MESSAGE value="Fixed language manager issues." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed language manager issues." />
+    <MESSAGE value="Release 1.4.0-LEGACY" />
+    <option name="LAST_COMMIT_MESSAGE" value="Release 1.4.0-LEGACY" />
   </component>
 </project>

@@ -18,6 +18,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class MinecraftPlugin extends JavaPlugin {
@@ -86,6 +87,8 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     private void createFiles() {
         FileManager.setFiles(filesToCreate());
+        FileManager.setFolderList(foldersToCreate());
+
         FileManager.createFolders();
         FileManager.createFiles();
 
@@ -150,6 +153,14 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         return bundle;
     }
 
+    public List<PluginFile> filesToCreate() {
+        return Arrays.asList();
+    }
+
+    public List<PluginFolder> foldersToCreate() {
+        return Arrays.asList();
+    }
+
     /**
      *
      *  ABSTRACT METHODS
@@ -167,7 +178,6 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
     // This method is called on startup to register the commands;
     public abstract List<CustomCommand> registerCommands();
-    public abstract List<PluginFile> filesToCreate();
 
 
 }
