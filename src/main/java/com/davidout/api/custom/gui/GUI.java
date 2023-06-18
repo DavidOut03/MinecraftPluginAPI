@@ -1,12 +1,9 @@
 package com.davidout.api.custom.gui;
 
-import com.davidout.api.utillity.TextUtils;
+import com.davidout.api.utillity.text.TextUtils;
 import com.davidout.api.utillity.item.Item;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.Utility;
 import org.bukkit.entity.Player;
-import org.bukkit.event.inventory.ClickType;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;

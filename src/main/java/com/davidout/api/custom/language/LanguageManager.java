@@ -3,17 +3,16 @@ package com.davidout.api.custom.language;
 import com.davidout.api.custom.file.FileManager;
 import com.davidout.api.custom.file.PluginFile;
 import com.davidout.api.custom.file.PluginFolder;
-import com.davidout.api.utillity.TextUtils;
+import com.davidout.api.utillity.text.TextUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class LanguageManager {
 
-    private static final Map<String, TranslationBundle> languageBundles = new HashMap<>();
+    private static final Map<String, LanguageBundle> languageBundles = new HashMap<>();
     private static final PluginFolder folder = new PluginFolder("/language");
     private static String currentLanguage = "default";
 
@@ -31,7 +30,7 @@ public class LanguageManager {
 
     public static PluginFolder getFolder() {return folder;}
 
-    public static void setLanguageBundle(String languageBundle, TranslationBundle translationBundle) {
+    public static void setLanguageBundle(String languageBundle, LanguageBundle translationBundle) {
         languageBundles.put(languageBundle, translationBundle);
         saveTranslationBundle(languageBundle, translationBundle);
     }
@@ -43,7 +42,7 @@ public class LanguageManager {
             if(!cf.getName().endsWith(".yml")) return;
             YamlConfiguration yamlConfiguration = YamlConfiguration.loadConfiguration(cf);
             String languageName = cf.getName().replace(".yml", "");
-            TranslationBundle bundle = new TranslationBundle(languageName);
+            LanguageBundle bundle = new LanguageBundle(languageName);
 
             if(yamlConfiguration.getConfigurationSection("message") == null) return;
             for(String currentKey : yamlConfiguration.getConfigurationSection("message").getKeys(false)) {
@@ -55,7 +54,7 @@ public class LanguageManager {
         });
     }
 
-    protected static void saveTranslationBundle(String language, TranslationBundle bundle) {
+    protected static void saveTranslationBundle(String language, LanguageBundle bundle) {
         PluginFile file = FileManager.getFile(language);
         if(file == null) {
             file = FileManager.createFile(folder, language);

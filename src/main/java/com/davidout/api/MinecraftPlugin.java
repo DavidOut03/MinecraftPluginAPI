@@ -8,7 +8,7 @@ import com.davidout.api.custom.file.PluginFile;
 import com.davidout.api.custom.file.PluginFolder;
 import com.davidout.api.custom.gui.GUIManager;
 import com.davidout.api.custom.language.LanguageManager;
-import com.davidout.api.custom.language.TranslationBundle;
+import com.davidout.api.custom.language.LanguageBundle;
 import com.davidout.api.listener.ArmorListener;
 import com.davidout.api.listener.LeaveListener;
 import com.davidout.api.custom.scoreboard.ScoreboardManager;
@@ -51,7 +51,8 @@ public abstract class MinecraftPlugin extends JavaPlugin {
         this.createFiles();
 
         LanguageManager.loadTranslations();
-        LanguageManager.setLanguageBundle(LanguageManager.getCurrentLanguage(), getDefaultTranslationBundle());
+        LanguageManager.setLanguageBundle(getDefaultTranslationBundle().getLanguage(), getDefaultTranslationBundle());
+        LanguageManager.setLanguage(getDefaultTranslationBundle().getLanguage());
 
         this.onStartup();
     }
@@ -144,8 +145,8 @@ public abstract class MinecraftPlugin extends JavaPlugin {
      *
      */
 
-    public TranslationBundle getDefaultTranslationBundle() {
-        TranslationBundle bundle = new TranslationBundle("en");
+    public LanguageBundle getDefaultTranslationBundle() {
+        LanguageBundle bundle = new LanguageBundle("en");
         bundle.setMessage("example", "This is an example message.");
         bundle.setMessage("onEnable", "This plugin enabled.");
         bundle.setMessage("onDisable", "This plugin disabled.");

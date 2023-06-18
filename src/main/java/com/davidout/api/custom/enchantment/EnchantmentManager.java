@@ -1,15 +1,13 @@
 package com.davidout.api.custom.enchantment;
 
 import com.davidout.api.MinecraftPlugin;
-import com.davidout.api.custom.enchantment.CustomEnchantment;
-import com.davidout.api.utillity.RomanNumber;
+import com.davidout.api.utillity.text.RomanNumber;
 import org.bukkit.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 

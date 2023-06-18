@@ -1,5 +1,7 @@
-package com.davidout.api.utillity;
+package com.davidout.api.utillity.player;
 
+import com.davidout.api.utillity.text.TextUtils;
+import com.davidout.api.utillity.server.ServerUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;

@@ -1,4 +1,4 @@
-package com.davidout.api.utillity;
+package com.davidout.api.utillity.server;
 
 import org.bukkit.Bukkit;
 

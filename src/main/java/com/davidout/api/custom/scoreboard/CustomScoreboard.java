@@ -1,12 +1,11 @@
 package com.davidout.api.custom.scoreboard;
 
 import com.davidout.api.MinecraftPlugin;
-import com.davidout.api.utillity.TextUtils;
+import com.davidout.api.utillity.text.TextUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
