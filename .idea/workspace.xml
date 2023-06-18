@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added selection Utillity class." />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Split MainPlugin.java class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/plugin/PluginLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/plugin/PluginLoader.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +78,7 @@
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\customevents" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.davidout.api.utillity.location" />
       <recent name="com.davidout.api.listeners" />
       <recent name="com.davidout.api.enums" />
     </key>
@@ -181,14 +191,8 @@
       <workItem from="1687007394855" duration="2591000" />
       <workItem from="1687014258940" duration="8478000" />
       <workItem from="1687097353436" duration="140000" />
-      <workItem from="1687097620115" duration="1561000" />
-    </task>
-    <task id="LOCAL-00053" summary="Added capetelize first letter to enchantments">
-      <created>1685370781736</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1685370781736</updated>
+      <workItem from="1687097620115" duration="2547000" />
+      <workItem from="1687112069719" duration="6005000" />
     </task>
     <task id="LOCAL-00054" summary="Added capetelize first letter to enchantments">
       <created>1685370802242</created>
@@ -526,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687099733221</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Split MainPlugin.java class">
+      <created>1687100840459</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1687100840459</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed enchantment target" />
     <MESSAGE value="Changed enchantment name in lore." />
     <MESSAGE value="Added new method to add the custom enchantment" />
     <MESSAGE value="Added capetelize first letter to enchantments" />
@@ -569,6 +579,7 @@
     <MESSAGE value="Release 1.4.0-LEGACY" />
     <MESSAGE value="Added the abillity to add files and folders on startup" />
     <MESSAGE value="Added selection Utillity class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added selection Utillity class." />
+    <MESSAGE value="Split MainPlugin.java class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Split MainPlugin.java class" />
   </component>
 </project>

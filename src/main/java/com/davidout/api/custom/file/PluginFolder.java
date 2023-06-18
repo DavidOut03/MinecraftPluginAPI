@@ -8,42 +8,34 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-public class PluginFolder {
-
+public class PluginFolder extends File {
     private final File dataFolder;
-    private final String path;
-
 
     public PluginFolder(String path) {
-        this.path = path;
+        super(MinecraftPlugin.getPlugin().getDataFolder(), path);
         this.dataFolder = MinecraftPlugin.getPlugin().getDataFolder();
     }
 
-    public boolean createPath() {
-        if(dataFolder.exists()) return true;
-        boolean worked = dataFolder.mkdir();
-
-        if(!worked) return false;
-        if(new File(dataFolder, path).exists()) return true;
-        return new File(dataFolder, path).mkdir();
+    public PluginFolder(PluginFolder folder, String name) {
+        super(folder.getPath(), name);
+        this.dataFolder = MinecraftPlugin.getPlugin().getDataFolder();
     }
 
-    public boolean pathExists() {
-        return dataFolder.exists() && new File(dataFolder, path).exists();
+    public void createPath() {
+        if(!dataFolder.exists()) dataFolder.mkdir();
+        if(this.exists()) return;
+        this.mkdir();
     }
 
-
-    public String getAbsoluteFolderPath() {return this.getFolder().getAbsolutePath();}
-    public String getPath() {return this.path;}
-    public String getFolderName() {return this.path.split("/")[this.path.split("/").length - 1];}
-
-    public File getFolder() {
-       return new File(dataFolder, path);
+    public boolean pathExists() {return dataFolder.exists() && this.exists();
     }
+
+    public String getFolderName() {return getPath().split("/")[getPath().split("/").length - 1];}
+
 
     public List<File> getFilesInFolder() {
-        if(getFolder() == null) return Collections.emptyList();
-        return Arrays.asList(Objects.requireNonNull(this.getFolder().listFiles()));
+        if(!this.exists()) return Collections.emptyList();
+        return Arrays.asList(Objects.requireNonNull(this.listFiles()));
     }
 
 }

@@ -4,6 +4,7 @@ import com.davidout.api.MinecraftPlugin;
 import com.davidout.api.custom.file.FileManager;
 import com.davidout.api.custom.file.PluginFile;
 import com.davidout.api.custom.file.PluginFolder;
+import com.davidout.api.custom.language.LanguageBundle;
 import com.davidout.api.custom.language.LanguageManager;
 import com.davidout.api.listener.ArmorListener;
 import com.davidout.api.listener.LeaveListener;
@@ -24,8 +25,9 @@ public class PluginLoader {
         this.createFiles();
 
         LanguageManager.loadTranslations();
-        LanguageManager.setLanguageBundle(plugin.getDefaultTranslationBundle().getLanguage(), plugin.getDefaultTranslationBundle());
-        LanguageManager.setLanguage(plugin.getDefaultTranslationBundle().getLanguage());
+        LanguageBundle bundle = plugin.getDefaultTranslationBundle();
+        LanguageManager.setLanguageBundle(bundle.getLanguage(), bundle);
+        LanguageManager.setLanguage(bundle.getLanguage());
     }
 
     public void unLoadPlugin() {
@@ -40,8 +42,8 @@ public class PluginLoader {
 
     private void register() {
         this.registerNecesarryListeners();
-        plugin.registerEvents().forEach (eventListener -> plugin.getPluginManager().registerEvents(eventListener, plugin) );
-        plugin.getCommandManager().registerCommands ( plugin.registerCommands() );
+        if(plugin.registerEvents() != null) plugin.registerEvents().forEach (eventListener -> plugin.getPluginManager().registerEvents(eventListener, plugin) );
+        if(plugin.registerCommands() != null) plugin.getCommandManager().registerCommands ( plugin.registerCommands() );
         plugin.getEnchantmentManager().registerEnchantments();
     }
 

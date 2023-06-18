@@ -25,7 +25,7 @@ public class LanguageManager {
     }
     public static String getTranslation(String language, String key) {
         String returned = (languageBundles.get(language) == null || languageBundles.get(language).getMessage(key) == null) ? "No Translation" : languageBundles.get(language).getMessage(key);
-        return returned;
+        return TextUtils.formatColorCodes(returned);
     }
 
     public static PluginFolder getFolder() {return folder;}
@@ -36,7 +36,7 @@ public class LanguageManager {
     }
 
     public static void loadTranslations() {
-        if(folder.getFolder() == null) return;
+        if(!folder.pathExists()) return;
 
         folder.getFilesInFolder().forEach(cf -> {
             if(!cf.getName().endsWith(".yml")) return;
