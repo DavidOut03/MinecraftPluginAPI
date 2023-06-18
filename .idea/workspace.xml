@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added the abillity to add files and folders on startup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/TranslationBundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageBundle.java" afterDir="false" />
-    </list>
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added selection Utillity class." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,14 +181,7 @@
       <workItem from="1687007394855" duration="2591000" />
       <workItem from="1687014258940" duration="8478000" />
       <workItem from="1687097353436" duration="140000" />
-      <workItem from="1687097620115" duration="1121000" />
-    </task>
-    <task id="LOCAL-00052" summary="Added new method to add the custom enchantment">
-      <created>1685370706504</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1685370706504</updated>
+      <workItem from="1687097620115" duration="1561000" />
     </task>
     <task id="LOCAL-00053" summary="Added capetelize first letter to enchantments">
       <created>1685370781736</created>
@@ -531,7 +519,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687097987291</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Added selection Utillity class.">
+      <created>1687099733221</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1687099733221</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Legacy release 1.0.2" />
     <MESSAGE value="Fixed enchantment target" />
     <MESSAGE value="Changed enchantment name in lore." />
     <MESSAGE value="Added new method to add the custom enchantment" />
@@ -574,6 +568,7 @@
     <MESSAGE value="Fixed language manager issues." />
     <MESSAGE value="Release 1.4.0-LEGACY" />
     <MESSAGE value="Added the abillity to add files and folders on startup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the abillity to add files and folders on startup" />
+    <MESSAGE value="Added selection Utillity class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added selection Utillity class." />
   </component>
 </project>
