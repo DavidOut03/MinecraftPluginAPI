@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed file editor">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/number/NumberUtillity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Scoreboard fix + PlayerLookingDirection enum">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,13 +198,8 @@
       <workItem from="1687204593578" duration="3000" />
       <workItem from="1687204601353" duration="146000" />
       <workItem from="1687205651787" duration="69000" />
-    </task>
-    <task id="LOCAL-00055" summary="Fixed capetelize first letter to enchantments">
-      <created>1685370921868</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1685370921868</updated>
+      <workItem from="1687205939209" duration="19000" />
+      <workItem from="1687206003307" duration="10000" />
     </task>
     <task id="LOCAL-00056" summary="Fixed capetelize first letter to enchantments">
       <created>1685371013270</created>
@@ -546,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687122321755</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Scoreboard fix + PlayerLookingDirection enum">
+      <created>1687205954787</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1687205954787</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +562,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added new method to add the custom enchantment" />
     <MESSAGE value="Added capetelize first letter to enchantments" />
     <MESSAGE value="Fixed capetelize first letter to enchantments" />
     <MESSAGE value="Added fileSystem" />
@@ -589,6 +586,7 @@
     <MESSAGE value="Added selection Utillity class." />
     <MESSAGE value="Split MainPlugin.java class" />
     <MESSAGE value="Fixed file editor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed file editor" />
+    <MESSAGE value="Scoreboard fix + PlayerLookingDirection enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scoreboard fix + PlayerLookingDirection enum" />
   </component>
 </project>
