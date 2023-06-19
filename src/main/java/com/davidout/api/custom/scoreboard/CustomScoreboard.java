@@ -81,17 +81,20 @@ public abstract class CustomScoreboard  {
             List<String> newLines = update(player);
             Collections.reverse(newLines);
 
-            player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).setDisplayName(TextUtils.formatColorCodes(title));
+
+            if(player == null) return;
+            Scoreboard scoreboard = player.getScoreboard();
+            scoreboard.getObjective(DisplaySlot.SIDEBAR).setDisplayName(TextUtils.formatColorCodes(title));
 
 
             for(int i = 0; i < newLines.size(); i++) {
-                setLine(i, newLines.get(i), player);
+                setLine(scoreboard, i, newLines.get(i), player);
             }
 
+            player.setScoreboard(scoreboard);
     }
 
-    private void setLine(int line, String newText, Player player) {
-        Scoreboard scoreboard = player.getScoreboard();
+    private void setLine(Scoreboard scoreboard, int line, String newText, Player player) {
         Objective objective = scoreboard.getObjective(DisplaySlot.SIDEBAR);
         String prefix = getPrefix(newText);
         String entry = ChatColor.getLastColors(prefix) + getEntry(newText);
@@ -100,13 +103,13 @@ public abstract class CustomScoreboard  {
 
         this.resetOldLine(line, scoreboard);
         Team team = (scoreboard.getTeam("line" + line) == null) ? scoreboard.registerNewTeam("line" + line) : scoreboard.getTeam("line" + line);
+        if(team == null) return;
         team.setPrefix(prefix);
         team.setSuffix(suffix);
         team.addEntry(entry);
 
         Score score = objective.getScore(TextUtils.formatColorCodes(newText));
         score.setScore(line + 1);
-
     }
 
     private void resetOldLine(int line, Scoreboard scoreboard) {

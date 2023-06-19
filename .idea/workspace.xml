@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Split MainPlugin.java class">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed file editor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/number/NumberUtillity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/plugin/PluginLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/plugin/PluginLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,12 +59,15 @@
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
     &quot;last_directory_selection&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/custom&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/scoreboard&quot;,
+    &quot;last_opened_file_path&quot;: &quot;W:/repositories/micc-delivery&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15546875&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -193,13 +193,15 @@
       <workItem from="1687097353436" duration="140000" />
       <workItem from="1687097620115" duration="2547000" />
       <workItem from="1687112069719" duration="6005000" />
-    </task>
-    <task id="LOCAL-00054" summary="Added capetelize first letter to enchantments">
-      <created>1685370802242</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1685370802242</updated>
+      <workItem from="1687122306564" duration="23000" />
+      <workItem from="1687177757791" duration="75000" />
+      <workItem from="1687190455193" duration="2000" />
+      <workItem from="1687197834671" duration="1358000" />
+      <workItem from="1687200582191" duration="3000" />
+      <workItem from="1687203949816" duration="140000" />
+      <workItem from="1687204593578" duration="3000" />
+      <workItem from="1687204601353" duration="146000" />
+      <workItem from="1687205651787" duration="69000" />
     </task>
     <task id="LOCAL-00055" summary="Fixed capetelize first letter to enchantments">
       <created>1685370921868</created>
@@ -537,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687100840459</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Fixed file editor">
+      <created>1687122321755</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1687122321755</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +564,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed enchantment name in lore." />
     <MESSAGE value="Added new method to add the custom enchantment" />
     <MESSAGE value="Added capetelize first letter to enchantments" />
     <MESSAGE value="Fixed capetelize first letter to enchantments" />
@@ -580,6 +588,7 @@
     <MESSAGE value="Added the abillity to add files and folders on startup" />
     <MESSAGE value="Added selection Utillity class." />
     <MESSAGE value="Split MainPlugin.java class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Split MainPlugin.java class" />
+    <MESSAGE value="Fixed file editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed file editor" />
   </component>
 </project>
