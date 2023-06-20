@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Scoreboard fix + PlayerLookingDirection enum">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Set java version to java 8">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,14 +201,9 @@
       <workItem from="1687204601353" duration="146000" />
       <workItem from="1687205651787" duration="69000" />
       <workItem from="1687205939209" duration="19000" />
-      <workItem from="1687206003307" duration="10000" />
-    </task>
-    <task id="LOCAL-00056" summary="Fixed capetelize first letter to enchantments">
-      <created>1685371013270</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1685371013271</updated>
+      <workItem from="1687206003307" duration="133000" />
+      <workItem from="1687211238986" duration="2072000" />
+      <workItem from="1687260022005" duration="751000" />
     </task>
     <task id="LOCAL-00057" summary="Added fileSystem">
       <created>1685389612292</created>
@@ -544,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687205954787</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Set java version to java 8">
+      <created>1687206031545</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1687206031545</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +566,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added capetelize first letter to enchantments" />
     <MESSAGE value="Fixed capetelize first letter to enchantments" />
     <MESSAGE value="Added fileSystem" />
     <MESSAGE value="Updated scoreboard methods" />
@@ -587,6 +590,7 @@
     <MESSAGE value="Split MainPlugin.java class" />
     <MESSAGE value="Fixed file editor" />
     <MESSAGE value="Scoreboard fix + PlayerLookingDirection enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scoreboard fix + PlayerLookingDirection enum" />
+    <MESSAGE value="Set java version to java 8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set java version to java 8" />
   </component>
 </project>

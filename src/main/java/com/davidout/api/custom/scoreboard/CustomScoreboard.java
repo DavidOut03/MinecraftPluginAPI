@@ -7,25 +7,19 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public abstract class CustomScoreboard  {
 
-    private Scoreboard board;
-    private Objective objective;
     private String name;
     private String title;
-    private List<String> players;
+    private final HashMap<Player, Scoreboard> players;
     private int schedular;
 
     public CustomScoreboard() {
-        this.name = (name == null) ? "Custom Scoreboard" : getName();
-        this.players = new ArrayList<>();
+        this.name = "Custom Scoreboard";
+        this.players = new HashMap<>();
         this.title = TextUtils.formatColorCodes(this.name);
-
-        this.resetScoreboard();
     }
 
     /**
@@ -35,12 +29,12 @@ public abstract class CustomScoreboard  {
      */
 
 
-    private void resetScoreboard() {
-        Bukkit.getScoreboardManager().getMainScoreboard().clearSlot(DisplaySlot.SIDEBAR);
-        this.board =  Bukkit.getScoreboardManager().getNewScoreboard();
-        this.objective = this.board.registerNewObjective("customObjective", "dummy");
-        this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-        this.setTitle(getName());
+    private void resetScoreboard(Player player) {
+        Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
+        Objective objective = scoreboard.registerNewObjective("custom", "dummy", "Custom Scoreboard");
+        objective.setDisplaySlot(DisplaySlot.SIDEBAR);
+        player.setScoreboard(scoreboard);
+        players.put(player, scoreboard);
 
         updateScoreboard();
     }
@@ -49,7 +43,11 @@ public abstract class CustomScoreboard  {
         this.schedular = Bukkit.getScheduler().scheduleSyncRepeatingTask(MinecraftPlugin.getPlugin(), new Runnable() {
             @Override
             public void run() {
-             updateScoreboard();
+                if(players.isEmpty()) {
+                    stopUpdater();
+                    return;
+                }
+                 updateScoreboard();
             }
         }, 0L, (long) updateTimeInSeconds() * 20);
     }
@@ -68,33 +66,29 @@ public abstract class CustomScoreboard  {
             return;
         }
 
-        players.forEach(playerName -> {
-            if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-            setLines(playerName);
+
+        players.forEach((player, scoreboard) -> {
+            if(player == null) return;
+            setLines(player);
         });
     }
 
 
-    private void setLines(String playerName) {
-            if(playerName == null || Bukkit.getPlayer(playerName) == null) return;
-            Player player = Bukkit.getPlayer(playerName);
+    private void setLines(Player player) {
             List<String> newLines = update(player);
             Collections.reverse(newLines);
 
 
             if(player == null) return;
-            Scoreboard scoreboard = player.getScoreboard();
-            scoreboard.getObjective(DisplaySlot.SIDEBAR).setDisplayName(TextUtils.formatColorCodes(title));
-
+            players.get(player).getObjective(DisplaySlot.SIDEBAR).setDisplayName(TextUtils.formatColorCodes(title));
 
             for(int i = 0; i < newLines.size(); i++) {
-                setLine(scoreboard, i, newLines.get(i), player);
+                setLine(players.get(player), i, newLines.get(i));
             }
 
-            player.setScoreboard(scoreboard);
     }
 
-    private void setLine(Scoreboard scoreboard, int line, String newText, Player player) {
+    private void setLine(Scoreboard scoreboard, int line, String newText) {
         Objective objective = scoreboard.getObjective(DisplaySlot.SIDEBAR);
         String prefix = getPrefix(newText);
         String entry = ChatColor.getLastColors(prefix) + getEntry(newText);
@@ -113,6 +107,8 @@ public abstract class CustomScoreboard  {
     }
 
     private void resetOldLine(int line, Scoreboard scoreboard) {
+        Objective objective = scoreboard.getObjective(DisplaySlot.SIDEBAR);
+
         for(String entry : objective.getScoreboard().getEntries()) {
             Score score = objective.getScore(entry);
             if(score.getScore() != (line + 1)) continue;
@@ -130,13 +126,12 @@ public abstract class CustomScoreboard  {
 
     public void addToScoreboard(Player p) {
         if(this.players.isEmpty() && useUpdate()) startUpdater();
-        this.players.add(p.getName());
-        p.setScoreboard(board);
+        this.resetScoreboard(p);
     }
 
     public void removeFromScoreboard(Player p) {
-        this.players.remove(p.getName());
-        p.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
+        players.remove(p);
+        p.setScoreboard(Bukkit.getScoreboardManager().getMainScoreboard());
         if(this.players.isEmpty() && useUpdate()) stopUpdater();
     }
 
