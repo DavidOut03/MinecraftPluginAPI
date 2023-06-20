@@ -68,7 +68,7 @@ public class LanguageManager {
             file.saveFile();
         } catch (Exception ex) {
             Bukkit.getConsoleSender().sendMessage(TextUtils.formatColorCodes("&cCould not save language file: " + language + ".yml"));
-            ex.printStackTrace();
+//            ex.printStackTrace();
         }
     }
 

@@ -15,7 +15,7 @@ public class PlayerUtils {
         if(!ServerUtils.serverVersionIsAbove("1.7")) return;
 
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
-        Team team = (scoreboard.getTeam(p.getName()) == null) ? scoreboard.registerNewTeam(p.getName()) : scoreboard.registerNewTeam(p.getName());
+        Team team = (scoreboard.getTeam(p.getName()) == null) ? scoreboard.getTeam(p.getName()) : scoreboard.registerNewTeam(p.getName());
         if(prefix != null && !prefix.isEmpty()) team.setPrefix(TextUtils.formatColorCodes(prefix));
         if(suffix != null && !suffix.isEmpty()) team.setSuffix(TextUtils.formatColorCodes(suffix));
         team.addEntry(p.getName());

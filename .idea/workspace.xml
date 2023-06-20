@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Set java version to java 8">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed Custom scoreboard bug where players would have the same scoreboard.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/ScoreboardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/ScoreboardManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/player/PlayerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/player/PlayerUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,9 +100,10 @@
       <command value="mvn clean deploy -X" />
       <command value="mvn clean package" />
       <command value="mvn clean verify sonar:sonar \   -Dsonar.projectKey=MinecraftPluginAPI \   -Dsonar.projectName='MinecraftPluginAPI' \   -Dsonar.host.url=http://localhost:9000 \   -Dsonar.token=sqp_6ab9cfe918ef432fba4646d5dce58f2f940fa5d7" />
+      <command value="mvn clean verify sonar:sonar \   -Dsonar.projectKey=MinecraftPluginAPI \   -Dsonar.projectName='MinecraftPluginAPI' \   -Dsonar.host.url=http://localhost:9000 \   -Dsonar.token=sqp_8d81e00bc9d27d27bb3266e1b0c7ef8d863a1256" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.Deploy">
+  <component name="RunManager" selected="Maven.Sonar Qube">
     <configuration name="Deploy" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -148,8 +156,45 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="Sonar Qube" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mvn" />
+                <option value="clean" />
+                <option value="verify" />
+                <option value="sonar:sonar" />
+                <option value="\" />
+                <option value="-Dsonar.projectKey=MinecraftPluginAPI" />
+                <option value="\" />
+                <option value="-Dsonar.projectName='MinecraftPluginAPI'" />
+                <option value="\" />
+                <option value="-Dsonar.host.url=http://localhost:9000" />
+                <option value="\" />
+                <option value="-Dsonar.token=sqp_8d81e00bc9d27d27bb3266e1b0c7ef8d863a1256" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Maven.Deploy" />
+      <item itemvalue="Maven.Sonar Qube" />
       <item itemvalue="Maven.Export jar" />
     </list>
   </component>
@@ -203,14 +248,7 @@
       <workItem from="1687205939209" duration="19000" />
       <workItem from="1687206003307" duration="133000" />
       <workItem from="1687211238986" duration="2072000" />
-      <workItem from="1687260022005" duration="751000" />
-    </task>
-    <task id="LOCAL-00057" summary="Added fileSystem">
-      <created>1685389612292</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1685389612292</updated>
+      <workItem from="1687260022005" duration="2603000" />
     </task>
     <task id="LOCAL-00058" summary="Added fileSystem">
       <created>1685389831571</created>
@@ -548,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687206031545</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="Fixed Custom scoreboard bug where players would have the same scoreboard.">
+      <created>1687260852242</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1687260852243</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +611,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed capetelize first letter to enchantments" />
     <MESSAGE value="Added fileSystem" />
     <MESSAGE value="Updated scoreboard methods" />
     <MESSAGE value="Add the lastest colors" />
@@ -591,6 +635,7 @@
     <MESSAGE value="Fixed file editor" />
     <MESSAGE value="Scoreboard fix + PlayerLookingDirection enum" />
     <MESSAGE value="Set java version to java 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set java version to java 8" />
+    <MESSAGE value="Fixed Custom scoreboard bug where players would have the same scoreboard." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Custom scoreboard bug where players would have the same scoreboard." />
   </component>
 </project>

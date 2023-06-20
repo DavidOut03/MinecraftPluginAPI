@@ -40,7 +40,7 @@ public enum PlayerLookingDirection {
             case WEST: return BlockFace.WEST;
         }
 
-        return null;
+        return BlockFace.SELF;
     }
 
     public static BlockFace getOppositeFace(Location placedBlockLoc, Location againstBlockLoc) {
