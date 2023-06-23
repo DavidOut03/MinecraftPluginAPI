@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed code smells.">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed custom enchantment bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,13 +244,7 @@
       <workItem from="1687438314387" duration="522000" />
       <workItem from="1687518238266" duration="1257000" />
       <workItem from="1687527458161" duration="499000" />
-    </task>
-    <task id="LOCAL-00059" summary="Added fileSystem">
-      <created>1685389976949</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1685389976949</updated>
+      <workItem from="1687546879853" duration="646000" />
     </task>
     <task id="LOCAL-00060" summary="Added fileSystem">
       <created>1685390032106</created>
@@ -590,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687262911741</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Fixed custom enchantment bugs">
+      <created>1687546916171</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1687546916171</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +607,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated scoreboard methods" />
     <MESSAGE value="Add the lastest colors" />
     <MESSAGE value="Fixed title" />
     <MESSAGE value="Fix scores bug" />
@@ -633,6 +631,7 @@
     <MESSAGE value="Set java version to java 8" />
     <MESSAGE value="Fixed Custom scoreboard bug where players would have the same scoreboard." />
     <MESSAGE value="Fixed code smells." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed code smells." />
+    <MESSAGE value="Fixed custom enchantment bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed custom enchantment bugs" />
   </component>
 </project>

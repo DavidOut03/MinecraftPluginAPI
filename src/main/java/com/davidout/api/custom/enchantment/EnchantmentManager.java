@@ -9,7 +9,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class EnchantmentManager {
 
@@ -59,6 +61,13 @@ public class EnchantmentManager {
         return customEnchantList;
     }
 
+//    public static List<CustomEnchantment> getCustomEnchants(ItemStack itemStack) {
+//        return itemStack.getEnchantments().keySet().stream().filter(enchantment -> enchantment instanceof CustomEnchantment).map(enchantment -> (CustomEnchantment) enchantment).collect(Collectors.toList());
+//    }
+
+    public static Map<CustomEnchantment, Integer> getCustomEnchantments(ItemStack itemStack) {
+        return itemStack.getEnchantments().entrySet().stream().filter(enchantmentIntegerEntry -> enchantmentIntegerEntry.getKey() instanceof CustomEnchantment).collect(Collectors.toMap(enchantmentIntegerEntry -> (CustomEnchantment) enchantmentIntegerEntry.getKey(), Map.Entry::getValue));
+    }
 
     public static boolean addCustomEnchantment(ItemStack item, Enchantment enchantment, int level) {
         CustomEnchantment customEnchantment = getEnchantByName(enchantment.getName());
@@ -96,6 +105,7 @@ public class EnchantmentManager {
         if(!currentLore.isEmpty()) returned.addAll(currentLore);
         return returned;
     }
+
 
     private static boolean canEnchantItem(CustomEnchantment enchantment, ItemStack itemStack) {
         return enchantment != null && itemStack != null && itemStack.getItemMeta() != null && enchantment.canEnchantItem(itemStack);
