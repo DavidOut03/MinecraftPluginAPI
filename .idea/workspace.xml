@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed Custom scoreboard bug where players would have the same scoreboard.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed code smells.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/ScoreboardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/ScoreboardManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/player/PlayerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/player/PlayerUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +97,7 @@
       <command value="mvn clean verify sonar:sonar \   -Dsonar.projectKey=MinecraftPluginAPI \   -Dsonar.projectName='MinecraftPluginAPI' \   -Dsonar.host.url=http://localhost:9000 \   -Dsonar.token=sqp_8d81e00bc9d27d27bb3266e1b0c7ef8d863a1256" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.Sonar Qube">
+  <component name="RunManager" selected="Maven.Deploy">
     <configuration name="Deploy" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -248,14 +242,10 @@
       <workItem from="1687205939209" duration="19000" />
       <workItem from="1687206003307" duration="133000" />
       <workItem from="1687211238986" duration="2072000" />
-      <workItem from="1687260022005" duration="2603000" />
-    </task>
-    <task id="LOCAL-00058" summary="Added fileSystem">
-      <created>1685389831571</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1685389831571</updated>
+      <workItem from="1687260022005" duration="2757000" />
+      <workItem from="1687438314387" duration="522000" />
+      <workItem from="1687518238266" duration="1257000" />
+      <workItem from="1687527458161" duration="499000" />
     </task>
     <task id="LOCAL-00059" summary="Added fileSystem">
       <created>1685389976949</created>
@@ -593,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687260852243</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Fixed code smells.">
+      <created>1687262911741</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1687262911741</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added fileSystem" />
     <MESSAGE value="Updated scoreboard methods" />
     <MESSAGE value="Add the lastest colors" />
     <MESSAGE value="Fixed title" />
@@ -636,6 +632,7 @@
     <MESSAGE value="Scoreboard fix + PlayerLookingDirection enum" />
     <MESSAGE value="Set java version to java 8" />
     <MESSAGE value="Fixed Custom scoreboard bug where players would have the same scoreboard." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Custom scoreboard bug where players would have the same scoreboard." />
+    <MESSAGE value="Fixed code smells." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed code smells." />
   </component>
 </project>

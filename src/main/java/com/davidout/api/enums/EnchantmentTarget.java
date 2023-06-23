@@ -55,7 +55,7 @@ public enum EnchantmentTarget {
     }
 
     public static EnchantmentTarget getEnchantmentTarget(ItemStack itemStack) {
-        String mat = itemStack.getType().name();
+        String mat = itemStack.getType().name().toLowerCase();
         if(Material.valueOf(mat.toUpperCase()) == Material.BOOK) return EnchantmentTarget.ALL;
 
         if(Item.itemIsArmour(itemStack)) {

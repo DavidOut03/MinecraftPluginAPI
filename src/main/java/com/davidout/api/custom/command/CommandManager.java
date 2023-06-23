@@ -94,11 +94,24 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         if(this.commandList.isEmpty()) return false;
 
         for (CustomCommand customCommand : this.commandList) {
-            if (customCommand.getCommandName() == null || !commandName.equalsIgnoreCase(customCommand.getCommandName())) continue;
+            if (customCommand.getCommandName() == null) continue;
+            if(!commandName.equalsIgnoreCase(customCommand.getCommandName()) && !equalsAlias(command, customCommand.getAliases())) continue;
             return this.executeCustomCommand(commandSender, customCommand, arguments);
         }
 
         return false;
+    }
+
+    private boolean equalsAlias(Command command, List<String> aliases) {
+        boolean returned = false;
+
+        for (String alias : aliases) {
+            if(!alias.equals(command.getName()) && ! command.getAliases().contains(alias)) continue;
+            returned = true;
+            break;
+        }
+
+        return returned;
     }
 
     @Override

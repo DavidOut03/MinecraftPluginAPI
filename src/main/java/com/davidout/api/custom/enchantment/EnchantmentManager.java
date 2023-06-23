@@ -83,7 +83,7 @@ public class EnchantmentManager {
         return addCustomEnchantment(item, level, enchantment);
     }
 
-    private static List<String> updateLore(List<String> currentLore, CustomEnchantment enchantment, int level) {
+    public static List<String> updateLore(List<String> currentLore, CustomEnchantment enchantment, int level) {
         ArrayList<String> returned = new ArrayList<>();
         if(currentLore == null) currentLore = new ArrayList<>();
 

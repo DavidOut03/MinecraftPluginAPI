@@ -47,7 +47,6 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
 
     @Override
     public boolean canEnchantItem(ItemStack item) {
-
         for (EnchantmentTarget currentTarget : this.details.getTargets()) {
             if(!currentTarget.includes(item)) continue;
             return true;
