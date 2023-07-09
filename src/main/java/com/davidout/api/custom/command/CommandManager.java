@@ -34,7 +34,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
                 this.plugin.getCommand(customCommand.getCommandName()).setTabCompleter(this);
                 this.commandList.add(customCommand);
             } catch (Exception ex) {
-                Bukkit.getLogger().log(Level.WARNING, "Could not register command: " + customCommand.getCommandName() + " because of an error:", ex);
+                Bukkit.getLogger().log(Level.WARNING, "Could not register command: {c} because of an error: {e}".replace("{c}", customCommand.getCommandName()).replace("{e}", ex.toString()));
             }
 
 
@@ -74,15 +74,18 @@ public class CommandManager implements CommandExecutor, TabCompleter {
             return true;
         }
 
+        boolean canExecute = false;
+
         // Check for all arguments if its an subcommand
         for (int i = 0; i < arguments.length; i++) {
             CustomCommand subCommand = getSubCommand(customCommand, arguments[i]);
             if(subCommand == null)  return customCommand.executeCommand(sender, arguments);
             String[] newArgs = Arrays.copyOfRange(arguments, 1, arguments.length);
-            return subCommand.executeCommand(sender, newArgs);
+            canExecute = subCommand.executeCommand(sender, newArgs);
+            break;
         }
 
-        return false;
+        return canExecute;
     }
 
 
@@ -91,11 +94,24 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         if(this.commandList.isEmpty()) return false;
 
         for (CustomCommand customCommand : this.commandList) {
-            if (customCommand.getCommandName() == null || !commandName.equalsIgnoreCase(customCommand.getCommandName())) continue;
+            if (customCommand.getCommandName() == null) continue;
+            if(!commandName.equalsIgnoreCase(customCommand.getCommandName()) && !equalsAlias(command, customCommand.getAliases())) continue;
             return this.executeCustomCommand(commandSender, customCommand, arguments);
         }
 
         return false;
+    }
+
+    private boolean equalsAlias(Command command, List<String> aliases) {
+        boolean returned = false;
+
+        for (String alias : aliases) {
+            if(!alias.equals(command.getName()) && ! command.getAliases().contains(alias)) continue;
+            returned = true;
+            break;
+        }
+
+        return returned;
     }
 
     @Override

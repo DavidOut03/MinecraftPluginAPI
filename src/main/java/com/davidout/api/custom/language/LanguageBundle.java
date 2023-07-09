@@ -2,11 +2,11 @@ package com.davidout.api.custom.language;
 
 import java.util.HashMap;
 
-public class TranslationBundle {
+public class LanguageBundle {
     private final HashMap<String, String> messages;
     private final String language;
 
-    public TranslationBundle(String language) {
+    public LanguageBundle(String language) {
         this.language = language;
         this.messages = new HashMap<>();
     }

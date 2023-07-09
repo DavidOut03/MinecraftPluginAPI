@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed language manager issues.">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added get custom enchantments method to enchantmentManager.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="legacy" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,12 +58,15 @@
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
     &quot;last_directory_selection&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/custom&quot;,
-    &quot;last_opened_file_path&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/scoreboard&quot;,
+    &quot;last_opened_file_path&quot;: &quot;W:/repositories/micc-delivery&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15546875&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -73,6 +77,7 @@
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\customevents" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.davidout.api.utillity.location" />
       <recent name="com.davidout.api.listeners" />
       <recent name="com.davidout.api.enums" />
     </key>
@@ -89,6 +94,7 @@
       <command value="mvn clean deploy -X" />
       <command value="mvn clean package" />
       <command value="mvn clean verify sonar:sonar \   -Dsonar.projectKey=MinecraftPluginAPI \   -Dsonar.projectName='MinecraftPluginAPI' \   -Dsonar.host.url=http://localhost:9000 \   -Dsonar.token=sqp_6ab9cfe918ef432fba4646d5dce58f2f940fa5d7" />
+      <command value="mvn clean verify sonar:sonar \   -Dsonar.projectKey=MinecraftPluginAPI \   -Dsonar.projectName='MinecraftPluginAPI' \   -Dsonar.host.url=http://localhost:9000 \   -Dsonar.token=sqp_8d81e00bc9d27d27bb3266e1b0c7ef8d863a1256" />
     </option>
   </component>
   <component name="RunManager" selected="Maven.Deploy">
@@ -144,8 +150,45 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="Sonar Qube" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mvn" />
+                <option value="clean" />
+                <option value="verify" />
+                <option value="sonar:sonar" />
+                <option value="\" />
+                <option value="-Dsonar.projectKey=MinecraftPluginAPI" />
+                <option value="\" />
+                <option value="-Dsonar.projectName='MinecraftPluginAPI'" />
+                <option value="\" />
+                <option value="-Dsonar.host.url=http://localhost:9000" />
+                <option value="\" />
+                <option value="-Dsonar.token=sqp_8d81e00bc9d27d27bb3266e1b0c7ef8d863a1256" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Maven.Deploy" />
+      <item itemvalue="Maven.Sonar Qube" />
       <item itemvalue="Maven.Export jar" />
     </list>
   </component>
@@ -184,90 +227,33 @@
       <workItem from="1686996298201" duration="16000" />
       <workItem from="1687007394855" duration="2591000" />
       <workItem from="1687014258940" duration="8478000" />
-    </task>
-    <task id="LOCAL-00049" summary="Changed enchantment name in lore.">
-      <created>1685281857221</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1685281857221</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Changed enchantment name in lore.">
-      <created>1685281930588</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1685281930588</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Added new method to add the custom enchantment">
-      <created>1685368402292</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1685368402293</updated>
-    </task>
-    <task id="LOCAL-00052" summary="Added new method to add the custom enchantment">
-      <created>1685370706504</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1685370706504</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Added capetelize first letter to enchantments">
-      <created>1685370781736</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1685370781736</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Added capetelize first letter to enchantments">
-      <created>1685370802242</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1685370802242</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Fixed capetelize first letter to enchantments">
-      <created>1685370921868</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1685370921868</updated>
-    </task>
-    <task id="LOCAL-00056" summary="Fixed capetelize first letter to enchantments">
-      <created>1685371013270</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1685371013271</updated>
-    </task>
-    <task id="LOCAL-00057" summary="Added fileSystem">
-      <created>1685389612292</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1685389612292</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Added fileSystem">
-      <created>1685389831571</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1685389831571</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Added fileSystem">
-      <created>1685389976949</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1685389976949</updated>
-    </task>
-    <task id="LOCAL-00060" summary="Added fileSystem">
-      <created>1685390032106</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1685390032107</updated>
+      <workItem from="1687097353436" duration="140000" />
+      <workItem from="1687097620115" duration="2547000" />
+      <workItem from="1687112069719" duration="6005000" />
+      <workItem from="1687122306564" duration="23000" />
+      <workItem from="1687177757791" duration="75000" />
+      <workItem from="1687190455193" duration="2000" />
+      <workItem from="1687197834671" duration="1358000" />
+      <workItem from="1687200582191" duration="3000" />
+      <workItem from="1687203949816" duration="140000" />
+      <workItem from="1687204593578" duration="3000" />
+      <workItem from="1687204601353" duration="146000" />
+      <workItem from="1687205651787" duration="69000" />
+      <workItem from="1687205939209" duration="19000" />
+      <workItem from="1687206003307" duration="133000" />
+      <workItem from="1687211238986" duration="2072000" />
+      <workItem from="1687260022005" duration="2757000" />
+      <workItem from="1687438314387" duration="522000" />
+      <workItem from="1687518238266" duration="1257000" />
+      <workItem from="1687527458161" duration="499000" />
+      <workItem from="1687546879853" duration="2909000" />
+      <workItem from="1687721439003" duration="2686000" />
+      <workItem from="1687724577807" duration="1455000" />
+      <workItem from="1687781058724" duration="72000" />
+      <workItem from="1687782076871" duration="213000" />
+      <workItem from="1687782575387" duration="4000" />
+      <workItem from="1688918898651" duration="64000" />
+      <workItem from="1688918991065" duration="1979000" />
     </task>
     <task id="LOCAL-00061" summary="Added fileSystem">
       <created>1685390481592</created>
@@ -528,7 +514,91 @@
       <option name="project" value="LOCAL" />
       <updated>1687019635707</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Release 1.4.0-LEGACY">
+      <created>1687029724238</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1687029724238</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Release 1.4.0-LEGACY">
+      <created>1687029752383</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1687029752383</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Added the abillity to add files and folders on startup">
+      <created>1687097987290</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1687097987291</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Added selection Utillity class.">
+      <created>1687099733221</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1687099733221</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Split MainPlugin.java class">
+      <created>1687100840459</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1687100840459</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Fixed file editor">
+      <created>1687122321755</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1687122321755</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Scoreboard fix + PlayerLookingDirection enum">
+      <created>1687205954787</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1687205954787</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Set java version to java 8">
+      <created>1687206031545</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1687206031545</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Fixed Custom scoreboard bug where players would have the same scoreboard.">
+      <created>1687260852242</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1687260852243</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Fixed code smells.">
+      <created>1687262911741</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1687262911741</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Fixed custom enchantment bugs">
+      <created>1687546916171</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1687546916171</updated>
+    </task>
+    <task id="LOCAL-00109" summary="Added get custom enchantments method to enchantmentManager.">
+      <created>1687547727714</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1687547727714</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,17 +616,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added the ScoreboardManager.java" />
-    <MESSAGE value="Fixed legacy enchantments" />
-    <MESSAGE value="Legacy release 1.0.2" />
-    <MESSAGE value="Fixed enchantment target" />
-    <MESSAGE value="Changed enchantment name in lore." />
-    <MESSAGE value="Added new method to add the custom enchantment" />
-    <MESSAGE value="Added capetelize first letter to enchantments" />
-    <MESSAGE value="Fixed capetelize first letter to enchantments" />
-    <MESSAGE value="Added fileSystem" />
-    <MESSAGE value="Updated scoreboard methods" />
-    <MESSAGE value="Add the lastest colors" />
     <MESSAGE value="Fixed title" />
     <MESSAGE value="Fix scores bug" />
     <MESSAGE value="1.1.0 Release" />
@@ -571,6 +630,17 @@
     <MESSAGE value="Added a better way to make custom enchantments" />
     <MESSAGE value="Added LanguageManager" />
     <MESSAGE value="Fixed language manager issues." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed language manager issues." />
+    <MESSAGE value="Release 1.4.0-LEGACY" />
+    <MESSAGE value="Added the abillity to add files and folders on startup" />
+    <MESSAGE value="Added selection Utillity class." />
+    <MESSAGE value="Split MainPlugin.java class" />
+    <MESSAGE value="Fixed file editor" />
+    <MESSAGE value="Scoreboard fix + PlayerLookingDirection enum" />
+    <MESSAGE value="Set java version to java 8" />
+    <MESSAGE value="Fixed Custom scoreboard bug where players would have the same scoreboard." />
+    <MESSAGE value="Fixed code smells." />
+    <MESSAGE value="Fixed custom enchantment bugs" />
+    <MESSAGE value="Added get custom enchantments method to enchantmentManager." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added get custom enchantments method to enchantmentManager." />
   </component>
 </project>

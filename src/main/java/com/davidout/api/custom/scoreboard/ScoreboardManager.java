@@ -8,8 +8,8 @@ import java.util.List;
 
 public class ScoreboardManager {
 
-    private List<CustomScoreboard> scoreboardList;
-    private HashMap<String, CustomScoreboard> players;
+    private final List<CustomScoreboard> scoreboardList;
+    private final HashMap<Player, CustomScoreboard> players;
 
     public ScoreboardManager() {
         this.scoreboardList = new ArrayList<>();
@@ -28,7 +28,7 @@ public class ScoreboardManager {
         if(players.get(player) != null) players.get(player).removeFromScoreboard(player);
 
         if(scoreboard == null) return;
-        this.players.put(player.getName(), scoreboard);
+        this.players.put(player, scoreboard);
         scoreboard.addToScoreboard(player);
     }
 

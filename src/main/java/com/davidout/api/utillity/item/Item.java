@@ -1,9 +1,7 @@
 package com.davidout.api.utillity.item;
 
-import com.davidout.api.utillity.TextUtils;
-import org.bukkit.ChatColor;
+import com.davidout.api.utillity.text.TextUtils;
 import org.bukkit.Material;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 
 public class Item {
