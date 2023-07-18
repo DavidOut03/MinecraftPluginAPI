@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Added get custom enchantments method to enchantmentManager.">
+    <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="1.6 snapshot">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/packet/PacketHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="legacy" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +56,7 @@
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
     &quot;last_directory_selection&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/custom&quot;,
-    &quot;last_opened_file_path&quot;: &quot;W:/repositories/micc-delivery&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Minecraft Development/repositories/PacketAPI&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -67,6 +65,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15546875&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -98,6 +97,36 @@
     </option>
   </component>
   <component name="RunManager" selected="Maven.Deploy">
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="a90b9f95-deec-4e23-b4f5-ef17ca646419" />
+      <option name="artifact" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="functionHostArguments" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Deploy" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -254,20 +283,8 @@
       <workItem from="1687782575387" duration="4000" />
       <workItem from="1688918898651" duration="64000" />
       <workItem from="1688918991065" duration="1979000" />
-    </task>
-    <task id="LOCAL-00061" summary="Added fileSystem">
-      <created>1685390481592</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1685390481592</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Added fileSystem">
-      <created>1685390664916</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1685390664916</updated>
+      <workItem from="1689694145224" duration="223000" />
+      <workItem from="1689694396867" duration="75000" />
     </task>
     <task id="LOCAL-00063" summary="Added fileSystem">
       <created>1685390686788</created>
@@ -598,7 +615,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687547727714</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="1.5.0 Release">
+      <created>1688924370936</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1688924370936</updated>
+    </task>
+    <task id="LOCAL-00111" summary="1.6 snapshot">
+      <created>1688924413694</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1688924413694</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,8 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed title" />
-    <MESSAGE value="Fix scores bug" />
     <MESSAGE value="1.1.0 Release" />
     <MESSAGE value="1.1.0-SNAPSHOT Release" />
     <MESSAGE value="1.1.0-LEGACY Release" />
@@ -641,6 +670,8 @@
     <MESSAGE value="Fixed code smells." />
     <MESSAGE value="Fixed custom enchantment bugs" />
     <MESSAGE value="Added get custom enchantments method to enchantmentManager." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added get custom enchantments method to enchantmentManager." />
+    <MESSAGE value="1.5.0 Release" />
+    <MESSAGE value="1.6 snapshot" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.6 snapshot" />
   </component>
 </project>

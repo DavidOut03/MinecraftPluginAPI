@@ -1,5 +1,6 @@
 package com.davidout.api.utillity.player;
 
+import com.davidout.api.utillity.server.Version;
 import com.davidout.api.utillity.text.TextUtils;
 import com.davidout.api.utillity.server.ServerUtils;
 import org.bukkit.Bukkit;
@@ -12,7 +13,7 @@ import org.bukkit.scoreboard.Team;
 public class PlayerUtils {
 
     public static void setNameTag(Player p, String prefix, String suffix) {
-        if(!ServerUtils.serverVersionIsAbove("1.7")) return;
+        if(!Version.serverVersionIsAbove("1.7")) return;
 
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getMainScoreboard();
         Team team = (scoreboard.getTeam(p.getName()) == null) ? scoreboard.getTeam(p.getName()) : scoreboard.registerNewTeam(p.getName());
