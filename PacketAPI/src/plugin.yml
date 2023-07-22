@@ -1,0 +1,6 @@
+name: PacketAPI
+main: snapje.packetapi.Core.PacketAPI
+author: Snapje
+version: beta-01
+api-version: 1.13
+description: The packetapi for Snapje.

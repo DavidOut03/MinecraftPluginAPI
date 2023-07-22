@@ -1,0 +1,7 @@
+name: PacketAPI
+version: '${project.version}'
+main: com.davidout.api.PacketAPI
+load: STARTUP
+authors: [David Out]
+description: A packet api for minecraft.
+website: www.davidout.com
