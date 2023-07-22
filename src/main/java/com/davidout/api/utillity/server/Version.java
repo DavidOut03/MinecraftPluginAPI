@@ -1,8 +1,8 @@
-package com.davidout.api.utillity;
+package com.davidout.api.utillity.server;
 
 import org.bukkit.Bukkit;
 
-public class ServerUtils {
+public class Version {
 
     public static String getServerVersion() {
         String minecraftVersion = Bukkit.getVersion();
@@ -15,6 +15,7 @@ public class ServerUtils {
         String[] versionParts = minecraftVersion.split(" ")[2].split("\\.");
         return Double.parseDouble(versionParts[0] + "." + versionParts[1]);
     }
+
 
     public static boolean serverVersionIsAbove(String version) {
 
@@ -30,7 +31,4 @@ public class ServerUtils {
 
         return false;
     }
-
 }
-
-

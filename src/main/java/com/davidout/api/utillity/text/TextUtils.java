@@ -1,4 +1,4 @@
-package com.davidout.api.utillity;
+package com.davidout.api.utillity.text;
 
 import org.bukkit.ChatColor;
 

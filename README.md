@@ -9,7 +9,7 @@ MinecraftPluginAPI is a Minecraft Spigot Plugin tool which simplifies and speeds
 -  [How can i create my own custom enchantments?](#how-do-i-create-my-own-custom-enchantments)
 -  [How do i create a custom GUI?](#how-do-i-create-my-own-guis)
 -  [How do i create my own scoreboard?](#how-can-i-create-a-custom-scoreboard)
--  [How do i manage my files?](#how-do-i-create-my-own-guis)
+-  [How do i manage my files?](#how-do-i-manage-my-files)
 
 ## How to Install
 You can use this maven repository.
@@ -33,7 +33,7 @@ My github packages repository.
         <dependency>
             <groupId>com.davidout.api.minecraft</groupId>
             <artifactId>minecraft-plugin-api</artifactId>
-            <version>1.3.0</version>
+            <version>1.4.0</version>
         </dependency>
 ```
 
@@ -42,7 +42,7 @@ My github packages repository.
         <dependency>
             <groupId>com.davidout.api.minecraft</groupId>
             <artifactId>minecraft-plugin-api</artifactId>
-            <version>1.3.0-LEGACY</version>
+            <version>1.4.0-LEGACY</version>
         </dependency>
 ```
 **Add this to your shaded maven plugin configuration**
@@ -396,6 +396,33 @@ public class YourPlugin extends MinecraftPlugin {
 ```
 
 ## How do i manage my files?
+
+### Create files or folders when the server is starting.
+
+```java
+public class YourPlugin extends MinecraftPlugin {
+
+
+    @Override
+    public List<PluginFile> filesToCreate() {
+        return Arrays.asList(
+                new PluginFile("test", "test")
+        );
+    }
+
+    @Override
+    public List<PluginFolder> foldersToCreate() {
+        return Arrays.asList(
+                new PluginFolder("test")
+        );
+    }
+    
+}
+
+```
+
+
+
 
 ### Create a file.
 

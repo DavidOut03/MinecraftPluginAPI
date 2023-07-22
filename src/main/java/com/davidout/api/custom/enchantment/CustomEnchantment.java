@@ -1,6 +1,5 @@
 package com.davidout.api.custom.enchantment;
 
-import com.davidout.api.custom.enchantment.factory.EnchantmentFunction;
 import com.davidout.api.enums.EnchantmentTarget;
 import org.bukkit.Bukkit;
 import org.bukkit.enchantments.Enchantment;
@@ -12,7 +11,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +18,7 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
 
     private final EnchantmentDetails details;
 
-    public CustomEnchantment(EnchantmentDetails details) {
+    protected CustomEnchantment(EnchantmentDetails details) {
         super(details.getName());
         this.details = details;
     }
@@ -49,12 +47,18 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
 
     @Override
     public boolean canEnchantItem(ItemStack item) {
-
         for (EnchantmentTarget currentTarget : this.details.getTargets()) {
             if(!currentTarget.includes(item)) continue;
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if(!(object instanceof CustomEnchantment)) return false;
+        CustomEnchantment customEnchantment = (CustomEnchantment) object;
+        return customEnchantment.details.getName().equalsIgnoreCase(this.details.getName());
     }
 
 
@@ -91,32 +95,36 @@ public abstract class CustomEnchantment extends EnchantmentWrapper implements Li
 
             Enchantment.registerEnchantment(this);
 
-            this.getEvents().forEach(currentEvent -> {
-                Bukkit.getServer().getPluginManager().registerEvent(currentEvent, this, EventPriority.MONITOR, (listener, event) -> onAction(event), plugin);
-            });
+            this.getEvents().forEach(currentEvent ->
+                    Bukkit.getServer().getPluginManager().registerEvent(
+                            currentEvent,
+                            this,
+                            EventPriority.MONITOR,
+                            (listener, event) -> onAction(event), plugin)
+            );
 
 
 
         } catch (Exception ex) {
             Bukkit.getLogger().warning("Could not register custom enchantment: '" + getName() + "' due to an error: ");
-            ex.printStackTrace();
+//            ex.printStackTrace();
         }
     }
 
     public void unRegisterEnchantment() {
 
         try {
-            Field byIdField = Enchantment.class.getDeclaredField("byKey");
+            Field byKeyField = Enchantment.class.getDeclaredField("byKey");
             Field byNameField = Enchantment.class.getDeclaredField("byName");
-            byIdField.setAccessible(true);
+            byKeyField.setAccessible(true);
             byNameField.setAccessible(true);
-            Map<Integer, Enchantment> byId = (Map<Integer, Enchantment>) byIdField.get(null);
+            Map<Integer, Enchantment> byKey = (Map<Integer, Enchantment>) byKeyField.get(null);
             Map<String, Enchantment> byName = (Map<String, Enchantment>) byNameField.get(null);
-            byId.remove( getKey());
+            byKey.remove( getKey());
             byName.remove( getName());
         } catch (Exception ex) {
             Bukkit.getLogger().warning("Could not unregister custom enchantment: '" + getName() + "' due to an error: ");
-            ex.printStackTrace();
+//            ex.printStackTrace();
         }
     }
 
