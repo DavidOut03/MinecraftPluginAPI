@@ -30,7 +30,7 @@ public enum EnchantmentTarget {
     TRIDENT;
 
     public boolean includes(ItemStack itemStack) {
-        if(this.equals(EnchantmentTarget.ALL) || this.equals(getEnchantmentTarget(itemStack)) || itemStack.getType().equals(Material.BOOK)) return true;
+        if(this.equals(EnchantmentTarget.ALL) || this.equals(getEnchantmentTarget(itemStack)) || itemStack.getType().name().contains("BOOK")) return true;
         EnchantmentTarget itemTarget = getEnchantmentTarget(itemStack);
 
         if(this.equals(EnchantmentTarget.ARMOUR)) {
@@ -55,8 +55,8 @@ public enum EnchantmentTarget {
     }
 
     public static EnchantmentTarget getEnchantmentTarget(ItemStack itemStack) {
-        String mat = itemStack.getType().toString().toLowerCase();
-        if(mat.equals(Material.BOOK)) return EnchantmentTarget.ALL;
+        String mat = itemStack.getType().name().toLowerCase();
+        if(Material.valueOf(mat.toUpperCase()).name().contains("BOOK")) return EnchantmentTarget.ALL;
 
         if(Item.itemIsArmour(itemStack)) {
             if(mat.endsWith(Item.helmet)) return EnchantmentTarget.HELMET;

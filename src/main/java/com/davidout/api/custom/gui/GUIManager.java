@@ -1,13 +1,11 @@
 package com.davidout.api.custom.gui;
 
-import com.davidout.api.utillity.TextUtils;
+import com.davidout.api.utillity.text.TextUtils;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.Recipe;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;

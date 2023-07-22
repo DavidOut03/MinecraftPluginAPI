@@ -1,4 +1,4 @@
-package com.davidout.api.utillity;
+package com.davidout.api.utillity.text;
 
 public class RomanNumber {
     private static final String[] ROMAN_NUMERALS = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
