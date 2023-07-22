@@ -89,7 +89,7 @@ public class YourPlugin extends MinecraftPlugin {
 ## How do i manage the languages
 
 ```java
-import com.davidout.api.custom.language.LanguageManager;
+import language.custom.com.davidout.api.minecraft.LanguageManager;
 
 public class YourPlugin extends MinecraftPlugin {
 
@@ -98,7 +98,7 @@ public class YourPlugin extends MinecraftPlugin {
         // use this method to set the current language.
         LanguageManager.setLanguage("en");
     }
-    
+
     // You can override the default language bundle with this method.
     @Override
     public TranslationBundle getDefaultTranslationBundle() {
@@ -267,22 +267,22 @@ public class YourPlugin extends MinecraftPlugin {
 
 ```java
 
-import com.davidout.api.custom.enchantment.CustomEnchantment;
-import com.davidout.api.custom.enchantment.EnchantmentDetails;
-import com.davidout.api.custom.enchantment.factory.EnchantmentFactory;
-import com.davidout.api.custom.event.ArmorEquipEvent;
+import enchantment.custom.com.davidout.api.minecraft.CustomEnchantment;
+import enchantment.custom.com.davidout.api.minecraft.EnchantmentDetails;
+import factory.enchantment.custom.com.davidout.api.minecraft.EnchantmentFactory;
+import event.custom.com.davidout.api.minecraft.ArmorEquipEvent;
 
 public class YourPlugin extends MinecraftPlugin {
 
     @Override
     public void onStartup() {
         EnchantmentDetails enchantmentDetails = new EnchantmentDetails("speed", 2);
-        
+
         CustomEnchantment enchantment = EnchantmentFactory.createEnchantment(enchantmentDetails, ArmorEquipEvent.class, event -> {
-        
+
             // your logic
         });
-        
+
         getEnchantmentManager().addEnchantment(enchantment);
     }
 }

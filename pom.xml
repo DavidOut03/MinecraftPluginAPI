@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.davidout.api.minecraft</groupId>
+    <groupId>mcapi.davidout</groupId>
     <artifactId>minecraft-plugin-api</artifactId>
-    <version>1.6.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>Github minecraftPluginAPI package</name>
+            <name>GitHub OWNER Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/DavidOut03/MinecraftPluginAPI</url>
         </repository>
     </distributionManagement>
