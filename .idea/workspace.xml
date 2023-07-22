@@ -5,50 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b34d7bdf-fde6-4fb8-bedb-c67faad0bd60" name="Changes" comment="Fixed language manager issues.">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PacketAPI/PacketAPI.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PacketAPI/api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PacketAPI/packet-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/command/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CustomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/command/CustomCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/enchantment/EnchantmentDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/EnchantmentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/enchantment/factory/EnchantmentFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/EnchantmentFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/enchantment/factory/EnchantmentFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/FactoryEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/enchantment/factory/FactoryEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/event/ArmorDequipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/event/ArmorDequipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/event/ArmorEquipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/event/ArmorEquipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/file/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/file/PluginFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/file/PluginFolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUIManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/gui/GUIManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/ItemAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/gui/ItemAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/language/LanguageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/TranslationBundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/language/TranslationBundle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/ScoreboardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/custom/scoreboard/ScoreboardManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/ArmorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/enums/ArmorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/listener/ArmorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/listener/ArmorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/listener/LeaveListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/listener/LeaveListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/PlayerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/utillity/PlayerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/RomanNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/utillity/RomanNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/utillity/ServerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/TextUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/utillity/TextUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/utillity/item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/ItemCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/PluginAPI/src/main/java/com/davidout/api/utillity/item/ItemCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +32,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="enabledProfiles">
+      <list>
+        <option value="github" />
+      </list>
+    </option>
+  </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
@@ -82,32 +48,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "development",
-    "last_directory_selection": "S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/custom",
-    "last_opened_file_path": "D:/Minecraft Development/api/MinecraftPluginAPI/PluginAPI",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;last_directory_selection&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/custom&quot;,
+    &quot;last_opened_file_path&quot;: &quot;S:/HBO ICT/repositories/MinecraftPluginAPI/src/main/java/com/davidout/api/scoreboard&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\scoreboard" />
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\enchantment" />
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\customevents" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\PluginAPI" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.davidout.api.listeners" />
@@ -128,38 +91,8 @@
       <command value="mvn clean verify sonar:sonar \   -Dsonar.projectKey=MinecraftPluginAPI \   -Dsonar.projectName='MinecraftPluginAPI' \   -Dsonar.host.url=http://localhost:9000 \   -Dsonar.token=sqp_6ab9cfe918ef432fba4646d5dce58f2f940fa5d7" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.Deploy PluginAPI">
-    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
-      <option name="appName" />
-      <option name="appServicePlanName" />
-      <option name="appServicePlanResourceGroup" />
-      <option name="appSettingsKey" value="6b96d6ef-d283-4aae-a11f-45ea2b74c41a" />
-      <option name="artifact" />
-      <option name="debugOptions" />
-      <option name="deployment" />
-      <option name="deploymentStagingDirectoryPath" />
-      <option name="funcPath" />
-      <option name="functionHostArguments" />
-      <option name="hostJsonPath" />
-      <option name="insightsName" />
-      <option name="instrumentationKey" />
-      <option name="javaVersion" />
-      <option name="localSettingsJsonPath" />
-      <option name="moduleName" />
-      <option name="os" />
-      <option name="pricingTier" />
-      <option name="providerMap">
-        <map />
-      </option>
-      <option name="region" />
-      <option name="resourceGroup" />
-      <option name="stagingFolder" />
-      <option name="subscription" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Deploy PluginAPI" type="MavenRunConfiguration" factoryName="Maven">
+  <component name="RunManager" selected="Maven.Deploy">
+    <configuration name="Deploy" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -179,7 +112,7 @@
               <map />
             </option>
             <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$/PluginAPI" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
@@ -212,7 +145,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Maven.Deploy PluginAPI" />
+      <item itemvalue="Maven.Deploy" />
       <item itemvalue="Maven.Export jar" />
     </list>
   </component>
@@ -251,7 +184,6 @@
       <workItem from="1686996298201" duration="16000" />
       <workItem from="1687007394855" duration="2591000" />
       <workItem from="1687014258940" duration="8478000" />
-      <workItem from="1690024919754" duration="124000" />
     </task>
     <task id="LOCAL-00049" summary="Changed enchantment name in lore.">
       <created>1685281857221</created>
