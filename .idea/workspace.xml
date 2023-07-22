@@ -31,13 +31,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="enabledProfiles">
-      <list>
-        <option value="github" />
-      </list>
-    </option>
-  </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
   </component>
@@ -68,7 +61,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="S:\HBO ICT\repositories\MinecraftPluginAPI\src\main\java\com\davidout\api\scoreboard" />
