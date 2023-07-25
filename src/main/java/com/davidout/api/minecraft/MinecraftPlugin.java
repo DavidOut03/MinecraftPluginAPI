@@ -52,6 +52,5 @@ public abstract class MinecraftPlugin extends PluginDetails {
     public GUIManager getGuiManager() {return pluginManagers.getGuiManager();}
     public PluginManager getPluginManager() {return pluginManagers.getPluginManager();}
 
-    public DatabaseManager getDatabaseManager() {return pluginManagers.getDatabaseManager();}
 
 }
