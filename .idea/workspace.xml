@@ -4,56 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6787fb9-05bb-45b8-89af-70cd3f1af064" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/DatabaseConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/DatabaseData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/DatabaseManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/type/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/type/MySQLDatabase.java" afterDir="false" />
+    <list default="true" id="f6787fb9-05bb-45b8-89af-70cd3f1af064" name="Changes" comment="Added database manager and dependency">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/MinecraftPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/command/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/command/CustomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/command/CustomCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/enchantment/CustomEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/enchantment/EnchantmentDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/enchantment/EnchantmentManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/EnchantmentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/enchantment/factory/EnchantmentFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/EnchantmentFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/enchantment/factory/EnchantmentFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/enchantment/factory/FactoryEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/enchantment/factory/FactoryEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/event/ArmorDequipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/event/ArmorDequipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/event/ArmorEquipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/event/ArmorEquipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/file/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/file/PluginFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/file/PluginFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/file/PluginFolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/GUIManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/gui/GUIManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/gui/ItemAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/gui/ItemAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageBundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/language/LanguageBundle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/language/LanguageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/CustomScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/scoreboard/CustomScoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/custom/scoreboard/ScoreboardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/scoreboard/ScoreboardManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/ArmorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/enums/ArmorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/enums/EnchantmentTarget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/enums/PlayerLookingDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/enums/PlayerLookingDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/listener/ArmorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/listener/ArmorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/listener/LeaveListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/listener/LeaveListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/packet/NMSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/packet/NMSHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/packet/PacketHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/packet/PacketHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/packet/reflection/ReflectionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/packet/reflection/ReflectionHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/plugin/PluginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/plugin/PluginLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/plugin/PluginManagers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginManagers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/item/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/item/ItemCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/item/ItemCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/number/NumberUtillity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/number/NumberUtillity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/player/PlayerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/player/PlayerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/server/ServerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/server/ServerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/server/Version.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/server/Version.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/server/location/Selection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/server/location/Selection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/text/RomanNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/text/RomanNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/utillity/text/TextUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/utillity/text/TextUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/MinecraftPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/language/LanguageBundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/language/LanguageBundle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/language/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/custom/language/LanguageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/Database.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/DatabaseManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/Table.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/exceptions/DatabaseConnectException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/exceptions/DatabaseDisconnectException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/exceptions/TableCreateException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/result/ActionResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/result/DatabaseDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/database/type/MySQLDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginManagers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/davidout/api/minecraft/plugin/PluginManagers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,10 +139,27 @@
       <workItem from="1690034404905" duration="59000" />
       <workItem from="1690034726975" duration="25000" />
       <workItem from="1690041914995" duration="1693000" />
+      <workItem from="1690194833366" duration="7000" />
+      <workItem from="1690220768844" duration="160000" />
+      <workItem from="1690284364806" duration="742000" />
+      <workItem from="1690285130205" duration="158000" />
+      <workItem from="1698951104326" duration="2562000" />
     </task>
+    <task id="LOCAL-00001" summary="Added database manager and dependency">
+      <created>1690285284534</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1690285284534</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added database manager and dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added database manager and dependency" />
   </component>
 </project>

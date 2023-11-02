@@ -1,8 +1,0 @@
-package com.davidout.api.minecraft.custom.enchantment.factory;
-
-import org.bukkit.event.Event;
-
-public interface EnchantmentFunction {
-
-    void executeFunction(Event event);
-}

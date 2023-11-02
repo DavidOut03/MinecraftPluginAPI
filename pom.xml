@@ -24,10 +24,8 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-
         <repository>
-            <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
+            <id>MinecraftPluginAPI</id>
             <url>https://maven.pkg.github.com/DavidOut03/DatabaseAPI</url>
         </repository>
     </repositories>
@@ -51,7 +49,7 @@
         <dependency>
             <groupId>com.davidout.api</groupId>
             <artifactId>database-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
 
     </dependencies>
