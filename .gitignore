@@ -3,8 +3,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-.github
-
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
@@ -38,6 +36,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
-/.github/workflows/
-/.github/workflows/
-/test.yaml
+/src/test/dump/test.yaml
+/src/test/dump/

@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6787fb9-05bb-45b8-89af-70cd3f1af064" name="Changes" comment="Rebuild">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPluginManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/FileRepresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/IFileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/YamlFileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestFileManager.java" afterDir="false" />
+    <list default="true" id="f6787fb9-05bb-45b8-89af-70cd3f1af064" name="Changes" comment="Added easy fileManager to create and load yaml files. Also added tests.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/IMessageManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/MessageManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/bundle/IMessageBundle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/bundle/MessageBundle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/message/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/message/MessageKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestMessageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPluginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPluginManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/IFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/IFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/YamlFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/YamlFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestFileManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -32,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="rebuild" />
+        <entry key="$PROJECT_DIR$" value="file-manager" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,27 +51,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;file-manager&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Minecraft Development/api/MinecraftPluginAPI/src/main/java/mcapi/davidout/model&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "rebuild",
+    "last_opened_file_path": "D:/Minecraft Development/api/MinecraftPluginAPI/src/main/java/mcapi/davidout/model",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\main\java\mcapi\davidout\model" />
       <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\main\java\mcapi\davidout\model\file" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\test\dump" />
       <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\test\java" />
     </key>
   </component>
@@ -134,6 +140,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestFileManager.testSaveFileSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="minecraft-plugin-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mcapi.davidout.manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mcapi.davidout.manager" />
+      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.manager.TestFileManager" />
+      <option name="METHOD_NAME" value="testSaveFileSuccessfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="deploy" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -163,6 +185,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestFileManager" />
+        <item itemvalue="JUnit.TestFileManager.testSaveFileSuccessfully" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -188,7 +211,7 @@
       <workItem from="1699022425358" duration="5573000" />
       <workItem from="1699114726141" duration="599000" />
       <workItem from="1706453698056" duration="3746000" />
-      <workItem from="1706627161987" duration="2636000" />
+      <workItem from="1706627161987" duration="6479000" />
     </task>
     <task id="LOCAL-00001" summary="Added database manager and dependency">
       <created>1690285284534</created>
@@ -211,27 +234,35 @@
       <option name="project" value="LOCAL" />
       <updated>1706453770718</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added easy fileManager to create and load yaml files. Also added tests.">
+      <created>1706630114843</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706630114843</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added database manager and dependency" />
     <MESSAGE value="Reworked structure" />
     <MESSAGE value="Rebuild" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rebuild" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestFileManager.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added easy fileManager to create and load yaml files. Also added tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added easy fileManager to create and load yaml files. Also added tests." />
   </component>
 </project>

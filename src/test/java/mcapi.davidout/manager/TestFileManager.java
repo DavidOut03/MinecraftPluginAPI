@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,22 +19,23 @@ public class TestFileManager {
 
     @Before
     public void setUp() {
+        File folder = new File("src/test/dump/");
+        folder.mkdir();
+
         fileManager = new YamlFileManager();
         config = createMockConfig();
-        testPath = "test";
+        testPath = "src/test/dump/test";
     }
 
     @Test
-    public void testSaveFileSuccessfully() throws IOException {
+    public void test1_SaveFileSuccessfully() throws IOException {
         boolean result = fileManager.saveFile(config, testPath);
-
         Assert.assertTrue("File not saved successfully", result);
     }
 
     @Test
-    public void testLoadFileAndVerifyContents() throws IOException {
+    public void test2_LoadFileAndVerifyContents() throws IOException {
         MockConfig loadedConfig = fileManager.loadFile(MockConfig.class, testPath);
-
         Assert.assertNotNull("Loaded configuration is null", loadedConfig);
         assertMockConfigsEqual(config, loadedConfig);
     }
