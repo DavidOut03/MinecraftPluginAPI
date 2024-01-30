@@ -4,44 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6787fb9-05bb-45b8-89af-70cd3f1af064" name="Changes" comment="Reworked structure">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/file/FileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/file/file/ConfigFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/file/file/IFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/file/file/PluginFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/file/folder/IFolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/file/folder/PluginFolder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/utillity/CallBack.java" afterDir="false" />
+    <list default="true" id="f6787fb9-05bb-45b8-89af-70cd3f1af064" name="Changes" comment="Rebuild">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPluginManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/FileRepresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/IFileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/YamlFileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestFileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/controller/listener/ArmorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/event/ArmorListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/controller/listener/LeaveListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/event/LeaveListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/controller/manager/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enchantment/EnchantmentManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/controller/manager/FileManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/controller/manager/GUIManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/gui/GUIManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/controller/manager/LanguageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/language/LanguageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/controller/manager/PluginManagers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/plugin/PluginManagers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/controller/manager/ScoreboardManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/scoreboard/ScoreboardManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/command/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/command/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/command/CustomCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/command/CustomCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/enchantment/CustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enchantment/CustomEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/enchantment/EnchantmentDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enchantment/EnchantmentDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/enchantment/factory/EnchantmentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enchantment/factory/EnchantmentFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/enchantment/factory/EnchantmentFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enchantment/factory/EnchantmentFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/enchantment/factory/FactoryEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enchantment/factory/FactoryEnchantment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/event/ArmorDequipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/event/ArmorDequipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/event/ArmorEquipEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/event/ArmorEquipEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/file/PluginFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/file/PluginFolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/gui/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/gui/ItemAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/gui/ItemAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/language/LanguageBundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/language/LanguageBundle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/custom/scoreboard/CustomScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/scoreboard/CustomScoreboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/enums/ArmorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enums/ArmorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/enums/EnchantmentTarget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enchantment/EnchantmentTarget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/enums/PlayerLookingDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/enums/PlayerLookingDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/plugin/PluginDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/plugin/PluginDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/model/plugin/PluginLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/plugin/PluginLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +24,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="rebuild" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -73,7 +51,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;file-manager&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Minecraft Development/api/MinecraftPluginAPI/src/main/java/mcapi/davidout/model&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -88,13 +66,16 @@
       <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\main\java\mcapi\davidout\model" />
       <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\main\java\mcapi\davidout\model\file" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\test\java" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean deploy" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TestFileManager">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -125,6 +106,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.Test" />
+      <module name="minecraft-plugin-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mcapi.davidout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestFileManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="minecraft-plugin-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mcapi.davidout.manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mcapi.davidout.manager" />
+      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.manager.TestFileManager" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="deploy" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -151,6 +160,12 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestFileManager" />
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -172,6 +187,8 @@
       <workItem from="1698951104326" duration="2942000" />
       <workItem from="1699022425358" duration="5573000" />
       <workItem from="1699114726141" duration="599000" />
+      <workItem from="1706453698056" duration="3746000" />
+      <workItem from="1706627161987" duration="2636000" />
     </task>
     <task id="LOCAL-00001" summary="Added database manager and dependency">
       <created>1690285284534</created>
@@ -187,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698954046290</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Rebuild">
+      <created>1706453770718</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706453770718</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +220,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added database manager and dependency" />
     <MESSAGE value="Reworked structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked structure" />
+    <MESSAGE value="Rebuild" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rebuild" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestFileManager.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
