@@ -1,6 +1,8 @@
 package mcapi.davidout;
 
+import mcapi.davidout.manager.file.IFileManager;
 import mcapi.davidout.manager.file.YamlFileManager;
+import mcapi.davidout.manager.language.MessageManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class MinecraftPlugin extends JavaPlugin {
@@ -38,8 +40,11 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     }
 
     private static MinecraftPluginManager createPluginManager() {
+        IFileManager fileManager = new YamlFileManager(getInstance().getDataFolder());
+
         return new MinecraftPluginManager(
-                new YamlFileManager(getInstance().getDataFolder())
+                fileManager,
+                new MessageManager(fileManager)
         );
     }
 

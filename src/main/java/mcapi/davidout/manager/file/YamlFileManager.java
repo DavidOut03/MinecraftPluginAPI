@@ -10,22 +10,23 @@ import java.nio.file.FileSystems;
 public class YamlFileManager implements IFileManager {
 
     private final String relativePath;
-    private File pluginFolder;
+    private final File baseFolder;
 
 
     public YamlFileManager(File folder) {
-        pluginFolder = folder;
+        this.baseFolder = folder;
 
-        if(!pluginFolder.exists()) {
-            pluginFolder.mkdirs();
+        if(!folder.exists()) {
+            folder.mkdirs();
         }
 
         String separator = FileSystems.getDefault().getSeparator();
         relativePath = String.format("%s%s$fileName.yaml",
-                pluginFolder.getPath(), separator);
+                folder.getPath(), separator);
     }
 
     public YamlFileManager() {
+        this.baseFolder = new File("./");
         String separator = FileSystems.getDefault().getSeparator();
         relativePath = String.format("%s%s$fileName.yaml",
                 "./", separator);
@@ -33,7 +34,7 @@ public class YamlFileManager implements IFileManager {
 
     @Override
     public <T> T loadFile(Class<T> fileClass, String path) {
-        try (Reader reader = new FileReader(relativePath.replace("$fileName", path))) {
+        try (Reader reader = new FileReader(relativePath.replace("$fileName", path.replace(".yaml", "")))) {
             Yaml yaml = new Yaml();
             return yaml.loadAs(reader, fileClass);
         } catch (Exception ex) {
@@ -56,5 +57,10 @@ public class YamlFileManager implements IFileManager {
             yaml.dump(fileClass, writer);
             return true;
         }
+    }
+
+    @Override
+    public File getBaseFolder() {
+        return baseFolder;
     }
 }
