@@ -1,5 +1,7 @@
 package mcapi.davidout;
 
+import mcapi.davidout.manager.enchantment.EnchantmentManager;
+import mcapi.davidout.manager.enchantment.enchanter.ItemEnchanter;
 import mcapi.davidout.manager.file.IFileManager;
 import mcapi.davidout.manager.file.YamlFileManager;
 import mcapi.davidout.manager.language.MessageManager;
@@ -13,7 +15,6 @@ public abstract class MinecraftPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-
 
         this.onStartup();
     }
@@ -44,7 +45,8 @@ public abstract class MinecraftPlugin extends JavaPlugin {
 
         return new MinecraftPluginManager(
                 fileManager,
-                new MessageManager(fileManager)
+                new MessageManager(fileManager),
+                new EnchantmentManager(instance, new ItemEnchanter())
         );
     }
 
