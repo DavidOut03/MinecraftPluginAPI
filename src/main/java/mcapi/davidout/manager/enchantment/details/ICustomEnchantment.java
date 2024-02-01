@@ -6,6 +6,7 @@ import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.event.Event;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.lang.reflect.Field;
@@ -18,7 +19,7 @@ public abstract class ICustomEnchantment extends EnchantmentWrapper implements L
     private final IEnchantmentDetails enchantmentDetails;
 
     public ICustomEnchantment(IEnchantmentDetails iEnchantmentDetails) {
-        super(iEnchantmentDetails.getName());
+        super(iEnchantmentDetails.getName().toLowerCase());
         this.enchantmentDetails = iEnchantmentDetails;
     }
 
@@ -72,6 +73,34 @@ public abstract class ICustomEnchantment extends EnchantmentWrapper implements L
     }
 
 
+    @Override
+    public String getName() {
+        return this.enchantmentDetails.getName();
+    }
+
+
+    @Override
+    public int getStartLevel() {
+        return 0;
+    }
+    @Override
+    public int getMaxLevel() {return this.enchantmentDetails.getMaxLevel();}
+
+    @Override
+    public boolean conflictsWith(Enchantment other) {
+        return false;
+    }
+
+
+    @Override
+    public boolean canEnchantItem(ItemStack item) {
+       return true;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        return false;
+    }
 
 
 
