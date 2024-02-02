@@ -1,11 +1,13 @@
 package mcapi.davidout.manager.file;
 
 import mcapi.davidout.MinecraftPlugin;
+import org.bukkit.Bukkit;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.*;
 import java.nio.file.FileSystems;
+import java.util.logging.Level;
 
 public class YamlFileManager implements IFileManager {
 
@@ -57,6 +59,11 @@ public class YamlFileManager implements IFileManager {
             yaml.dump(fileClass, writer);
             return true;
         }
+    }
+
+    @Override
+    public boolean deleteFile(String path) throws IOException {
+       return new File(relativePath.replace("$fileName", path)).delete();
     }
 
     @Override

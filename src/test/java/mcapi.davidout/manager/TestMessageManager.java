@@ -4,6 +4,7 @@ import mcapi.davidout.manager.file.YamlFileManager;
 import mcapi.davidout.manager.language.IMessageManager;
 import mcapi.davidout.manager.language.MessageManager;
 import mcapi.davidout.manager.language.bundle.IMessageBundle;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -48,8 +49,6 @@ public class TestMessageManager {
         Assert.assertNotNull("Expected bundle cannot be found.", bundle);
         Assert.assertEquals("Loaded bundle is not the same as expected bundle.", bundle.getName(), mockBundle.getName());
     }
-
-
 
 }
 

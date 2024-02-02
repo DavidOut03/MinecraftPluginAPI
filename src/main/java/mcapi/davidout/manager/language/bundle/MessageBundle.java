@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class MessageBundle implements IMessageBundle {
 
-    public String name;
-    public Map<String, String> messages;
+    private final String name;
+    private final Map<String, String> messages;
 
     public MessageBundle() {
         this.name = "";

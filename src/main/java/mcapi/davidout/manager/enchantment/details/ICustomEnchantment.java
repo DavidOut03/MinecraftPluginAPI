@@ -1,5 +1,6 @@
 package mcapi.davidout.manager.enchantment.details;
 
+import mcapi.davidout.manager.enchantment.EnchantmentTarget;
 import mcapi.davidout.manager.enchantment.event.IEnchantmentEvent;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
@@ -8,6 +9,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginManager;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -63,21 +66,18 @@ public abstract class ICustomEnchantment extends EnchantmentWrapper implements L
     public abstract void handleEvent(Event event);
 
     private void registerEvents(Plugin plugin) {
-        triggerOnEvents().forEach(eventClass ->
-                plugin.getServer().getPluginManager().registerEvent(
-                        eventClass,
-                        this,
-                        EventPriority.MONITOR,
-                        (listener, event) -> handleEvent(event), plugin)
-        );
+        PluginManager pluginManager = plugin.getServer().getPluginManager();
+
+        for (Class<? extends Event> eventClass : triggerOnEvents()) {
+            pluginManager.registerEvent(
+                    eventClass,
+                    this,
+                    EventPriority.MONITOR,
+                    (listener, event) -> handleEvent(event),
+                    plugin
+            );
+        }
     }
-
-
-    @Override
-    public String getName() {
-        return this.enchantmentDetails.getName();
-    }
-
 
     @Override
     public int getStartLevel() {
@@ -86,15 +86,15 @@ public abstract class ICustomEnchantment extends EnchantmentWrapper implements L
     @Override
     public int getMaxLevel() {return this.enchantmentDetails.getMaxLevel();}
 
+    @NotNull
     @Override
-    public boolean conflictsWith(Enchantment other) {
-        return false;
+    public String getName() {
+        return this.enchantmentDetails.getName();
     }
 
-
     @Override
-    public boolean canEnchantItem(ItemStack item) {
-       return true;
+    public boolean canEnchantItem(@NotNull ItemStack item) {
+       return EnchantmentTarget.isEnchantable(this.enchantmentDetails.getTargets(), item);
     }
 
     @Override

@@ -4,21 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6787fb9-05bb-45b8-89af-70cd3f1af064" name="Changes" comment="Added easy fileManager to create and load yaml files. Also added tests.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/IMessageManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/MessageManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/bundle/IMessageBundle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/bundle/MessageBundle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/message/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/message/MessageKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestMessageManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="f6787fb9-05bb-45b8-89af-70cd3f1af064" name="Changes" comment="Added unit test for EnchantmentManager">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/enchantment/details/EnchantmentDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/bundle/SavedBundle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/MinecraftPluginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPluginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/MinecraftPluginManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/enchantment/EnchantmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/enchantment/EnchantmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/enchantment/details/ICustomEnchantment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/enchantment/details/ICustomEnchantment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/enchantment/enchanter/ItemEnchanter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/enchantment/enchanter/ItemEnchanter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/IFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/IFileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/YamlFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/file/YamlFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/MessageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/MessageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/bundle/MessageBundle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mcapi/davidout/manager/language/bundle/MessageBundle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/EnchantmentManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/EnchantmentManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestMessageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestMessageManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="Kotlin Class" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -37,14 +40,27 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="file-manager" />
+        <entry key="$PROJECT_DIR$" value="rebuild" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="Added first steps for a language manager." />
+        <option name="rewordedMessage" value="Added message manager." />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="b80bc33de04470d1d87d4028ed9ed66c39c65f5d" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2Svh8SqegCmTmMcwNTFBS8anETm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -53,17 +69,48 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.All in minecraft-plugin-api.executor": "Run",
+    "JUnit.EnchantmentManagerTest.executor": "Run",
+    "JUnit.EnchantmentManagerTest.test2_registerEvents.executor": "Run",
+    "JUnit.MinecraftPluginTest (1).executor": "Run",
+    "JUnit.MinecraftPluginTest.executor": "Run",
+    "JUnit.MinecraftPluginTest.test1_registerEnchantment.executor": "Run",
+    "JUnit.MinecraftPluginTest.testOnEnable.executor": "Run",
+    "JUnit.TestEnchantmentManager.executor": "Run",
+    "JUnit.TestEnchantmentManager.test1_registerEnchantment.executor": "Run",
+    "JUnit.TestEnchantmentTarget.checkCategories.executor": "Run",
+    "JUnit.TestItemType.CheckArmour.executor": "Run",
+    "JUnit.TestItemType.CheckTools.executor": "Debug",
+    "JUnit.TestItemType.checkCategories.executor": "Debug",
+    "JUnit.TestMessageManager.executor": "Run",
+    "JUnit.TestMessageManager.test1_loadBeforeCreated.executor": "Run",
+    "JUnit.TestMessageManager.test3_loadMessageBundles.executor": "Run",
+    "JUnit.TestMinecraftPlugin.executor": "Run",
+    "Maven.deploy.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "rebuild",
+    "git-widget-placeholder": "enchantment-manager",
+    "jdk.selected.com.intellij.ui.dsl.builder.impl.RowImpl.sdk": "17",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "D:/Minecraft Development/api/MinecraftPluginAPI/src/test/java",
     "last_opened_file_path": "D:/Minecraft Development/api/MinecraftPluginAPI/src/main/java/mcapi/davidout/model",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15546875",
+    "project.structure.side.proportion": "0.4643678",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "jdk.preference.com.intellij.ui.dsl.builder.impl.RowImpl.sdk": [
+      "17=C:\\Program Files\\Java\\jdk-17.0.3.1"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -75,13 +122,17 @@
       <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\test\dump" />
       <recent name="D:\Minecraft Development\api\MinecraftPluginAPI\src\test\java" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="mcapi.davidout.manager" />
+      <recent name="mcapi.davidout" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean deploy" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestFileManager">
+  <component name="RunManager" selected="JUnit.MinecraftPluginTest">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -112,8 +163,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.Test" />
+    <configuration name="MinecraftPluginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="minecraft-plugin-api" />
       <extension name="coverage">
         <pattern>
@@ -121,36 +171,40 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestFileManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="minecraft-plugin-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mcapi.davidout.manager.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mcapi.davidout.manager" />
-      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.manager.TestFileManager" />
+      <option name="PACKAGE_NAME" value="mcapi.davidout" />
+      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.MinecraftPluginTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestFileManager.testSaveFileSuccessfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MinecraftPluginTest.test1_registerEnchantment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="minecraft-plugin-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="mcapi.davidout.manager.*" />
+          <option name="PATTERN" value="mcapi.davidout.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="mcapi.davidout.manager" />
-      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.manager.TestFileManager" />
-      <option name="METHOD_NAME" value="testSaveFileSuccessfully" />
+      <option name="PACKAGE_NAME" value="mcapi.davidout" />
+      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.MinecraftPluginTest" />
+      <option name="METHOD_NAME" value="test1_registerEnchantment" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MinecraftPluginTest.testOnEnable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="minecraft-plugin-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mcapi.davidout.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mcapi.davidout" />
+      <option name="MAIN_CLASS_NAME" value="mcapi.davidout.MinecraftPluginTest" />
+      <option name="METHOD_NAME" value="testOnEnable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -162,6 +216,7 @@
         <option name="myRunnerSettings" />
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="cmdOptions" />
             <option name="profiles">
               <set />
             </option>
@@ -171,9 +226,13 @@
                 <option value="deploy" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
             <option name="workingDirPath" value="$PROJECT_DIR$" />
@@ -182,13 +241,27 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JUnit.All in minecraft-plugin-api" />
+      <item itemvalue="JUnit.MinecraftPluginTest" />
+      <item itemvalue="JUnit.MinecraftPluginTest.test1_registerEnchantment" />
+      <item itemvalue="JUnit.MinecraftPluginTest.testOnEnable" />
+      <item itemvalue="Maven.deploy" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestFileManager" />
-        <item itemvalue="JUnit.TestFileManager.testSaveFileSuccessfully" />
-        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.MinecraftPluginTest" />
+        <item itemvalue="JUnit.MinecraftPluginTest.test1_registerEnchantment" />
+        <item itemvalue="JUnit.MinecraftPluginTest.testOnEnable" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -211,7 +284,12 @@
       <workItem from="1699022425358" duration="5573000" />
       <workItem from="1699114726141" duration="599000" />
       <workItem from="1706453698056" duration="3746000" />
-      <workItem from="1706627161987" duration="6479000" />
+      <workItem from="1706627161987" duration="11938000" />
+      <workItem from="1706642903304" duration="897000" />
+      <workItem from="1706644191883" duration="376000" />
+      <workItem from="1706645213944" duration="3970000" />
+      <workItem from="1706817963873" duration="8211000" />
+      <workItem from="1706898231034" duration="10213000" />
     </task>
     <task id="LOCAL-00001" summary="Added database manager and dependency">
       <created>1690285284534</created>
@@ -241,7 +319,45 @@
       <option name="project" value="LOCAL" />
       <updated>1706630114843</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added first steps for a language manager.">
+      <created>1706634431806</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706634431806</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added message manager.">
+      <created>1706641671871</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1706641671871</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add EnchantmentTarget and test.">
+      <option name="closed" value="true" />
+      <created>1706648670251</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706648670251</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added first steps form itemEnchanter">
+      <option name="closed" value="true" />
+      <created>1706824787832</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1706824787832</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added unit test for EnchantmentManager">
+      <option name="closed" value="true" />
+      <created>1706825930580</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1706825930580</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +379,22 @@
     <MESSAGE value="Reworked structure" />
     <MESSAGE value="Rebuild" />
     <MESSAGE value="Added easy fileManager to create and load yaml files. Also added tests." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added easy fileManager to create and load yaml files. Also added tests." />
+    <MESSAGE value="Added first steps for a language manager." />
+    <MESSAGE value="Added message manager." />
+    <MESSAGE value="Add EnchantmentTarget and test." />
+    <MESSAGE value="Added first steps form itemEnchanter" />
+    <MESSAGE value="Added unit test for EnchantmentManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added unit test for EnchantmentManager" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/mcapi.davidout/manager/TestMessageManager.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

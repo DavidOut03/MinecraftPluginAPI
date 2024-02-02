@@ -1,19 +1,22 @@
 package mcapi.davidout.manager.language;
-
-import mcapi.davidout.MinecraftPlugin;
-import mcapi.davidout.MinecraftPluginManager;
+;
 import mcapi.davidout.manager.file.IFileManager;
 import mcapi.davidout.manager.language.bundle.IMessageBundle;
 import mcapi.davidout.manager.language.bundle.MessageBundle;
+import mcapi.davidout.manager.language.bundle.SavedBundle;
 import mcapi.davidout.manager.language.message.MessageKey;
+import mcapi.davidout.utillity.TextUtils;
+import org.bukkit.Bukkit;
 
-import java.io.Console;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
-
 public class MessageManager implements IMessageManager {
+
+    private static MessageManager instance;
+    public static MessageManager getInstance() {
+        return instance;
+    }
 
     private final List<IMessageBundle> messageBundles;
     private final IFileManager fileManager;
@@ -22,7 +25,7 @@ public class MessageManager implements IMessageManager {
     public MessageManager(IFileManager fileManager) {
         this.fileManager = fileManager;
         this.messageBundles = new ArrayList<>();
-        this.loadMessageBundles();
+        instance = this;
     }
 
     @Override
@@ -60,13 +63,21 @@ public class MessageManager implements IMessageManager {
 
     @Override
     public String getMessageFromBundle(IMessageBundle bundle, String key) {
-        return bundle.getMessages().entrySet().stream().
-                filter(entry -> entry.getKey().equalsIgnoreCase(key)).findFirst().map(Map.Entry::getValue).orElse(null);
+        if(bundle == null) {
+            return "No bundle selected";
+        }
+
+        return TextUtils.formatColorCodes(
+                bundle.getMessages().entrySet().stream().
+                filter(entry -> entry.getKey().equalsIgnoreCase(key)).findFirst().map(Map.Entry::getValue).orElse("&cCould not find the message.")
+        );
     }
 
     @Override
     public void addMessageBundle(IMessageBundle bundle) {
         messageBundles.add(bundle);
+        if(currentBundle != null) return;
+        currentBundle = bundle;
     }
 
     @Override
@@ -88,16 +99,28 @@ public class MessageManager implements IMessageManager {
         for (File file : yamlFiles) {
             try {
                 String bundleName = file.getName().replace(".yaml", "");
-                Map<String, String> messages = fileManager.loadFile(SavedBundle.class, file.getName()).messages;
+                SavedBundle savedBundle = fileManager.loadFile(SavedBundle.class, file.getName());
+
+                if (savedBundle == null) {
+                    System.err.println("Could not load file: " + file.getName());
+                    continue;
+                }
+
+                Map<String, String> messages = savedBundle.messages;
 
                 Optional<IMessageBundle> existingBundle = messageBundles.stream()
                         .filter(bundle -> bundle.getName().equalsIgnoreCase(bundleName))
                         .findFirst();
 
-                existingBundle.ifPresent(messageBundles::remove);
+                existingBundle.ifPresent(bundle -> {
+                    System.out.println("Removing existing bundle: " + bundle.getName());
+                    messageBundles.remove(bundle);
+                });
+
+                System.out.println("Adding new bundle: " + bundleName);
                 messageBundles.add(new MessageBundle(bundleName, messages));
             } catch (IOException e) {
-                System.err.println("Could not load message bundle: " + file.getName());
+                System.err.println("Error loading message bundles: " + e.getMessage());
                 e.printStackTrace();
             }
         }
@@ -110,7 +133,7 @@ public class MessageManager implements IMessageManager {
     public boolean saveMessageBundles()  {
         for (IMessageBundle bundle : this.messageBundles) {
             try {
-                fileManager.saveFile(new SavedBundle(bundle.getMessages()), bundle.getName());
+                fileManager.saveFile(new SavedBundle(bundle.getName(), bundle.getMessages()), bundle.getName());
             } catch (Exception ex) {
                 ex.printStackTrace();
                 return false;
@@ -120,14 +143,3 @@ public class MessageManager implements IMessageManager {
     }
 }
 
-class SavedBundle {
-    public Map<String, String> messages;
-
-    public SavedBundle(Map<String, String> messages) {
-        this.messages = messages;
-    }
-
-    public SavedBundle() {
-        this.messages = new HashMap<>();
-    }
-}

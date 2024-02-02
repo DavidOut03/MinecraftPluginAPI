@@ -11,14 +11,22 @@ import java.util.Map;
 
 public class EnchantmentManager implements IEnchantmentManager {
 
-    private List<ICustomEnchantment> enchantments;
-    private IEnchanter enchanter;
+
+    private static EnchantmentManager instance;
+    public static EnchantmentManager getInstance() {
+        return instance;
+    }
+
+    private final List<ICustomEnchantment> enchantments;
+    private final IEnchanter enchanter;
     private final Plugin plugin;
 
     public EnchantmentManager(Plugin plugin, IEnchanter enchanter) {
         this.enchantments = new ArrayList<>();
         this.enchanter = enchanter;
         this.plugin = plugin;
+
+        instance = this;
     }
 
     @Override
